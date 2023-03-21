@@ -21,5 +21,6 @@ namespace QLCC.Entities
         public double? HeSoLuong { get; set; }
         public int? NgayNghiPhep { get; set; }
         public int? SoNgayDaNghi { get; set; }
+        public virtual ICollection<NhanVien_Quyen> NhanVien_Quyens { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using static QLCC.ViewModels.Constants;
 
 namespace QLCC.Entities
 {
@@ -10,7 +11,11 @@ namespace QLCC.Entities
         public string LyDo { get; set; }
         public DateTime ThoiGianTao { get; set; }
         public DateTime TaoChoNgay { get; set; }
-        public string LoaiNghi { get; set; }
-        public string TrangThai { get; set; }
+        public LoaiNghiEnum LoaiNghi { get; set; }
+        public TrangThaiNghiEnum TrangThai { get; set; }
+        [ForeignKey("NhanVienId")]
+        public virtual User? NhanVien { get; set; }
+        [ForeignKey("NguoiPheDuyetId")]
+        public virtual User? NguoiPheDuyet { get; set; }
     }
 }

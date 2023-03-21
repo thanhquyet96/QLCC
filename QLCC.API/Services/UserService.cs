@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using QLCC.Entities;
 using QLCC.Helper;
@@ -48,9 +50,28 @@ namespace QLCC.Models
 
         public User GetById(int id)
         {
-            return _db.Users.FirstOrDefault(x => x.Id == id);
+            return _db.Users.Include(x=>x.NhanVien_Quyens).FirstOrDefault(x => x.Id == id);
         }
 
+        private List<Claim> GetQuyens(User user)
+        {
+            IdentityOptions _options = new IdentityOptions();
+
+            var claims = new List<Claim>
+                {
+                    new Claim("Id", user.Id.ToString()),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    new Claim(_options.ClaimsIdentity.UserIdClaimType, user.Id.ToString()),
+                    new Claim(_options.ClaimsIdentity.UserNameClaimType, user.TaiKhoan),
+                };
+            var data = _db.NhanVien_Quyen.Where(x => x.NhanVienId == user.Id).Include(x=>x.Quyen).ToList();
+            foreach (var item in data)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, item.Quyen?.TenQuyen));
+            }
+
+            return claims;
+        }
         // helper methods
 
         private string generateJwtToken(User user)
@@ -58,11 +79,12 @@ namespace QLCC.Models
             // generate token that is valid for 7 days
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+            var claims = GetQuyens(user);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new[] { new Claim("id", user.Id.ToString()) }),
+                Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.UtcNow.AddDays(7),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);

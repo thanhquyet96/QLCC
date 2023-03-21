@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using QLCC.Entities;
+using QLCC.Helpers;
 using QLCC.Models;
+using QLCC.ViewModels;
+using static QLCC.ViewModels.Constants;
 
 namespace QLCC.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class NghiPhepController : ControllerBase
     {
         private readonly DataContext _context;
@@ -23,9 +22,19 @@ namespace QLCC.Controllers
 
         // GET: api/NghiPhep
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<NghiPhep>>> GetNghiPhep()
+        public async Task<ActionResult<IEnumerable<NghiPhepDetail>>> GetNghiPhep()
         {
-            return await _context.NghiPhep.ToListAsync();
+            var model = await _context.NghiPhep.Select(x => new NghiPhepDetail()
+            {
+                LoaiNghi = x.LoaiNghi,
+                LyDo = x.LyDo,
+                NguoiPheDuyet = x.NguoiPheDuyet != null ? x.NguoiPheDuyet.HoVaTen : "",
+                TaoChoNgay = x.TaoChoNgay,
+                TenNhanVien = x.NhanVien != null ? x.NhanVien.HoVaTen : "",
+                ThoiGianTao = x.ThoiGianTao,
+                TrangThai = x.TrangThai,
+            }).ToListAsync();
+            return model;
         }
 
         // GET: api/NghiPhep/5
@@ -76,8 +85,13 @@ namespace QLCC.Controllers
         // POST: api/NghiPhep
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize(PRIVILGE.USER, PRIVILGE.OTHER)]
         public async Task<ActionResult<NghiPhep>> PostNghiPhep(NghiPhep nghiPhep)
         {
+            var user = User;
+            nghiPhep.NhanVienId = 1;
+            nghiPhep.ThoiGianTao = DateTime.Now;
+            nghiPhep.TrangThai = TrangThaiNghiEnum.ChoDuyet;
             _context.NghiPhep.Add(nghiPhep);
             await _context.SaveChangesAsync();
 

@@ -8,15 +8,33 @@ namespace QLCC.Helpers
     public class BaseController : ControllerBase
     {
         public UserIdentity UserIdentity;
-        private HttpContext _context;
-        public BaseController() { }
-        public BaseController(HttpContext context)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+
+        //public BaseController(IHttpContextAccessor httpContextAccessor) =>
+        //    _httpContextAccessor = httpContextAccessor;
+
+        public BaseController(IHttpContextAccessor httpContextAccessor)
         {
-            var user = (User)context.Items["User"];
+            _httpContextAccessor = httpContextAccessor;
+            LoadUserIdentity();
+        }
+        private void LoadUserIdentity()
+        {
+            var user = (User)_httpContextAccessor.HttpContext.Items["User"];
             if (user != null)
             {
                 UserIdentity = new UserIdentity(user);
             }
         }
+
+        //public BaseController()
+        //{
+        //    var user = (User)HttpContext.Items["User"];
+        //    if (user != null)
+        //    {
+        //        UserIdentity = new UserIdentity(user);
+        //    }
+        //}
     }
 }

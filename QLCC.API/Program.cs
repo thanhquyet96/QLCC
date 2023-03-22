@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.OpenApi.Models;
 using QLCC.Helper;
 using QLCC.Helpers;
@@ -54,6 +55,7 @@ builder.Services.AddSwaggerGen(c =>
                     }
         });
 });
+builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 
 var app = builder.Build();

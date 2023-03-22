@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
 namespace QLCC.ViewModels
@@ -8,17 +9,22 @@ namespace QLCC.ViewModels
         public enum LoaiNghiEnum
         {
             [Display(Name = "Nghỉ không lương")]
+            [Description("Nghỉ không lương")]
             NghiKhongLuong = 1,
             [Display(Name = "Nghỉ phép")]
+            [Description("Nghỉ phép")]
             NghiPhep = 2,
         }
         public enum TrangThaiNghiEnum
         {
             [Display(Name = "Chờ duyệt")]
+            [Description("Chờ duyệt")]
             ChoDuyet = 1,
             [Display(Name = "Đã duyệt")]
+            [Description("Đã duyệt")]
             DaDuyet = 2,
             [Display(Name = "Từ chối")]
+            [Description("Từ chối")]
             TuChoi = 3,
         }
         
@@ -33,11 +39,28 @@ namespace QLCC.ViewModels
     {
         public static string GetDisplayName(this Enum enumValue)
         {
-            return enumValue.GetType()
-                            .GetMember(enumValue.ToString())
-                            .First()
-                            .GetCustomAttribute<DisplayAttribute>()
-                            .GetName();
+            string displayName;
+            displayName = enumValue.GetType()
+                .GetMember(enumValue.ToString())
+                .FirstOrDefault()
+                .GetCustomAttribute<DisplayAttribute>()?
+                .GetName();
+            if (String.IsNullOrEmpty(displayName))
+            {
+                displayName = enumValue.ToString();
+            }
+            return displayName;
+        }
+        public static string GetDescription<T>(this T source)
+        {
+            FieldInfo fi = source.GetType().GetField(source.ToString());
+
+            DescriptionAttribute[] attributes = (DescriptionAttribute[])fi.GetCustomAttributes(
+                typeof(DescriptionAttribute), false);
+
+            if (attributes != null && attributes.Length > 0) return attributes[0].Description;
+            else return source.ToString();
         }
     }
+
 }

@@ -1,0 +1,230 @@
+USE [master]
+GO
+/****** Object:  Database [QuanLyChamCong]    Script Date: 3/9/2023 10:02:13 PM ******/
+CREATE DATABASE [QuanLyChamCong]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'QuanLyChamCong', FILENAME = N'D:\Code Thue\QuanLyChamCong\Database\QuanLyChamCong.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'QuanLyChamCong_log', FILENAME = N'D:\Code Thue\QuanLyChamCong\Database\QuanLyChamCong_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [QuanLyChamCong].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [QuanLyChamCong] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [QuanLyChamCong] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [QuanLyChamCong] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [QuanLyChamCong] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [QuanLyChamCong] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [QuanLyChamCong] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [QuanLyChamCong] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [QuanLyChamCong] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [QuanLyChamCong] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [QuanLyChamCong] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [QuanLyChamCong] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [QuanLyChamCong] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [QuanLyChamCong] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [QuanLyChamCong] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [QuanLyChamCong] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [QuanLyChamCong] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [QuanLyChamCong] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [QuanLyChamCong] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [QuanLyChamCong] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [QuanLyChamCong] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [QuanLyChamCong] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [QuanLyChamCong] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [QuanLyChamCong] SET RECOVERY FULL 
+GO
+ALTER DATABASE [QuanLyChamCong] SET  MULTI_USER 
+GO
+ALTER DATABASE [QuanLyChamCong] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [QuanLyChamCong] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [QuanLyChamCong] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [QuanLyChamCong] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [QuanLyChamCong] SET DELAYED_DURABILITY = DISABLED 
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'QuanLyChamCong', N'ON'
+GO
+USE [QuanLyChamCong]
+GO
+/****** Object:  Table [dbo].[ChamCong]    Script Date: 3/9/2023 10:02:14 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ChamCong](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Ten] [nvarchar](50) NOT NULL,
+	[NhanVienId] [int] NOT NULL,
+	[NgayChamCongId] [int] NULL,
+ CONSTRAINT [PK_ChamCong] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[LichSuChamCong]    Script Date: 3/9/2023 10:02:14 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[LichSuChamCong](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ThoiGianChamCong] [datetime] NOT NULL,
+	[NhanVienId] [int] NOT NULL,
+	[NgayChamCong] [date] NOT NULL,
+ CONSTRAINT [PK_LichSuChamCong] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[NgayChamCong]    Script Date: 3/9/2023 10:02:14 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[NgayChamCong](
+	[Id] [int] NOT NULL,
+	[ThoiGianChamCong] [datetime] NULL,
+	[ThoiGianRaVe] [datetime] NULL,
+	[NgayChamCong] [date] NULL,
+	[NhanVienId] [int] NULL,
+ CONSTRAINT [PK_NgayChamCong] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[NghiPhep]    Script Date: 3/9/2023 10:02:14 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[NghiPhep](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[NhanVienId] [int] NOT NULL,
+	[LyDo] [nvarchar](50) NOT NULL,
+	[NguoiPheDuyetId] [int] NOT NULL,
+	[ThoiGianTao] [datetime] NOT NULL,
+	[TaoChoNgay] [date] NOT NULL,
+	[LoaiNghi] [int] NOT NULL,
+	[TrangThai] [int] NOT NULL,
+ CONSTRAINT [PK_NghiPhep] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[NhanVien]    Script Date: 3/9/2023 10:02:14 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[NhanVien](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Ten] [nvarchar](50) NOT NULL,
+	[HoVaTen] [nvarchar](50) NOT NULL,
+	[SoDienThoai] [nvarchar](50) NOT NULL,
+	[DiaChi] [nvarchar](50) NOT NULL,
+	[SinhNhat] [date] NOT NULL,
+	[HeSoLuong] [float] NOT NULL,
+	[NgayNghiPhep] [int] NULL,
+	[SoNgayDaNghi] [int] NULL,
+ CONSTRAINT [PK_Employee] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[NhanVien_Quyen]    Script Date: 3/9/2023 10:02:14 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[NhanVien_Quyen](
+	[NhanVienId] [int] NOT NULL,
+	[QuyenId] [int] NOT NULL,
+ CONSTRAINT [PK_NhanVien_Quyen] PRIMARY KEY CLUSTERED 
+(
+	[NhanVienId] ASC,
+	[QuyenId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Quyen]    Script Date: 3/9/2023 10:02:14 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Quyen](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[TenQuyen] [nvarchar](50) NULL,
+ CONSTRAINT [PK_Quyen] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[ChamCong]  WITH CHECK ADD  CONSTRAINT [FK_ChamCong_NgayChamCong] FOREIGN KEY([NgayChamCongId])
+REFERENCES [dbo].[NgayChamCong] ([Id])
+GO
+ALTER TABLE [dbo].[ChamCong] CHECK CONSTRAINT [FK_ChamCong_NgayChamCong]
+GO
+ALTER TABLE [dbo].[ChamCong]  WITH CHECK ADD  CONSTRAINT [FK_ChamCong_NhanVien] FOREIGN KEY([NhanVienId])
+REFERENCES [dbo].[NhanVien] ([Id])
+GO
+ALTER TABLE [dbo].[ChamCong] CHECK CONSTRAINT [FK_ChamCong_NhanVien]
+GO
+ALTER TABLE [dbo].[LichSuChamCong]  WITH CHECK ADD  CONSTRAINT [FK_LichSuChamCong_NhanVien] FOREIGN KEY([NhanVienId])
+REFERENCES [dbo].[NhanVien] ([Id])
+GO
+ALTER TABLE [dbo].[LichSuChamCong] CHECK CONSTRAINT [FK_LichSuChamCong_NhanVien]
+GO
+ALTER TABLE [dbo].[NghiPhep]  WITH CHECK ADD  CONSTRAINT [FK_NghiPhep_NhanVien] FOREIGN KEY([NhanVienId])
+REFERENCES [dbo].[NhanVien] ([Id])
+GO
+ALTER TABLE [dbo].[NghiPhep] CHECK CONSTRAINT [FK_NghiPhep_NhanVien]
+GO
+ALTER TABLE [dbo].[NhanVien_Quyen]  WITH CHECK ADD  CONSTRAINT [FK_NhanVien_Quyen_NhanVien] FOREIGN KEY([NhanVienId])
+REFERENCES [dbo].[NhanVien] ([Id])
+GO
+ALTER TABLE [dbo].[NhanVien_Quyen] CHECK CONSTRAINT [FK_NhanVien_Quyen_NhanVien]
+GO
+ALTER TABLE [dbo].[NhanVien_Quyen]  WITH CHECK ADD  CONSTRAINT [FK_NhanVien_Quyen_Quyen] FOREIGN KEY([QuyenId])
+REFERENCES [dbo].[Quyen] ([Id])
+GO
+ALTER TABLE [dbo].[NhanVien_Quyen] CHECK CONSTRAINT [FK_NhanVien_Quyen_Quyen]
+GO
+USE [master]
+GO
+ALTER DATABASE [QuanLyChamCong] SET  READ_WRITE 
+GO

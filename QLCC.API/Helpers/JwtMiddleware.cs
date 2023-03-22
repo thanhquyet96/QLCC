@@ -45,14 +45,19 @@ namespace QLCC.Helpers
                     ValidateIssuer = false,
                     ValidateAudience = false,
                     // set clockskew to zero so tokens expire exactly at token expiration time (instead of 5 minutes later)
-                    ClockSkew = TimeSpan.Zero
+                    ClockSkew = TimeSpan.Zero,
+                   
                 }, out SecurityToken validatedToken);
 
                 var jwtToken = (JwtSecurityToken)validatedToken;
-                var userId = int.Parse(jwtToken.Claims.First(x => x.Type == "id").Value);
+                var userId = int.Parse(jwtToken.Claims.First(x => x.Type == "Id").Value);
+                var roles = jwtToken.Claims.Where(x => x.Type == "role")?.Select(x => x.Value).ToList();
 
                 // attach user to context on successful jwt validation
                 context.Items["User"] = userService.GetById(userId);
+                context.Items["Roles"] = roles;
+                
+                var model = jwtToken;
             }
             catch
             {

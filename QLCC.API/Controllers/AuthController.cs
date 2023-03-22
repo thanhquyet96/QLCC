@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using QLCC.Helpers;
 using QLCC.Models;
 
 namespace QLCC.Controllers

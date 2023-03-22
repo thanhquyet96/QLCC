@@ -3,6 +3,7 @@ using Microsoft.OpenApi.Models;
 using QLCC.Helper;
 using QLCC.Helpers;
 using QLCC.Models;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +16,12 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddDbContext<DataContext>
     (options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddControllers();
+//builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    options.JsonSerializerOptions.WriteIndented = true;
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 //builder.Services.AddSwaggerGen();
@@ -67,5 +73,11 @@ app.UseAuthorization();
 app.MapControllers();
 // custom jwt auth middleware
 app.UseMiddleware<JwtMiddleware>();
+
+app.UseCors(builder => builder
+.AllowAnyHeader()
+.AllowAnyMethod()
+.SetIsOriginAllowed((host) => true)
+.AllowCredentials());
 
 app.Run();

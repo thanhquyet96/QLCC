@@ -11,5 +11,9 @@ namespace QLCC.Entities
         [Key]
         [Column(Order = 2)]
         public int? QuyenId { get; set; }
+        [ForeignKey("QuyenId")]
+        public virtual Quyen Quyen { get; set; }
+        [ForeignKey("NhanVienId")]
+        public virtual User NhanVien { get; set; }
     }
 }

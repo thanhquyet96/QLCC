@@ -9,7 +9,7 @@ namespace QLCC.ViewModels
             Id = user.Id;
             Name = user.HoVaTen;
             Username = user.TaiKhoan;
-            Privilges = user.NhanVien_Quyens?.Select(x => x.Quyen?.TenQuyen);
+            Privilges = user.NhanVien_Quyens?.Select(x => x.Quyen?.TenQuyen).ToList();
         }
         public int Id { get; set; }
         public string Name { get; set; }

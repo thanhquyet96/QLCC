@@ -12,11 +12,11 @@ namespace QLCC.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class NghiPhepController : BaseController
+    public class NghiPhepController : BaseController 
     {
         private readonly DataContext _context;
 
-        public NghiPhepController(DataContext context)
+        public NghiPhepController(IHttpContextAccessor httpContextAccessort, DataContext context) :base (httpContextAccessort)
         {
             _context = context;
         }
@@ -28,6 +28,7 @@ namespace QLCC.Controllers
             var model = await _context.NghiPhep.ToListAsync();
             var result = model.Select(x => new NghiPhepDetail()
             {
+                Id = x.Id,
                 LoaiNghi = x.LoaiNghi,
                 LyDo = x.LyDo,
                 NguoiPheDuyet = x.NguoiPheDuyet != null ? x.NguoiPheDuyet.HoVaTen : "",
@@ -63,6 +64,35 @@ namespace QLCC.Controllers
                 return BadRequest();
             }
 
+            _context.Entry(nghiPhep).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!NghiPhepExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        [HttpPut("{id}/update-status")]
+        public async Task<IActionResult> UpdateStatus(int id, int status = 1)
+        {
+            var nghiPhep = await _context.NghiPhep.FindAsync(id);
+            if (nghiPhep == null)
+                return BadRequest();
+            nghiPhep.TrangThai = (TrangThaiNghiEnum)status;
+            _context.Entry(nghiPhep).State = EntityState.Detached;
             _context.Entry(nghiPhep).State = EntityState.Modified;
 
             try

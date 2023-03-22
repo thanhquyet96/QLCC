@@ -1,10 +1,14 @@
 ﻿using Microsoft.OpenApi.Extensions;
+using Newtonsoft.Json.Linq;
+using QLCC.ViewModels;
+using System;
 using static QLCC.ViewModels.Constants;
 
 namespace QLCC.Entities
 {
     public class NghiPhepDetail
     {
+        public int Id { get; set; }
         public string TenNhanVien { get; set; }
         public string NguoiPheDuyet { get; set; }
         public string LyDo { get; set; }
@@ -20,9 +24,10 @@ namespace QLCC.Entities
                     switch (LoaiNghi.Value)
                     {
                         case LoaiNghiEnum.NghiKhongLuong:
-                            return LoaiNghiEnum.NghiKhongLuong.GetDisplayName();
+                            return LoaiNghi.Value.GetDescription();
+                            ;
                         case LoaiNghiEnum.NghiPhep:
-                            return LoaiNghiEnum.NghiPhep.GetDisplayName();
+                            return LoaiNghi.Value.GetDescription();
                         default:
                             return "N/A";
                     }
@@ -39,11 +44,11 @@ namespace QLCC.Entities
                 switch (TrangThai.Value)
                 {
                     case TrangThaiNghiEnum.ChoDuyet:
-                        return TrangThaiNghiEnum.ChoDuyet.GetDisplayName();
+                        return TrangThaiNghiEnum.ChoDuyet.GetDescription();
                     case TrangThaiNghiEnum.DaDuyet:
-                        return TrangThaiNghiEnum.DaDuyet.GetDisplayName();
+                        return TrangThaiNghiEnum.DaDuyet.GetDescription();
                     case TrangThaiNghiEnum.TuChoi:
-                        return TrangThaiNghiEnum.TuChoi.GetDisplayName();
+                        return TrangThaiNghiEnum.TuChoi.GetDescription();
                     default:
                         return "N/A";
                 }

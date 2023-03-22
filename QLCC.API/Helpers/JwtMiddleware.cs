@@ -56,7 +56,7 @@ namespace QLCC.Helpers
                 // attach user to context on successful jwt validation
                 context.Items["User"] = userService.GetById(userId);
                 context.Items["Roles"] = roles;
-
+                
                 var model = jwtToken;
             }
             catch

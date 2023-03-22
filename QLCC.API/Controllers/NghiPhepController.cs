@@ -4,6 +4,7 @@ using QLCC.Entities;
 using QLCC.Helpers;
 using QLCC.Models;
 using QLCC.ViewModels;
+using System.Security.Claims;
 using static QLCC.ViewModels.Constants;
 
 namespace QLCC.Controllers
@@ -11,7 +12,7 @@ namespace QLCC.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class NghiPhepController : ControllerBase
+    public class NghiPhepController : BaseController
     {
         private readonly DataContext _context;
 
@@ -24,7 +25,8 @@ namespace QLCC.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<NghiPhepDetail>>> GetNghiPhep()
         {
-            var model = await _context.NghiPhep.Select(x => new NghiPhepDetail()
+            var model = await _context.NghiPhep.ToListAsync();
+            var result = model.Select(x => new NghiPhepDetail()
             {
                 LoaiNghi = x.LoaiNghi,
                 LyDo = x.LyDo,
@@ -33,8 +35,8 @@ namespace QLCC.Controllers
                 TenNhanVien = x.NhanVien != null ? x.NhanVien.HoVaTen : "",
                 ThoiGianTao = x.ThoiGianTao,
                 TrangThai = x.TrangThai,
-            }).ToListAsync();
-            return model;
+            }).ToList();
+            return result;
         }
 
         // GET: api/NghiPhep/5
@@ -86,10 +88,18 @@ namespace QLCC.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [Authorize(PRIVILGE.USER, PRIVILGE.OTHER)]
-        public async Task<ActionResult<NghiPhep>> PostNghiPhep(NghiPhep nghiPhep)
+        public async Task<ActionResult<NghiPhep>> PostNghiPhep([FromBody]NghiPhep nghiPhep)
         {
-            var user = User;
-            nghiPhep.NhanVienId = 1;
+            var userIdentiy = (User)HttpContext.Items["User"];
+            //var userId = int.Parse(userIdentiy.Claims.First(x => x.Type == "Id").Value);
+
+            //var user = User.Claims.First(x=>x.Type == "id")?.Value;
+            //string userId = User.FindFirst(ClaimTypes.Sid)?.Value;
+            
+            if(UserIdentity != null)
+            {
+                nghiPhep.NhanVienId = UserIdentity.Id;
+            }
             nghiPhep.ThoiGianTao = DateTime.Now;
             nghiPhep.TrangThai = TrangThaiNghiEnum.ChoDuyet;
             _context.NghiPhep.Add(nghiPhep);

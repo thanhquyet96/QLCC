@@ -11,17 +11,23 @@ namespace QLCC.Entities
         public DateTime ThoiGianTao { get; set; }
         public DateTime TaoChoNgay { get; set; }
         public LoaiNghiEnum? LoaiNghi { get; set; }
-        public string TenLoaiNghi { 
-            get {
-                switch (LoaiNghi)
+        public string TenLoaiNghi
+        {
+            get
+            {
+                if (LoaiNghi.HasValue)
                 {
-                    case LoaiNghiEnum.NghiKhongLuong:
-                        return LoaiNghiEnum.NghiKhongLuong.GetDisplayName();
-                    case LoaiNghiEnum.NghiPhep:
-                        return LoaiNghiEnum.NghiPhep.GetDisplayName();
-                    default:
-                        return "N/A";
+                    switch (LoaiNghi.Value)
+                    {
+                        case LoaiNghiEnum.NghiKhongLuong:
+                            return LoaiNghiEnum.NghiKhongLuong.GetDisplayName();
+                        case LoaiNghiEnum.NghiPhep:
+                            return LoaiNghiEnum.NghiPhep.GetDisplayName();
+                        default:
+                            return "N/A";
+                    }
                 }
+                return "N/A";
             }
         }
         public TrangThaiNghiEnum? TrangThai { get; set; }
@@ -29,7 +35,8 @@ namespace QLCC.Entities
         {
             get
             {
-                switch (TrangThai)
+                if (!TrangThai.HasValue) return "N/A";
+                switch (TrangThai.Value)
                 {
                     case TrangThaiNghiEnum.ChoDuyet:
                         return TrangThaiNghiEnum.ChoDuyet.GetDisplayName();

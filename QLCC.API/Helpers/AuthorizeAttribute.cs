@@ -18,7 +18,7 @@ namespace QLCC.Helpers
 
         public AuthorizeAttribute(params string[] roles)
         {
-            _roles = roles ?? new string[] { };
+            _roles = roles;
         }
         public void OnAuthorization(AuthorizationFilterContext context)
         {
@@ -34,16 +34,15 @@ namespace QLCC.Helpers
                 context.Result = new JsonResult(new { message = "Unauthorized" }) { StatusCode = StatusCodes.Status401Unauthorized };
             }
             var roles = (List<string>)context.HttpContext.Items["Roles"];
-            if(roles == null || roles.Count == 0)
+            if (roles == null || roles.Count == 0)
             {
                 context.Result = new JsonResult(new { message = "Unauthorized" }) { StatusCode = StatusCodes.Status401Unauthorized };
             }
             else if (roles.Any() && _roles.Any())
             {
 
-                var isAuth = false;
 
-                var a = roles.Any(x => _roles.Contains(x));
+                var isAuth = roles.Any(x => _roles.Contains(x));
                 //foreach (var role in roles)
                 //{
                 //    var isRole = _roles.Count(x => x == role);
@@ -56,16 +55,16 @@ namespace QLCC.Helpers
                 //        isAuth = false;
                 //    }
                 //}
-                if(!a)
+                if (!isAuth)
                 {
                     context.Result = new JsonResult(new { message = "Bạn không có quyền truy cập chức năng này!" }) { StatusCode = StatusCodes.Status403Forbidden };
                 }
                 //context.Result = new JsonResult(new { message = "Bạn không có quyền truy cập chức năng này!" }) { StatusCode = StatusCodes.Status403Forbidden };
             }
-            else
-            {
-                
-            }
+            //else
+            //{
+            //    context.Result = new JsonResult(new { message = "Bạn không có quyền truy cập chức năng này!" }) { StatusCode = StatusCodes.Status403Forbidden };
+            //}
 
         }
     }

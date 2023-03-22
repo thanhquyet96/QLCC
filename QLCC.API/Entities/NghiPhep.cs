@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using static QLCC.ViewModels.Constants;
 
 namespace QLCC.Entities
@@ -13,9 +14,11 @@ namespace QLCC.Entities
         public DateTime TaoChoNgay { get; set; }
         public LoaiNghiEnum LoaiNghi { get; set; }
         public TrangThaiNghiEnum TrangThai { get; set; }
+        [JsonIgnore]
         [ForeignKey("NhanVienId")]
-        public virtual User? NhanVien { get; set; }
+        public virtual User NhanVien { get; set; }
         [ForeignKey("NguoiPheDuyetId")]
-        public virtual User? NguoiPheDuyet { get; set; }
+        [JsonIgnore]
+        public virtual User NguoiPheDuyet { get; set; }
     }
 }

@@ -41,6 +41,10 @@ typings
 bin
 obj
 .vs
+.launchSettings.json
+QLCC.csproj.user
+appsettings.json
 
 # local sqlite db that is auto generated
 LocalDatabase.db
+.DS_Store

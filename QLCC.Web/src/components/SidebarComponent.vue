@@ -31,10 +31,10 @@
             <a href="#"><i class="fa fa-money" /> <span> Quản lý quyền</span> <span class="menu-arrow" /></a>
             <ul style="display: none;">
               <li><router-link to="/quyen">Danh sách</router-link></li>
-              <li><a href="payments.html">Payments</a></li>
+              <!-- <li><a href="payments.html">Payments</a></li>
               <li><a href="expenses.html">Expenses</a></li>
               <li><a href="taxes.html">Taxes</a></li>
-              <li><a href="provident-fund.html">Provident Fund</a></li>
+              <li><a href="provident-fund.html">Provident Fund</a></li> -->
             </ul>
           </li>
           <li class="submenu">
@@ -53,9 +53,6 @@
               <li><router-link to="/nghiphep/create">Thêm mới</router-link></li>
             </ul>
           </li>
-
-
-          
         </ul>
       </div>
     </div>

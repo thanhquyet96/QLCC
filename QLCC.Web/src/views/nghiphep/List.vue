@@ -89,6 +89,7 @@ export default {
         { key: 'thoiGianTao', label: 'Thời gian tạo' },
         { key: 'taoChoNgay', label: 'Tạo cho ngày' },
         { key: 'tenLoaiNghi', label: 'Loại nghỉ' },
+        { key: 'tenHinhThucNghi', label: 'Hình thức nghỉ' },
         { key: 'tenTrangThai', label: 'Trạng thái' },
         { key: 'action', label: 'Hành động' },
       ],

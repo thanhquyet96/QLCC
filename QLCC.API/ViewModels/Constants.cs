@@ -6,7 +6,7 @@ namespace QLCC.ViewModels
 {
     public static class Constants
     {
-        public enum LoaiNghiEnum
+        public enum HinhThucNghiEnum
         {
             [Display(Name = "Nghỉ không lương")]
             [Description("Nghỉ không lương")]
@@ -14,6 +14,16 @@ namespace QLCC.ViewModels
             [Display(Name = "Nghỉ phép")]
             [Description("Nghỉ phép")]
             NghiPhep = 2,
+        }
+        public enum LoaiNghiEnum
+        {
+            // =1 nếu đi làm full
+            [Description("Nghỉ cả ngày")]
+            NghiCaNgay = 2,
+            [Description("Nghỉ buổi sáng")]
+            NghiSang = 3,
+            [Description("Nghỉ buổi chiều")]
+            NghiChieu = 4,
         }
         public enum TrangThaiNghiEnum
         {

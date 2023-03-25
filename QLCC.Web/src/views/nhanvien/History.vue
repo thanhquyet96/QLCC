@@ -1,9 +1,12 @@
+<!-- eslint-disable vue/valid-v-slot -->
+<!-- eslint-disable vue/no-v-for-template-key-on-child -->
+<!-- eslint-disable vue/valid-v-for -->
 <template>
   <div>
     <div class="row">
       <div class="col-sm-12">
         <h4 class="page-title">
-          Lịch sử chấm công
+          Lịch sử chấm công tháng {{ searchForm.month }} - {{ searchForm.year }}
         </h4>
       </div>
     </div>
@@ -51,14 +54,15 @@
       <div class="col-sm-6 col-md-3">
         <a
           href="#"
-          class="btn btn-success btn-block" style="margin-top: 15px;"
+          class="btn btn-success btn-block"
+          style="margin-top: 15px;"
         > Tìm kiếm </a>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-12">
         <div class="table-responsive">
-          <table class="table table-striped custom-table mb-0">
+          <!-- <table class="table table-striped custom-table mb-0">
             <thead>
               <tr>
                 <th>Nhân viên</th>
@@ -434,7 +438,24 @@
                 <td><i class="fa fa-check text-success" /> </td>
               </tr>
             </tbody>
-          </table>
+          </table> -->
+          <TableComponentVue 
+            :fields="fields"
+            :items="items"
+            data-url="nhanvien/history"
+          />
+          <!-- <b-table
+            sticky-header
+            responsive
+            striped
+            hover
+            :fields="fields"
+            :items="items"
+            :busy="isBusy"
+            show-empty
+          >
+            
+          </b-table> -->
         </div>
       </div>
     </div>
@@ -447,20 +468,24 @@
     export default {
     name: 'ListView',
     components: {
-    
+      TableComponentVue
     },
     data() {
       return {
+        labelIcon: '<i class="fa fa-check text-success" />',
+        formatted: [1,2,3,4,5,6],
         items: [
-          { index: 1, name: 'Lof van ten', sex: 'Male', age: 42 },
-          { index: 2, name: 'Lof van ten', sex: 'Female', age: 36 },
-          { index: 3, name: 'Rubin Kincade', sex: 'Male', age: 73 },
-          { index: 4, name: 'Shirley Partridge', sex: 'Female', age: 62 }
+          { hoVaTen: 'Lof van ten', 1: 1, 2: 2, 3: 3, 5: 5, loaiNghi: 1 },
         ],
+        fieldDefault: [
+          // { key: 'index', label: 'STT' },
+          { key: 'hoVaTen', label: 'Nhân viên' },
+        ],
+        fields: [],
         searchForm: {
           keyWord: null,
-          month: null,
-          year: null,
+          month: new Date().getMonth() + 1,
+          year: new Date().getFullYear(),
         },
         months:[
           { item: 1, name: 1 },
@@ -483,18 +508,82 @@
         { item: 2022, name: 2022},
         { item: 2023, name: 2023},
 
-        ]
+        ],
+        isBusy: true,
+       
       };
+    },
+    watch: {
+      'searchForm.month'(val) {
+        this.loadFields();
+      },
+      'searchForm.year'(val) {
+        this.loadFields();
+      },
+    },
+    created() {
+      this.loadFields();
     },
     mounted() {
       // Datetimepicker
-	if($('.datetimepicker').length > 0) {
-		$('.datetimepicker').datetimepicker({
-			format: 'DD/MM/YYYY'
-		});
-	}
-    }
-    }
+      if($('.datetimepicker').length > 0) {
+        $('.datetimepicker').datetimepicker({
+          format: 'DD/MM/YYYY'
+        });
+      }
+      $("[class=raw-icon]").each((index, item) => {
+        debugger;
+          const value = $(item).text();
+          console.log('value',value);
+          $(item).html(value);
+      });
+    },
+    methods: {
+      loadFields() {
+        const days = getAllDaysInMonth(this.searchForm.month, this.searchForm.year);
+        const keys = Object.keys(days).map(x=> { return Number(x) + 1 });
+        this.fields = [...this.fieldDefault, ...keys.map(x=> { 
+          return { 
+            key: `${x}`, 
+            label: x.toString(),
+            class: 'raw-icon',
+            name: 'quyetdaika',
+            formatter: (value) => {
+              const a = '<i class="fa fa-check text-success" />';
+              console.log(this);
+              return this.checkIcon(value);
+            }
+           }
+          })
+        ];
+      },
+      loadHistories() {
+
+      },
+      checkIcon(type){
+        switch(type){
+          // Đi làm
+          case 1: 
+            return `<i class="fa fa-check text-success" />`;
+          // Nghỉ cả ngày
+          case 2: 
+           return '<i class="fa fa-close text-danger" />';
+          // Nghỉ buổi sáng
+          case 3: 
+            return '<div class="half-day"><span class="first-off"><i class="fa fa-close text-danger" /></span> <span  class="first-off"><i class="fa fa-check text-success" /></span></div>';
+          // Nghỉ buổi chiều
+          case 4: 
+          return '<div class="half-day"><span class="first-off"><i class="fa fa-close text-success" /></span> <span  class="first-off"><i class="fa fa-check text-danger" /></span></div>';
+        }
+      },
+    },
+  }
+
+    const getAllDaysInMonth = (month, year) =>
+      Array.from(
+        { length: new Date(year, month, 0).getDate() },
+        (_, i) => new Date(year, month - 1, i + 1)
+      );
   </script>
   <style scoped>
     .form-group {

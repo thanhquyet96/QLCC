@@ -22,6 +22,24 @@
               Trường này không được để trống
             </b-form-invalid-feedback>
           </b-form-group>
+
+          <b-form-group
+            label="Hình thức nghỉ:"
+          >
+            <b-form-select
+              v-model="nghiPhep.hinhThucNghi"
+              :options="hinhThucNghis"
+              class="mb-3"
+              value-field="item"
+              text-field="name"
+              disabled-field="notEnabled"
+              :state="($v.nghiPhep.hinhThucNghi.$model !== null) && !$v.nghiPhep.hinhThucNghi.$error"
+            />
+            <b-form-invalid-feedback>
+              Trường này không được để trống
+            </b-form-invalid-feedback>
+          </b-form-group>
+
           <b-form-group
             label="Loại nghỉ:"
           >
@@ -106,16 +124,22 @@ export default {
         nguoiPheDuyet: null,
         taoChoNgay: null,
         lyDo: null,
+        hinhThucNghi: null,
       },
       nguoiPheDuyets: [
           { item: 1, name: 'Admin 1' },
           { item: 2, name: 'Admin 2' },
           { item: 3, name: 'Admin 3' },
         ],
-        optionsLeaveType: [
-           { item: 1, name: 'Nghỉ phép' },
-           { item: 2, name: 'Nghỉ không lương' },
-        ],
+      optionsLeaveType: [
+         { item: 1, name: 'Nghỉ phép' },
+         { item: 2, name: 'Nghỉ không lương' },
+      ],
+      hinhThucNghis: [
+        { item: 2, name: 'Nghỉ cả ngày' },
+        { item: 3, name: 'Nghỉ sáng' },
+        { item: 4, name: 'Nghỉ chiều' },
+      ]
     };
   },
   validations: {
@@ -125,6 +149,9 @@ export default {
         required
       },
       loaiNghi: {
+        required
+      },
+      hinhThucNghi: {
         required
       },
       taoChoNgay: {

@@ -13,6 +13,7 @@ namespace QLCC.Entities
         public DateTime ThoiGianTao { get; set; }
         public DateTime TaoChoNgay { get; set; }
         public LoaiNghiEnum LoaiNghi { get; set; }
+        public HinhThucNghiEnum HinhThucNghi { get; set; }
         public TrangThaiNghiEnum TrangThai { get; set; }
         [JsonIgnore]
         [ForeignKey("NhanVienId")]

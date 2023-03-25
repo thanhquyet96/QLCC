@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using QLCC.Entities;
 using QLCC.Models;
+using QLCC.ViewModels;
 
 namespace QLCC.Controllers
 {
@@ -23,9 +24,17 @@ namespace QLCC.Controllers
 
         // GET: api/LichSuChamCong
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<LichSuChamCong>>> GetLichSuChamCong()
+        public async Task<ActionResult<IEnumerable<LichSuChamCongGrid>>> GetLichSuChamCong()
         {
-            return await _context.LichSuChamCong.ToListAsync();
+            var result = await _context.LichSuChamCong.ToListAsync();
+            var data = result.Select(x => new LichSuChamCongGrid()
+            {
+                NhanVienId = x.NhanVienId,
+                NgayChamCong = x.NgayChamCong,
+                ThoiGianChamCong = x.ThoiGianChamCong,
+                LoaiNghi = x.NhanVien.NghiPheps.FirstOrDefault(y=>y.TaoChoNgay == x.NgayChamCong).LoaiNghi,
+            });
+            return data.ToList();
         }
 
         // GET: api/LichSuChamCong/5

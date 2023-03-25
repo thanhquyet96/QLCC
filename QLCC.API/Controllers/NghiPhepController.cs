@@ -130,6 +130,7 @@ namespace QLCC.Controllers
             {
                 nghiPhep.NhanVienId = UserIdentity.Id;
             }
+          
             nghiPhep.ThoiGianTao = DateTime.Now;
             nghiPhep.TrangThai = TrangThaiNghiEnum.ChoDuyet;
             _context.NghiPhep.Add(nghiPhep);

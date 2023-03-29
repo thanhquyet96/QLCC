@@ -131,16 +131,16 @@ export default {
       return this.fields.find(x=>x.key === 'tenTrangThai');
     }
   },
-  created() {
-    if (this.options) {
+  watch: {
+    options() {
       this.items = this.options;
+      this.isBusy = false;
     }
-    if (this.headers) {
-      // this.fields = this.headers;
+  },
+  created() {
+    if(this.dataUrl !== '') {
+      this.doSearch();
     }
-    this.doSearch();
-    this.$root.$on('child-event', this.reactOnChildEvent);
-
   },
   methods: {
     async doSearch() {
@@ -161,22 +161,11 @@ export default {
       await this.doSearch();
     },
     async changeStatus(id, value) {
-      console.log(id, value);
       await this.$http.put(`${this.dataUrl}/${id}/update-status?status=${value}`);
       this.$toast.success('Cập nhật thành công!');
       await this.doSearch();
 
     },
-    moreClick(value){
-      alert('aa');
-      // this.$parent.$emit('btnclick', value);
-    },
-    fnNext(value) {
-      console.log('okkkk', value)
-    },
-    reactOnChildEvent(message) {
-            console.log(message);
-        }
   }
 }
 </script>

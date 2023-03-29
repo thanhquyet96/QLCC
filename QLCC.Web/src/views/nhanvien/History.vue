@@ -1,6 +1,3 @@
-<!-- eslint-disable vue/valid-v-slot -->
-<!-- eslint-disable vue/no-v-for-template-key-on-child -->
-<!-- eslint-disable vue/valid-v-for -->
 <template>
   <div>
     <div class="row">
@@ -56,6 +53,7 @@
           href="#"
           class="btn btn-success btn-block"
           style="margin-top: 15px;"
+          @click="doSearch"
         > Tìm kiếm </a>
       </div>
     </div>
@@ -441,21 +439,8 @@
           </table> -->
           <TableComponentVue 
             :fields="fields"
-            :items="items"
-            data-url="nhanvien/history"
+            :options="items"
           />
-          <!-- <b-table
-            sticky-header
-            responsive
-            striped
-            hover
-            :fields="fields"
-            :items="items"
-            :busy="isBusy"
-            show-empty
-          >
-            
-          </b-table> -->
         </div>
       </div>
     </div>
@@ -516,13 +501,16 @@
     watch: {
       'searchForm.month'(val) {
         this.loadFields();
+        this.loadHistories();
       },
       'searchForm.year'(val) {
         this.loadFields();
+        this.loadHistories();
       },
     },
     created() {
       this.loadFields();
+      this.loadHistories();
     },
     mounted() {
       // Datetimepicker
@@ -531,12 +519,7 @@
           format: 'DD/MM/YYYY'
         });
       }
-      $("[class=raw-icon]").each((index, item) => {
-        debugger;
-          const value = $(item).text();
-          console.log('value',value);
-          $(item).html(value);
-      });
+      
     },
     methods: {
       loadFields() {
@@ -544,38 +527,61 @@
         const keys = Object.keys(days).map(x=> { return Number(x) + 1 });
         this.fields = [...this.fieldDefault, ...keys.map(x=> { 
           return { 
-            key: `${x}`, 
+            key: `heading_${x}`, 
             label: x.toString(),
             class: 'raw-icon',
-            name: 'quyetdaika',
-            formatter: (value) => {
-              const a = '<i class="fa fa-check text-success" />';
-              console.log(this);
-              return this.checkIcon(value);
-            }
+            // name: 'quyetdaika',
+            // formatter: (value) => {
+            //   const a = '<i class="fa fa-check text-success" />';
+            //   console.log(this);
+            //   return this.checkIcon(value);
+            // }
            }
           })
         ];
       },
-      loadHistories() {
+      async loadHistories() {
+        const query = new URLSearchParams(this.searchForm).toString()
 
+        const {data} = await this.$http.get(`lichsuchamcong?${query}`);
+        this.items = data || [];
+        this.$nextTick(() => {
+          this.rawIcon();
+        });
+      },
+      doSearch() {
+        this.loadHistories();
       },
       checkIcon(type){
         switch(type){
           // Đi làm
           case 1: 
-            return `<i class="fa fa-check text-success" />`;
+            return `<i class="fa fa-check text-success"></i>`;
           // Nghỉ cả ngày
           case 2: 
-           return '<i class="fa fa-close text-danger" />';
+           return '<i class="fa fa-close text-danger"></i>';
           // Nghỉ buổi sáng
           case 3: 
-            return '<div class="half-day"><span class="first-off"><i class="fa fa-close text-danger" /></span> <span  class="first-off"><i class="fa fa-check text-success" /></span></div>';
+            return '<div class="half-day"><span class="first-off"><i class="fa fa-close text-danger"></i></span><span class="first-off"><i class="fa fa-check text-success"></i></span></div>';
           // Nghỉ buổi chiều
           case 4: 
-          return '<div class="half-day"><span class="first-off"><i class="fa fa-close text-success" /></span> <span  class="first-off"><i class="fa fa-check text-danger" /></span></div>';
+            return '<div class="half-day"><span class="first-off"><i class="fa fa-close text-success"></i></span><span class="first-off"><i class="fa fa-check text-danger"></i></span></div>';
+          default: 
+            return '<i class="fa fa-close text-danger"></i>';
         }
       },
+      rawIcon() {
+        const vm = this;
+        $("tbody [class=raw-icon]").each((index, item) => {
+          const value = $(item).data('value') || item.innerText;
+          $(item).data('value', value);
+          item.innerText = '';
+          const html = this.checkIcon(Number(value));
+          if(item.innerHtml !== html) {
+            $(item).append(html);
+          }
+        });
+      }
     },
   }
 

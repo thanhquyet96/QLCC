@@ -10,13 +10,13 @@
             label="Người phê duyệt:"
           >
             <b-form-select
-              v-model="nghiPhep.nguoiPheDuyet"
+              v-model="nghiPhep.nguoiPheDuyetId"
               :options="nguoiPheDuyets"
               class="mb-3"
               value-field="item"
               text-field="name"
               disabled-field="notEnabled"
-              :state="($v.nghiPhep.nguoiPheDuyet.$model !== null) && !$v.nghiPhep.nguoiPheDuyet.$error"
+              :state="($v.nghiPhep.nguoiPheDuyetId.$model !== null) && !$v.nghiPhep.nguoiPheDuyetId.$error"
             />
             <b-form-invalid-feedback>
               Trường này không được để trống
@@ -121,21 +121,17 @@ export default {
     return {
       nghiPhep: {
         loaiNghi: null,
-        nguoiPheDuyet: null,
+        nguoiPheDuyetId: null,
         taoChoNgay: null,
         lyDo: null,
         hinhThucNghi: null,
       },
-      nguoiPheDuyets: [
-          { item: 1, name: 'Admin 1' },
-          { item: 2, name: 'Admin 2' },
-          { item: 3, name: 'Admin 3' },
-        ],
-      optionsLeaveType: [
-         { item: 1, name: 'Nghỉ phép' },
-         { item: 2, name: 'Nghỉ không lương' },
-      ],
+      nguoiPheDuyets: [],
       hinhThucNghis: [
+        { item: 1, name: 'Nghỉ phép' },
+        { item: 2, name: 'Nghỉ không lương' },
+      ],
+      optionsLeaveType: [
         { item: 2, name: 'Nghỉ cả ngày' },
         { item: 3, name: 'Nghỉ sáng' },
         { item: 4, name: 'Nghỉ chiều' },
@@ -145,7 +141,7 @@ export default {
   validations: {
     
     nghiPhep: {
-      nguoiPheDuyet: {
+      nguoiPheDuyetId: {
         required
       },
       loaiNghi: {
@@ -166,6 +162,7 @@ export default {
    
   },
   created() {
+    this.loadUsers();
   },
   methods: {
     async save() {
@@ -175,10 +172,18 @@ export default {
         this.$toast.success('Thêm mới thành công!');
         this.cancel();
       }
-      
     },
     cancel() {
       this.$router.push(`/nghiphep`);
+    },
+    async loadUsers() {
+      const { data } = await this.$http.get('nhanvien');
+      this.nguoiPheDuyets = data.map(x => { 
+        return {
+          item: x.id,
+          name: x.hoVaTen,
+        }
+      });
     }
   },
 }

@@ -6,77 +6,92 @@
           Thông tin nghỉ phép
         </h4>
         <form action="#">
-          <div class="form-group">
-            <label :required="isEdit">Họ và tên</label>
-            <b-form-input
-              v-model="$v.nghiPhep.hoVaTen.$model"
-              :state="isEdit && !$v.nghiPhep.hoVaTen.$error"
+          <b-form-group
+            label="Người phê duyệt:"
+          >
+            <b-form-select
+              v-model="nghiPhep.nguoiPheDuyetId"
               :disabled="!isEdit"
+              :options="nguoiPheDuyets"
+              class="mb-3"
+              value-field="item"
+              text-field="name"
+              disabled-field="notEnabled"
+              :state="isEdit && ($v.nghiPhep.nguoiPheDuyetId.$model !== null) && !$v.nghiPhep.nguoiPheDuyetId.$error"
+            />
+            <b-form-invalid-feedback>
+              Trường này không được để trống
+            </b-form-invalid-feedback>
+          </b-form-group>
+
+          <b-form-group
+            label="Hình thức nghỉ:"
+          >
+            <b-form-select
+              v-model="nghiPhep.hinhThucNghi"
+              :disabled="!isEdit"
+              :options="hinhThucNghis"
+              class="mb-3"
+              value-field="item"
+              text-field="name"
+              disabled-field="notEnabled"
+              :state="isEdit && ($v.nghiPhep.hinhThucNghi.$model !== null) && !$v.nghiPhep.hinhThucNghi.$error"
+            />
+            <b-form-invalid-feedback>
+              Trường này không được để trống
+            </b-form-invalid-feedback>
+          </b-form-group>
+
+          <b-form-group
+            label="Loại nghỉ:"
+          >
+            <b-form-select
+              v-model="nghiPhep.loaiNghi"
+              :disabled="!isEdit"
+              :options="optionsLeaveType"
+              class="mb-3"
+              value-field="item"
+              text-field="name"
+              disabled-field="notEnabled"
+              :state="isEdit && ($v.nghiPhep.loaiNghi.$model !== null) && !$v.nghiPhep.loaiNghi.$error"
+            />
+            <b-form-invalid-feedback>
+              Trường này không được để trống
+            </b-form-invalid-feedback>
+          </b-form-group>
+
+          <b-form-group
+            label="Ngày nghỉ:"
+          >
+            <b-form-input
+              v-model="$v.nghiPhep.taoChoNgay.$model"
+              :disabled="!isEdit"
+              type="date"
+              :state="isEdit && ($v.nghiPhep.taoChoNgay.$model !== null) && !$v.nghiPhep.taoChoNgay.$error"
+            />
+            <!-- <datepicker
+              :value="$v.nghiPhep.taoChoNgay.$model"
+              :state="($v.nghiPhep.taoChoNgay.$model !== null) && !$v.nghiPhep.taoChoNgay.$error"
+            /> -->
+            <b-form-invalid-feedback>
+              Trường này không được để trống
+            </b-form-invalid-feedback>
+          </b-form-group>
+          <div class="form-group">
+            <label>Lý do</label>
+            <b-form-textarea
+              v-model="$v.nghiPhep.lyDo.$model"
+              :disabled="!isEdit"
+              :state="isEdit && ($v.nghiPhep.lyDo.$model !== null) && !$v.nghiPhep.lyDo.$error"
+              placeholder="Enter something..."
+              rows="3"
+              max-rows="6"
             />
             <b-form-invalid-feedback>
               Trường này không được để trống
             </b-form-invalid-feedback>
           </div>
-          
-          <div class="form-group">
-            <label>Số điện thoại</label>
-            <b-form-input
-              v-model="$v.nghiPhep.soDienThoai.$model"
-              :state="isEdit && !$v.nghiPhep.soDienThoai.$error"
-              :disabled="!isEdit"
-            />
-            <b-form-invalid-feedback>
-              Trường này không được để trống
-            </b-form-invalid-feedback>
-          </div>
-          <div class="form-group">
-            <b-form-input
-              v-model="$v.nghiPhep.diaChi.$model"
-              :state="isEdit && !$v.nghiPhep.diaChi.$error"
-              :disabled="!isEdit"
-            />
-            <b-form-invalid-feedback>
-              Trường này không được để trống
-            </b-form-invalid-feedback>
-          </div>
-          <div class="form-group">
-            <label>Sinh nhật</label>
-            <input
-              v-model="nghiPhep.sinhNhat"
-              type="datetime"
-              class="form-control"
-              :disabled="!isEdit"
-            >
-          </div>
-          <div class="form-group">
-            <label>Hệ số lương</label>
-            <b-form-input
-              v-model="$v.nghiPhep.heSoLuong.$model"
-              :state="isEdit && !$v.nghiPhep.heSoLuong.$error"
-              :disabled="!isEdit"
-            />
-            <b-form-invalid-feedback>
-              Trường này không được để trống
-            </b-form-invalid-feedback>
-          </div>
-          <div class="form-group">
-            <label>Số ngày đã nghỉ</label>
-            <input
-              v-model="nghiPhep.soNgayDaNghi"
-              type="text"
-              class="form-control"
-              :disabled="!isEdit"
-            >
-          </div>
-          <div class="form-group">
-            <label>Số ngày nghỉ phép</label>
-            <input
-              v-model="nghiPhep.ngayNghiPhep"
-              type="text"
-              class="form-control"
-              :disabled="!isEdit"
-            >
-          </div>
+
           <div
             v-if="isEdit"
             class="text-right"
@@ -122,30 +137,40 @@ export default {
   data() {
     return {
       nghiPhep: {
-        diaChi: null,
-        heSoLuong: null,
-        hoVaTen: null,
-        id: null,
-        ngayNghiPhep: null,
-        sinhNhat: null,
-        soDienThoai: null,
-        soNgayDaNghi: null,
-        // taiKhoan: null,
-      }
+        loaiNghi: null,
+        nguoiPheDuyetId: null,
+        taoChoNgay: null,
+        lyDo: null,
+        hinhThucNghi: null,
+      },
+      nguoiPheDuyets: [],
+      hinhThucNghis: [
+        { item: 1, name: 'Nghỉ phép' },
+        { item: 2, name: 'Nghỉ không lương' },
+      ],
+      optionsLeaveType: [
+        { item: 2, name: 'Nghỉ cả ngày' },
+        { item: 3, name: 'Nghỉ sáng' },
+        { item: 4, name: 'Nghỉ chiều' },
+      ]
     };
   },
   validations: {
+    
     nghiPhep: {
-      hoVaTen: {
+      nguoiPheDuyetId: {
+        required
+      },
+      loaiNghi: {
+        required
+      },
+      hinhThucNghi: {
+        required
+      },
+      taoChoNgay: {
         required,
       },
-      diaChi: {
-        required,
-      },
-      soDienThoai: {
-        required,
-      },
-      heSoLuong: {
+      lyDo: {
         required,
       },
     }
@@ -158,14 +183,12 @@ export default {
       return this.$route.meta.isEdit;
     }
   },
-  created() {
-    this.getData();
+  async created() {
+    await this.getDetail();
+
+    await this.loadUsers();
   },
   methods: {
-    async getData() {
-      const res = await this.$http.get(`nghiphep/${this.id}`);
-      this.nghiPhep = res?.data || {};
-    },
     async save() {
       this.$v.$touch()
       if (!this.$v.$invalid){
@@ -173,10 +196,23 @@ export default {
         this.$toast.success('Cập nhật thành công!');
         this.cancel();
       }
-      
     },
     cancel() {
-      this.$router.push(`/nghiphep/detail/${this.id}`);
+      this.$router.push(`/nghiphep`);
+    },
+    async getDetail() {
+      const { data } = await this.$http.get(`nghiphep/${this.id}`);
+      this.nghiPhep = data || [];
+      this.nghiPhep.taoChoNgay = data.taoChoNgay?.split('T')[0];
+    },
+    async loadUsers() {
+      const { data } = await this.$http.get('nhanvien');
+      this.nguoiPheDuyets = data.map(x => { 
+        return {
+          item: x.id,
+          name: x.hoVaTen,
+        }
+      });
     }
   },
 }

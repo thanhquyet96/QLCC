@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using QLCC.Entities;
 using QLCC.Models;
 using QLCC.ViewModels;
+using static QLCC.ViewModels.Constants;
 
 namespace QLCC.Controllers
 {
@@ -24,17 +27,66 @@ namespace QLCC.Controllers
 
         // GET: api/LichSuChamCong
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<LichSuChamCongGrid>>> GetLichSuChamCong()
+        public async Task<ActionResult<IEnumerable<LichSuChamCongGrid>>> GetLichSuChamCong(int month, int year)
         {
-            var result = await _context.LichSuChamCong.ToListAsync();
-            var data = result.Select(x => new LichSuChamCongGrid()
+            var result = await _context.LichSuChamCong.Include(x => x.NhanVien).Where(x => x.NgayChamCong.Month == month && x.NgayChamCong.Year == year).ToListAsync();
+
+            var data = result.GroupBy(x => new { NhanVienId = x.NhanVienId, HoVaTen = x.NhanVien.HoVaTen });
+            List<IDictionary<string, object>> histories = new List<IDictionary<string, object>>();
+            foreach (var item in data)
             {
-                NhanVienId = x.NhanVienId,
-                NgayChamCong = x.NgayChamCong,
-                ThoiGianChamCong = x.ThoiGianChamCong,
-                LoaiNghi = x.NhanVien.NghiPheps.FirstOrDefault(y=>y.TaoChoNgay == x.NgayChamCong).LoaiNghi,
-            });
-            return data.ToList();
+
+                //Check Nghỉ phép
+                var nghiPheps = await _context.NghiPhep.Where(x => x.NhanVienId == item.Key.NhanVienId && x.TaoChoNgay.Year == year && x.TaoChoNgay.Month == month && x.TrangThai == TrangThaiNghiEnum.DaDuyet).ToListAsync();
+                //
+                var record = new ExpandoObject() as IDictionary<string, object>;
+                record.Add("hoVaTen", item.Key.HoVaTen);
+                LoaiNghiEnum loaiNghi = LoaiNghiEnum.NghiCaNgay;
+                foreach (var day in item)
+                {
+                    var nghiPhep = nghiPheps.FirstOrDefault(x => x.TaoChoNgay.Date == day.NgayChamCong.Date);
+                    if (nghiPhep != null)
+                    {
+                        if(nghiPhep.HinhThucNghi == HinhThucNghiEnum.NghiPhep && nghiPhep.LoaiNghi == LoaiNghiEnum.NghiCaNgay)
+                        {
+                            loaiNghi = LoaiNghiEnum.DiLam;
+                        }
+                        else
+                        {
+                            loaiNghi = nghiPhep.LoaiNghi;
+                        }
+                    }
+                    else
+                    {
+                        loaiNghi = LoaiNghiEnum.DiLam;
+                    }
+                    record.Add($"heading_{day.NgayChamCong.Day.ToString()}", (int)loaiNghi);
+                }
+                if (nghiPheps != null && !nghiPheps.Any(x => item.Select(x => x.NgayChamCong.Day).Contains(x.TaoChoNgay.Day)))
+                {
+                    foreach (var nghiPhep in nghiPheps)
+                    {
+                        if (!record.ContainsKey($"heading_{nghiPhep.TaoChoNgay.Day.ToString()}"))
+                        {
+                            LoaiNghiEnum stautus = LoaiNghiEnum.NghiCaNgay;
+                            if (nghiPhep.HinhThucNghi == HinhThucNghiEnum.NghiPhep && nghiPhep.LoaiNghi == LoaiNghiEnum.NghiCaNgay)
+                            {
+                                stautus = LoaiNghiEnum.DiLam;
+                            }
+                            else
+                            {
+                                stautus = nghiPhep.LoaiNghi;
+                            }
+                            record.Add($"heading_{nghiPhep.TaoChoNgay.Day.ToString()}", (int)stautus);
+                        }
+                    }
+                }
+
+                histories.Add(record);
+            }
+
+
+            return Ok(histories);
         }
 
         // GET: api/LichSuChamCong/5
@@ -49,69 +101,6 @@ namespace QLCC.Controllers
             }
 
             return lichSuChamCong;
-        }
-
-        // PUT: api/LichSuChamCong/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutLichSuChamCong(int id, LichSuChamCong lichSuChamCong)
-        {
-            if (id != lichSuChamCong.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(lichSuChamCong).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!LichSuChamCongExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/LichSuChamCong
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<LichSuChamCong>> PostLichSuChamCong(LichSuChamCong lichSuChamCong)
-        {
-            _context.LichSuChamCong.Add(lichSuChamCong);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetLichSuChamCong", new { id = lichSuChamCong.Id }, lichSuChamCong);
-        }
-
-        // DELETE: api/LichSuChamCong/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteLichSuChamCong(int id)
-        {
-            var lichSuChamCong = await _context.LichSuChamCong.FindAsync(id);
-            if (lichSuChamCong == null)
-            {
-                return NotFound();
-            }
-
-            _context.LichSuChamCong.Remove(lichSuChamCong);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool LichSuChamCongExists(int id)
-        {
-            return _context.LichSuChamCong.Any(e => e.Id == id);
         }
     }
 }

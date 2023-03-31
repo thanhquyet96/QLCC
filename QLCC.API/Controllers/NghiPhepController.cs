@@ -25,7 +25,7 @@ namespace QLCC.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<NghiPhepDetail>>> GetNghiPhep()
         {
-            var model = await _context.NghiPhep.ToListAsync();
+            var model = await _context.NghiPhep.Include(x=>x.NguoiPheDuyet).Include(x=>x.NhanVien).ToListAsync();
             var result = model.Select(x => new NghiPhepDetail()
             {
                 Id = x.Id,
@@ -36,6 +36,7 @@ namespace QLCC.Controllers
                 TenNhanVien = x.NhanVien != null ? x.NhanVien.HoVaTen : "",
                 ThoiGianTao = x.ThoiGianTao,
                 TrangThai = x.TrangThai,
+                HinhThucNghi = x.HinhThucNghi,
             }).ToList();
             return result;
         }

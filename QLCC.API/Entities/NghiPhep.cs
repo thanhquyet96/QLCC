@@ -20,6 +20,7 @@ namespace QLCC.Entities
         public virtual User NhanVien { get; set; }
         [ForeignKey("NguoiPheDuyetId")]
         [JsonIgnore]
+        [InverseProperty("NghiPheps")]
         public virtual User NguoiPheDuyet { get; set; }
     }
 }

@@ -7,7 +7,7 @@ namespace QLCC.Entities
     {
         public int Id { get; set; }
         public int NhanVienId { get; set; }
-        public DateTime ThoiGianChamCong { get; set; }
+        public decimal ThoiGianChamCong { get; set; }
         public DateTime NgayChamCong { get; set; }
         [ForeignKey("NhanVienId")]
         public virtual User NhanVien { get; set; } 

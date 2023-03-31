@@ -18,6 +18,7 @@ namespace QLCC.Models
         AuthenticateResponse Authenticate(AuthenticateRequest model);
         IEnumerable<User> GetAll();
         User GetById(int id);
+        int RegisterUser(RegisterViewModel user);
     }
 
     public class UserService : IUserService
@@ -47,12 +48,33 @@ namespace QLCC.Models
         {
             return _db.Users.AsEnumerable();
         }
-
+      
         public User GetById(int id)
         {
-            return _db.Users.Include(x=>x.NhanVien_Quyens).FirstOrDefault(x => x.Id == id);
+            return _db.Users.Include(x => x.NhanVien_Quyens).FirstOrDefault(x => x.Id == id);
         }
 
+        public int RegisterUser(RegisterViewModel model)
+        {
+            var user = _db.Users.FirstOrDefault(x => x.TaiKhoan == model.Username);
+            if (user == null)
+            {
+                _db.Users.Add(new User()
+                {
+                    HoVaTen = model.FullName,
+                    TaiKhoan = model.Username,
+                    MatKhau = model.Password,
+                    HeSoLuong = 1,
+                });
+                _db.SaveChanges();
+                return 0;
+            }
+            // TH Tài khoản đã tồn tại
+            else
+            {
+                return user.Id;
+            }
+        }
         private List<Claim> GetQuyens(User user)
         {
             IdentityOptions _options = new IdentityOptions();
@@ -65,7 +87,7 @@ namespace QLCC.Models
                     new Claim(_options.ClaimsIdentity.UserIdClaimType, user.Id.ToString()),
                     new Claim(_options.ClaimsIdentity.UserNameClaimType, user.TaiKhoan),
                 };
-            var data = _db.NhanVien_Quyen.Where(x => x.NhanVienId == user.Id).Include(x=>x.Quyen).ToList();
+            var data = _db.NhanVien_Quyen.Where(x => x.NhanVienId == user.Id).Include(x => x.Quyen).ToList();
             foreach (var item in data)
             {
                 claims.Add(new Claim(ClaimTypes.Role, item.Quyen?.TenQuyen));

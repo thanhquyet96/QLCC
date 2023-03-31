@@ -18,6 +18,7 @@ namespace QLCC.ViewModels
         public enum LoaiNghiEnum
         {
             // =1 nếu đi làm full
+            DiLam = 1,
             [Description("Nghỉ cả ngày")]
             NghiCaNgay = 2,
             [Description("Nghỉ buổi sáng")]
@@ -37,11 +38,11 @@ namespace QLCC.ViewModels
             [Description("Từ chối")]
             TuChoi = 3,
         }
-        
+
     }
     public static class PRIVILGE
     {
-       public const string ADMIN = "ADMIN";
+        public const string ADMIN = "ADMIN";
         public const string USER = "USER";
         public const string OTHER = "OTHER";
     }

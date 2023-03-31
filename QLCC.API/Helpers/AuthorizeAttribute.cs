@@ -38,7 +38,7 @@ namespace QLCC.Helpers
             {
                 context.Result = new JsonResult(new { message = "Unauthorized" }) { StatusCode = StatusCodes.Status401Unauthorized };
             }
-            else if (roles.Any() && _roles.Any())
+            else if ((roles.Any() && _roles.Any()) && !roles.Any(x => x == "ADMIN"))
             {
 
 

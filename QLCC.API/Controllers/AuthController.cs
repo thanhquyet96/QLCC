@@ -27,6 +27,33 @@ namespace QLCC.Controllers
             return Ok(response);
         }
 
+        [HttpPost("Register")]
+        public IActionResult Register([FromBody] RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var response = _userService.RegisterUser(model);
+
+                if (response == 0)
+                    return Ok(new { message = "Thêm mới thành công!" });
+                else
+                    return Ok(new { message = "Tài khoản đã tồn tại!" });
+
+
+            }
+
+            return BadRequest();
+        }
+
+        [HttpPost("Logout")]
+        public IActionResult Logout()
+        {
+            HttpContext.Items.Clear();
+            return Ok();
+        }
+
+
+
         //[Authorize]
         [HttpGet("GetAll")]
         public IActionResult GetAll()

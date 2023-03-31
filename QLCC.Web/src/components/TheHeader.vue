@@ -124,24 +124,13 @@
                                    alt="Admin"
                                  >
             <span class="status online" /></span>
-          <span>Admin</span>
+          <span style="padding-left: 6px;">{{ $store.state?.user?.hoVaTen }}</span>
         </a>
         <div class="dropdown-menu">
           <a
             class="dropdown-item"
-            href="profile.html"
-          >My Profile</a>
-          <a
-            class="dropdown-item"
-            href="edit-profile.html"
-          >Edit Profile</a>
-          <a
-            class="dropdown-item"
-            href="settings.html"
-          >Settings</a>
-          <a
-            class="dropdown-item"
-            href="login.html"
+            href="#"
+            @click="logout"
           >Logout</a>
         </div>
       </li>
@@ -176,10 +165,10 @@
 </template>
 
 <script>
+
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
   },
   methods: {
     openMenu() {
@@ -191,25 +180,14 @@ export default {
 				$('.subdrop + ul').slideUp();
 			}
 			return false;
-    }
+    },
+    logout() {
+      const vm = this;
+      this.$services.logout().then((res) => {
+        vm.$router.push('/login')
+      })
   }
+  },
+  
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-/* h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-} */
-</style>

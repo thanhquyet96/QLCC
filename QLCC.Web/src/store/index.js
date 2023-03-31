@@ -9,7 +9,7 @@ export default new Vuex.Store({
   },
   getters: {
     isAuthenticated(state) {
-      return state.user !== null;
+      return state.user != undefined && state.user !== null;
     }
   },
   mutations: {

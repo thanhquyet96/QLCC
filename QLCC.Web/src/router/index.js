@@ -94,7 +94,7 @@ const routes = [
           meta: { requiresAuth: false },
         },
         {
-          path: 'attendance/:id',
+          path: 'attendance',
           component: AttendanceNhanVien,
           
           // anybody can read a post
@@ -274,7 +274,6 @@ const router = new VueRouter({
   routes
 })
 router.beforeEach((to, from, next) => {
-  console.log('router.app.$store', store)
   const requiresAuth = to.matched.some(x => x.meta.requiresAuth);
   const currentUser = router.app.$store.getters.isAuthenticated;
   if (requiresAuth && !currentUser) {

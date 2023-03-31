@@ -1,38 +1,69 @@
 ﻿<template>
-    <div class="main-wrapper account-wrapper">
-        <div class="account-page">
-            <div class="account-center">
-                <div class="account-box">
-                    <form action="#" @submit.prevent="submitForm" class="form-signin">
-                        <div class="account-logo">
-                            <a href="index.html"><img src="assets/img/logo-dark.png" alt=""></a>
-                        </div>
-                        <div class="form-group">
-                            <label>Tài khoản</label>
-                            <input type="text" autofocus="" v-model="user.Username" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label>Mật khẩu</label>
-                            <input type="password" v-model="user.Password" class="form-control">
-                        </div>
-                        <div class="form-group text-right">
-                            <a href="forgot-password.html">Quên mật khẩu?</a>
-                        </div>
-                        <div class="form-group text-center">
-                            <button type="submit" class="btn btn-primary account-btn">Đăng nhập</button>
-                        </div>
-                        <div class="text-center register-link">
-                            Bạn chưa có tài khoản? <a href="register.html">Đăng ký</a>
-                        </div>
-                    </form>
-                </div>
+  <div class="main-wrapper account-wrapper">
+    <div class="account-page">
+      <div class="account-center">
+        <div class="account-box">
+          <form
+            action="#"
+            class="form-signin"
+            @submit.prevent="submitForm"
+          >
+            <div class="account-logo">
+              <a href="index.html"><img
+                src="assets/img/logo-dark.png"
+                alt=""
+              ></a>
             </div>
+            <b-form-group
+              label="Tài khoản"
+            >
+              <b-form-input
+                v-model="$v.user.Username.$model"
+                :state="($v.user.Username.$model !== null) && !$v.user.Username.$error"
+              />
+              <b-form-invalid-feedback>
+                Trường này không được để trống
+              </b-form-invalid-feedback>
+            </b-form-group>
+            <b-form-group
+              label="Mật khẩu"
+            >
+              <b-form-input
+                v-model="$v.user.Password.$model"
+                :state="($v.user.Password.$model !== null) && !$v.user.Password.$error"
+                type="password"
+              />
+              <b-form-invalid-feedback>
+                Trường này không được để trống
+              </b-form-invalid-feedback>
+            </b-form-group>
+            <div class="form-group text-right">
+              <a href="forgot-password.html">Quên mật khẩu?</a>
+            </div>
+            <div class="form-group text-center">
+              <button
+                type="submit"
+                class="btn btn-primary account-btn"
+              >
+                Đăng nhập
+              </button>
+            </div>
+            <div class="text-center register-link">
+              Bạn chưa có tài khoản? 
+              <router-link to="/register">
+                Đăng ký
+              </router-link>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
-import Services from '@/Services/services';
+import { required, minLength, between } from 'vuelidate/lib/validators'
+
 export default {
   name: 'LoginView',
   props: {
@@ -46,14 +77,25 @@ export default {
         }
     };
   },
+  validations: {
+    user: {
+      Username: {
+        required
+      },
+      Password: {
+        required
+      }
+    }
+  },
   methods: {
     submitForm() {
-        if(this.user){
+      this.$v.$touch()
+      if (!this.$v.$invalid){
         //    const user = ;
         const vm = this;
            this.$services.login(this.user).then((res) => {
-              vm.$router.push('/')
-           })
+            location.href = "/";
+           });
         }
     }
   }

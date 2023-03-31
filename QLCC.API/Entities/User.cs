@@ -22,5 +22,6 @@ namespace QLCC.Entities
         public int? NgayNghiPhep { get; set; }
         public int? SoNgayDaNghi { get; set; }
         public virtual ICollection<NhanVien_Quyen> NhanVien_Quyens { get; set; }
+        public virtual ICollection<NghiPhep> NghiPheps { get; set; }
     }
 }

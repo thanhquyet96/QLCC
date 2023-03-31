@@ -12,44 +12,58 @@
     </div>
     <div class="row filter-row">
       <div class="col-sm-6 col-md-3">
-        <div class="form-group form-focus">
-          <label class="focus-label">Từ khóa tìm kiếm</label>
-          <input
+        <b-form-group
+          label="Từ khóa:"
+        >
+          <b-form-input
+            v-model="searchForm.keyWord"
             type="text"
-            class="form-control floating"
-          >
-        </div>
-      </div>
-      <!-- <div class="col-sm-6 col-md-3">
-        <div class="form-group form-focus">
-          <label class="focus-label">From</label>
-          <div class="cal-icon">
-            <input
-              class="form-control floating datetimepicker"
-              type="text"
-            >
-          </div>
-        </div>
+            placeholder="Nhập từ khóa"
+            required
+          />
+        </b-form-group>
       </div>
       <div class="col-sm-6 col-md-3">
-        <div class="form-group form-focus">
-          <label class="focus-label">To</label>
-          <div class="cal-icon">
-            <input
-              class="form-control floating datetimepicker"
-              type="text"
-            >
-          </div>
-        </div>
-      </div> -->
+        <b-form-group
+          label="Tháng:"
+        >
+          <b-form-select
+            v-model="searchForm.month"
+            :options="months"
+            class="mb-3"
+            value-field="item"
+            text-field="name"
+            disabled-field="notEnabled"
+          />
+        </b-form-group>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <b-form-group
+          label="Năm:"
+        >
+          <b-form-select
+            v-model="searchForm.year"
+            :options="years"
+            class="mb-3"
+            value-field="item"
+            text-field="name"
+            disabled-field="notEnabled"
+          />
+        </b-form-group>
+      </div>
       <div class="col-sm-6 col-md-3">
         <a
           href="#"
           class="btn btn-success btn-block"
-        > Tìm kiếm</a>
+          style="margin-top: 15px;"
+          @click="doSearch"
+        > Tìm kiếm </a>
       </div>
     </div>
-    <TableComponentVue :options="items" />
+    <TableComponentVue
+      :fields="headers"
+      :options="items"
+    />
   </div>
 </template>
 
@@ -65,11 +79,18 @@ export default {
     return {
       headers: [
         { key: 'index', label: 'STT' },
-        { key: 'fullName', label: 'Họ và tên' },
+        { key: 'hoVaTen', label: 'Họ và tên' },
         { key: 'heSoLuong', label: 'Hệ số lương' },
         { key: 'soNgayNghiHuongLuong', label: 'Số ngày nghỉ hưởng lương' },
         { key: 'soNgayNghiKhongHuongLuong', label: 'Số ngày nghỉ không hưởng lương' },
-        { key: 'tienLuong', label: 'Tổng lương' },
+        { 
+          key: 'tienLuong', 
+          label: 'Tổng lương',
+          formatter: (value) => {
+            return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(value);
+          }
+        },
+        { key: 'show_details', label: 'Chi tiết'}
       ],
       items: [
           { index: 1, fullName: 'Lof van ten', heSoLuong: 'Male', soNgayNghiHuongLuong: 42, soNgayNghiKhongHuongLuong: 12, tienLuong: 1000 },
@@ -78,8 +99,61 @@ export default {
           { index: 4, fullName: 'Lof van ten', heSoLuong: 'Male', soNgayNghiHuongLuong: 42, soNgayNghiKhongHuongLuong: 12, tienLuong: 1000 },
           { index: 5, fullName: 'Lof van ten', heSoLuong: 'Male', soNgayNghiHuongLuong: 42, soNgayNghiKhongHuongLuong: 12, tienLuong: 1000 },
 
-        ]
+        ],
+        searchForm: {
+          keyWord: null,
+          month: new Date().getMonth() + 1,
+          year: new Date().getFullYear(),
+        },
+        months:[
+          { item: 1, name: 1 },
+          { item: 2, name: 2 },
+          { item: 3, name: 3 },
+          { item: 4, name: 4 },
+          { item: 5, name: 5 },
+          { item: 6, name: 6 },
+          { item: 7, name: 7 },
+          { item: 8, name: 8 },
+          { item: 9, name: 9 },
+          { item: 10, name: 10 },
+          { item: 11, name: 11 },
+          { item: 12, name: 12},
+        ],
+        years: [
+        { item: 2019, name: 2019},
+        { item: 2020, name: 2020},
+        { item: 2021, name: 2021},
+        { item: 2022, name: 2022},
+        { item: 2023, name: 2023},
+
+        ],
     };
+  },
+  watch: {
+    searchForm: {
+      handler() {
+        this.doSearch();
+      },
+      deep: true,
+    }
+  },
+  created() {
+    this.funPayroll();
+  },
+  methods: {
+    async doSearch() {
+      await this.funPayroll();
+    },
+    async funPayroll() {
+      const query = new URLSearchParams(this.searchForm).toString()
+
+      const {data} = await this.$http.post(`chamcong/payroll?${query}`);
+      this.items = data;
+    },
+    formatCurrency(value) {
+      return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(value);
+
+    }
   }
 }
 </script>

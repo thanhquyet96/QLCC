@@ -12,12 +12,12 @@
           <li class="menu-title">
             Main
           </li>
-          <li>
+          <!-- <li>
             <router-link to="/login"><i class="fa fa-dashboard" /><span>Login</span></router-link>
           </li>
           <li>
             <router-link to="/register"><i class="fa fa-dashboard" /><span>Register</span></router-link>
-          </li>
+          </li> -->
           <li>
             <a href="/"><i class="fa fa-dashboard" /> <span>Dashboard</span></a>
           </li>
@@ -31,10 +31,10 @@
             <a href="#"><i class="fa fa-money" /> <span> Quản lý quyền</span> <span class="menu-arrow" /></a>
             <ul style="display: none;">
               <li><router-link to="/quyen">Danh sách</router-link></li>
-              <li><a href="payments.html">Payments</a></li>
+              <!-- <li><a href="payments.html">Payments</a></li>
               <li><a href="expenses.html">Expenses</a></li>
               <li><a href="taxes.html">Taxes</a></li>
-              <li><a href="provident-fund.html">Provident Fund</a></li>
+              <li><a href="provident-fund.html">Provident Fund</a></li> -->
             </ul>
           </li>
           <li class="submenu">
@@ -42,7 +42,7 @@
             <ul style="display: none;">
               <li><router-link to="/nhanvien">Danh sách</router-link></li>
               <li><router-link to="/nhanvien/history/1">Lịch sử</router-link></li>
-              <li><router-link to="/nhanvien/attendance/1">Chấm công</router-link></li>
+              <li><router-link to="/nhanvien/attendance">Chấm công</router-link></li>
               <li><router-link to="/nhanvien/payroll">Tính lương</router-link></li>
             </ul>
           </li>
@@ -50,12 +50,8 @@
             <a href="#"><i class="fa fa-user" /> <span> Quản lý nghỉ phép </span> <span class="menu-arrow" /></a>
             <ul style="display: none;">
               <li><router-link to="/nghiphep/list">Danh sách</router-link></li>
-              <li><router-link to="/nghiphep/create">Thêm mới</router-link></li>
             </ul>
           </li>
-
-
-          
         </ul>
       </div>
     </div>

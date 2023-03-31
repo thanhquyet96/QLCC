@@ -23,10 +23,12 @@ namespace QLCC.Entities
                 {
                     switch (LoaiNghi.Value)
                     {
-                        case LoaiNghiEnum.NghiKhongLuong:
+                        case LoaiNghiEnum.NghiCaNgay:
                             return LoaiNghi.Value.GetDescription();
                             ;
-                        case LoaiNghiEnum.NghiPhep:
+                        case LoaiNghiEnum.NghiSang:
+                            return LoaiNghi.Value.GetDescription();
+                        case LoaiNghiEnum.NghiChieu:
                             return LoaiNghi.Value.GetDescription();
                         default:
                             return "N/A";
@@ -52,6 +54,28 @@ namespace QLCC.Entities
                     default:
                         return "N/A";
                 }
+            }
+        }
+
+        public HinhThucNghiEnum? HinhThucNghi { get; set; }
+        public string TenHinhThucNghi
+        {
+            get
+            {
+                if (HinhThucNghi.HasValue)
+                {
+                    switch (HinhThucNghi.Value)
+                    {
+                        case HinhThucNghiEnum.NghiKhongLuong:
+                            return HinhThucNghi.Value.GetDescription();
+                            ;
+                        case HinhThucNghiEnum.NghiPhep:
+                            return HinhThucNghi.Value.GetDescription();
+                        default:
+                            return "N/A";
+                    }
+                }
+                return "N/A";
             }
         }
     }

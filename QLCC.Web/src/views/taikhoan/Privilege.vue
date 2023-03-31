@@ -55,12 +55,7 @@ export default {
         hoVaTen: null,
       },
       selected: [], // Must be an array reference!
-        roles: [
-          { text: 'Orange', value: 'orange' },
-          { text: 'Apple', value: 'apple' },
-          { text: 'Pineapple', value: 'pineapple' },
-          { text: 'Grape', value: 'grape' }
-        ]
+      roles: [],
     };
   },
   computed: {
@@ -83,18 +78,15 @@ export default {
     async getRoles() {
       const res = await this.$http.get(`quyen`);
       this.roles = res?.data.map(x => { return { text: x.tenQuyen, value: x.id} }) || {};
+      this.selected = this.user.nhanVien_Quyens?.map(x=>x.quyenId) || [];
     },
     async save() {
-      this.$v.$touch()
-      if (!this.$v.$invalid){
-        await this.$http.put(`taikhoan/${this.id}`, this.quyen);
+      await this.$http.post(`nhanvien_quyen/${this.id}`, this.selected);
         this.$toast.success('Cập nhật thành công!');
         this.cancel();
-      }
-      
     },
     cancel() {
-      this.$router.push(`/taikhoan/detail/${this.id}`);
+      this.$router.push(`/taikhoan`);
     }
   },
 }

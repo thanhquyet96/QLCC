@@ -94,7 +94,7 @@ const routes = [
           meta: { requiresAuth: false },
         },
         {
-          path: 'attendance/:id',
+          path: 'attendance',
           component: AttendanceNhanVien,
           
           // anybody can read a post

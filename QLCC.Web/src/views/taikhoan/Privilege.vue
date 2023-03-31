@@ -78,7 +78,7 @@ export default {
     async getRoles() {
       const res = await this.$http.get(`quyen`);
       this.roles = res?.data.map(x => { return { text: x.tenQuyen, value: x.id} }) || {};
-      this.selected = this.user.nhanVien_Quyens.map(x=>x.quyenId);
+      this.selected = this.user.nhanVien_Quyens?.map(x=>x.quyenId) || [];
     },
     async save() {
       await this.$http.post(`nhanvien_quyen/${this.id}`, this.selected);

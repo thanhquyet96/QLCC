@@ -128,8 +128,8 @@ export default {
       },
       nguoiPheDuyets: [],
       hinhThucNghis: [
-        { item: 1, name: 'Nghỉ phép' },
-        { item: 2, name: 'Nghỉ không lương' },
+        { item: 1, name: 'Nghỉ không lương' },
+        { item: 2, name: 'Nghỉ phép' },
       ],
       optionsLeaveType: [
         { item: 2, name: 'Nghỉ cả ngày' },

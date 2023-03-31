@@ -69,6 +69,35 @@
         <template #emptyfiltered="scope">
           <h4>{{ scope.emptyFilteredText }}</h4>
         </template>
+
+
+        <template #cell(show_details)="row">
+          <b-button
+            size="sm"
+            class="mr-2"
+            @click="row.toggleDetails"
+          >
+            {{ row.detailsShowing ? 'Ẩn' : 'Hiện' }} Chi tiết
+          </b-button>
+        </template>
+
+        <template #row-details="row">
+          <b-card>
+            <b-row
+              v-for="(value, index) in Object.entries(row.item.valuePairs)"
+              :key="index"
+              class="mb-2"
+            >
+              <b-col
+                sm="3"
+                class="text-sm-right"
+              >
+                <b>{{ ++index + ". " }} {{ value[0] }}:</b>
+              </b-col>
+              <b-col>{{ value[1] }}</b-col>
+            </b-row>
+          </b-card>
+        </template>
       </b-table>
     </div>
   </div>
@@ -140,6 +169,11 @@ export default {
   created() {
     if(this.dataUrl !== '') {
       this.doSearch();
+    }
+    if(this.options.length > 0){
+      this.items = this.options;
+      this.isBusy = false;
+
     }
   },
   methods: {

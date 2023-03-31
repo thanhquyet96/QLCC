@@ -4,7 +4,7 @@
       <div class="account-center">
         <div class="account-box">
           <form
-            action="index.html"
+            @submit.prevent="onSubmit"
             class="form-signin"
           >
             <div class="account-logo">
@@ -13,42 +13,53 @@
                 alt=""
               ></a>
             </div>
-            <div class="form-group">
-              <label>Họ và tên</label>
-              <input
-                type="text"
-                autofocus=""
-                class="form-control"
-              >
-            </div>
-            <div class="form-group">
-              <label>Tài khoản</label>
-              <input
-                type="text"
-                autofocus=""
-                class="form-control"
-              >
-            </div>
-            <div class="form-group">
-              <label>Mật khẩu</label>
-              <input
-                type="password"
-                class="form-control"
-              >
-            </div>
-            <div class="form-group">
-              <label>Nhập lại mật khẩu</label>
-              <input
-                type="password"
-                class="form-control"
-              >
-            </div>
-            <!-- <div class="form-group text-right">
-                            <a href="forgot-password.html">Quên mật khẩu?</a>
-                        </div> -->
+            <b-form-group
+              label="Họ và tên"
+            >
+              <b-form-input
+                v-model="$v.user.fullName.$model"
+                :state="($v.user.fullName.$model !== null) && !$v.user.fullName.$error"
+              />
+              <b-form-invalid-feedback>
+                Trường này không được để trống
+              </b-form-invalid-feedback>
+            </b-form-group>
+            <b-form-group
+              label="Tài khoản"
+            >
+              <b-form-input
+                v-model="$v.user.userName.$model"
+                :state="($v.user.userName.$model !== null) && !$v.user.userName.$error"
+              />
+              <b-form-invalid-feedback>
+                Trường này không được để trống
+              </b-form-invalid-feedback>
+            </b-form-group>
+
+            <b-form-group
+              label="Mật khẩu"
+            >
+              <b-form-input
+                v-model="$v.user.password.$model"
+                :state="($v.user.password.$model !== null) && !$v.user.password.$error"
+              />
+              <b-form-invalid-feedback>
+                Trường này không được để trống
+              </b-form-invalid-feedback>
+            </b-form-group>
+            <b-form-group
+              label="Nhập lại mật khẩu"
+            >
+              <b-form-input
+                v-model="$v.user.rePassword.$model"
+                :state="($v.user.rePassword.$model !== null) && !$v.user.rePassword.$error"
+              />
+              <b-form-invalid-feedback>
+                Trường này không được để trống
+              </b-form-invalid-feedback>
+            </b-form-group>
             <div class="form-group text-center">
               <button
-                type="submit"
                 class="btn btn-primary account-btn"
               >
                 Đăng ký
@@ -64,12 +75,50 @@
   </div>
 </template>
 
-<script>export default {
+<script>
+import { required, minLength, between } from 'vuelidate/lib/validators'
+
+export default {
   name: 'LoginView',
-  props: {
-    msg: String
+  data() {
+    return {
+      user: {
+        fullName: null,
+        userName: null,
+        password: null,
+        rePassword: null,
+      }
+    };
+  },
+  validations: {
+    user: {
+      fullName: {
+        required
+      },
+      userName: {
+        required
+      },
+      password: {
+        required
+      },
+      rePassword: {
+        required,
+      },
+    }
+  },
+  methods: {
+    async onSubmit() {
+      this.$v.$touch()
+      if (!this.$v.$invalid)
+      {
+        this.$services.register(this.user).then(() => {
+          this.$router.push('/login');
+        });
+      }
+    }
   }
-}</script>
+}
+</script>
 
 <style scoped>
   /*  h3 {

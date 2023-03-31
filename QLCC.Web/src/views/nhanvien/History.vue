@@ -531,11 +531,13 @@
           format: 'DD/MM/YYYY'
         });
       }
-      $("[class=raw-icon]").each((index, item) => {
-        debugger;
-          const value = $(item).text();
-          console.log('value',value);
-          $(item).html(value);
+      $("tbody [class=raw-icon]").each((index, item) => {
+          const value = $(item).data('value') || item.innerText;
+          $(item).data('value', value);
+          const rawHtml = this.checkIcon(Number(value));
+          if(rawHtml !== item.innerHtml){
+            $(item).append(rawHtml);
+          }
       });
     },
     methods: {
@@ -544,15 +546,14 @@
         const keys = Object.keys(days).map(x=> { return Number(x) + 1 });
         this.fields = [...this.fieldDefault, ...keys.map(x=> { 
           return { 
-            key: `${x}`, 
+            key: `heading_${x}`, 
             label: x.toString(),
             class: 'raw-icon',
-            name: 'quyetdaika',
-            formatter: (value) => {
-              const a = '<i class="fa fa-check text-success" />';
-              console.log(this);
-              return this.checkIcon(value);
-            }
+            // formatter: (value) => {
+            //   const a = '<i class="fa fa-check text-success" />';
+            //   console.log(this);
+            //   return this.checkIcon(value);
+            // }
            }
           })
         ];
@@ -564,16 +565,16 @@
         switch(type){
           // Đi làm
           case 1: 
-            return `<i class="fa fa-check text-success" />`;
+            return `<i class="fa fa-check text-success"></i>`;
           // Nghỉ cả ngày
           case 2: 
-           return '<i class="fa fa-close text-danger" />';
+           return '<i class="fa fa-close text-danger"></i>';
           // Nghỉ buổi sáng
           case 3: 
-            return '<div class="half-day"><span class="first-off"><i class="fa fa-close text-danger" /></span> <span  class="first-off"><i class="fa fa-check text-success" /></span></div>';
+            return '<div class="half-day"><span class="first-off"><i class="fa fa-close text-danger"></i></span><span class="first-off"><i class="fa fa-check text-success"></i></span></div>';
           // Nghỉ buổi chiều
           case 4: 
-          return '<div class="half-day"><span class="first-off"><i class="fa fa-close text-success" /></span> <span  class="first-off"><i class="fa fa-check text-danger" /></span></div>';
+          return '<div class="half-day"><span class="first-off"><i class="fa fa-close text-success"></i></span><span class="first-off"><i class="fa fa-check text-danger"></i></span></div>';
         }
       },
     },

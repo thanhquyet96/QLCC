@@ -10,4 +10,16 @@ namespace QLCC.Models
         [Required]
         public string Password { get; set; }
     }
+
+    public class RegisterViewModel
+    {
+        [Required]
+        public string FullName { get; set; }
+        [Required]
+        public string Username { get; set; }
+        [Required]
+        public string Password { get; set; }
+        [Required]
+        public string RePassword { get; set; }
+    }
 }

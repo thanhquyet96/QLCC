@@ -14,4 +14,13 @@ export default {
         store.dispatch('loadIdentity', res?.data);
        })
     },
+    logout: () => {
+      return axios.post(`${baseURL}/auth/logout`).then((res) => {
+       localStorage.removeItem('UserInfo');
+       store.dispatch('loadIdentity', {});
+      })
+   },
+   register: (user) => {
+      return axios.post(`${baseURL}/auth/register`, user);
+   }
 }

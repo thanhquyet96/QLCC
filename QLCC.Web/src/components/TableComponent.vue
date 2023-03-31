@@ -69,6 +69,35 @@
         <template #emptyfiltered="scope">
           <h4>{{ scope.emptyFilteredText }}</h4>
         </template>
+
+
+        <template #cell(show_details)="row">
+          <b-button
+            size="sm"
+            class="mr-2"
+            @click="row.toggleDetails"
+          >
+            {{ row.detailsShowing ? 'Ẩn' : 'Hiện' }} Chi tiết
+          </b-button>
+        </template>
+
+        <template #row-details="row">
+          <b-card>
+            <b-row
+              v-for="(value, index) in Object.entries(row.item.valuePairs)"
+              :key="index"
+              class="mb-2"
+            >
+              <b-col
+                sm="3"
+                class="text-sm-right"
+              >
+                <b>{{ ++index + ". " }} {{ value[0] }}:</b>
+              </b-col>
+              <b-col>{{ value[1] }}</b-col>
+            </b-row>
+          </b-card>
+        </template>
       </b-table>
     </div>
   </div>
@@ -131,16 +160,21 @@ export default {
       return this.fields.find(x=>x.key === 'tenTrangThai');
     }
   },
-  created() {
-    if (this.options) {
+  watch: {
+    options() {
       this.items = this.options;
+      this.isBusy = false;
     }
-    if (this.headers) {
-      // this.fields = this.headers;
+  },
+  created() {
+    if(this.dataUrl !== '') {
+      this.doSearch();
     }
-    this.doSearch();
-    this.$root.$on('child-event', this.reactOnChildEvent);
+    if(this.options.length > 0){
+      this.items = this.options;
+      this.isBusy = false;
 
+    }
   },
   methods: {
     async doSearch() {
@@ -161,22 +195,11 @@ export default {
       await this.doSearch();
     },
     async changeStatus(id, value) {
-      console.log(id, value);
       await this.$http.put(`${this.dataUrl}/${id}/update-status?status=${value}`);
       this.$toast.success('Cập nhật thành công!');
       await this.doSearch();
 
     },
-    moreClick(value){
-      alert('aa');
-      // this.$parent.$emit('btnclick', value);
-    },
-    fnNext(value) {
-      console.log('okkkk', value)
-    },
-    reactOnChildEvent(message) {
-            console.log(message);
-        }
   }
 }
 </script>

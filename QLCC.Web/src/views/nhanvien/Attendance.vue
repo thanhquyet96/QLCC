@@ -11,17 +11,17 @@
       <div class="col-sm-6 col-md-3">
         <div
           class="form-group form-focus select-focus"
-          style="margin-bottom: -10px;"
+          style="margin-bottom: -10px; width: 400px;"
         >
           <h2 class="text-left">
-            Xin chào, Donly
+            Xin chào, {{ user?.hoVaTen }}
           </h2>
         </div>
         <p
           class="focus-label"
           style="text-align: left;"
         >
-          Hà Nội, ngày 27/05/2023
+          Hà Nội, ngày {{ new Date().toLocaleDateString() }}
         </p>
       </div>
 
@@ -36,14 +36,18 @@
     <div class="row">
       <div class="col-lg-3">
         <b-button
+          v-if="!isCheckIn"
           variant="success"
           style="height: 60px;"
+          @click="chamCong(false)"
         >
           Thực hiện chấm công
         </b-button>
         <b-button
+          v-else
           variant="danger"
           style="height: 60px;"
+          @click="chamCong(true)"
         >
           Chấm công về
         </b-button>
@@ -54,6 +58,7 @@
 
   <script>
     import TableComponentVue from "@/components/TableComponent.vue"
+import { mapState } from 'vuex';
 
     export default {
     name: 'ListView',
@@ -61,16 +66,28 @@
     
     },
     data() {
-    return {
-    items: [
-    { index: 1, name: 'Lof van ten', sex: 'Male', age: 42 },
-    { index: 2, name: 'Lof van ten', sex: 'Female', age: 36 },
-    { index: 3, name: 'Rubin Kincade', sex: 'Male', age: 73 },
-    { index: 4, name: 'Shirley Partridge', sex: 'Female', age: 62 }
-    ]
-    };
+      return {
+        isCheckIn: false,
+      };
+    },
+    computed: {
+      ...mapState(['user'])
+    },
+    created() {
+      this.checkCheckInCheckOut();
+    },
+    methods: {
+      async chamCong(checkOut) {
+        await this.$http.post(`chamcong?checkOut=${checkOut}`);
+        await this.checkCheckInCheckOut();
+        this.$toast.success('Chấm công thành công!');
+      },
+      async checkCheckInCheckOut() {
+        const { data } = await this.$http.get('chamcong/is-checkin');
+        this.isCheckIn = data;
+      }
     }
-    }
+  }
   </script>
   <style scoped>
     .form-group {

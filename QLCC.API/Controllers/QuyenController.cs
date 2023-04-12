@@ -25,9 +25,14 @@ namespace QLCC.Controllers
 
         // GET: api/Quyen
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Quyen>>> GetQuyen()
+        public async Task<ActionResult<IEnumerable<Quyen>>> GetQuyen(string keyword)
         {
-            return await _context.Quyen.ToListAsync();
+            var model = await _context.Quyen.ToListAsync();
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                model = model.Where(x => x.TenQuyen.ToLower().Contains(keyword.ToLower())).ToList();
+            }
+            return model;
         }
 
         // GET: api/Quyen/5

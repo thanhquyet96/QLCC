@@ -43,7 +43,7 @@
             <label>Sinh nhật</label>
             <input
               v-model="nhanVien.sinhNhat"
-              type="datetime"
+              type="date"
               class="form-control"
               :disabled="!isEdit"
             >
@@ -165,6 +165,8 @@ export default {
     async getData() {
       const res = await this.$http.get(`nhanvien/${this.id}`);
       this.nhanVien = res?.data || {};
+      this.nhanVien.sinhNhat = res?.data.sinhNhat?.split('T')[0];
+
     },
     async save() {
       this.$v.$touch()

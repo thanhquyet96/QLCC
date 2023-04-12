@@ -84,14 +84,20 @@ export default {
         { key: 'index', label: 'STT' },
         { key: 'hoVaTen', label: 'Họ và tên' },
         { key: 'diaChi', label: 'Địa chỉ' },
-        { key: 'sinhNhat', label: 'Sinh nhật' },
+        { 
+          key: 'sinhNhat', 
+          label: 'Sinh nhật', 
+          formatter: (value, key, item) => {
+              return formatDate(value, 'DD/MM/yyyy');
+          }
+        },
         { key: 'soDienThoai', label: 'Số điện thoại' },
         { key: 'soNgayDaNghi', label: 'Số ngày đã nghỉ' },
         { key: 'ngayNghiPhep', label: 'Số ngày nghỉ phép' },
         { key: 'action', label: 'Hành động' },
       ],
       searchForm: {
-        keyword: null,
+        keyword: '',
       },
     };  
   },
@@ -101,7 +107,7 @@ export default {
   methods:{
     doSearch(){
       this.$refs.tableNhanVien.doSearch();
-    }
+    },
   }
 }
 </script>

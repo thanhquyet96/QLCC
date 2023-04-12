@@ -47,6 +47,10 @@ HTTP.interceptors.response.use(function (response) {
   // Any status codes that falls outside the range of 2xx cause this function to trigger
   // Do something with response error
   Vue.$toast.error('Đã xảy ra lỗi, liên hệ quản trị viên!');
+  if(error.response.data.message){
+    Vue.$toast.error(error.response.data.message);
+  }
+
   // errorHandler(error);
   return Promise.reject(error);
 });

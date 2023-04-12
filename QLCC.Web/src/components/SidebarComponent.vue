@@ -18,38 +18,67 @@
           <li>
             <router-link to="/register"><i class="fa fa-dashboard" /><span>Register</span></router-link>
           </li> -->
-          <li>
+          <!-- <li>
             <a href="/"><i class="fa fa-dashboard" /> <span>Dashboard</span></a>
-          </li>
-          <li class="submenu">
+          </li> -->
+          
+          <li v-if="isAdmin || isUser" class="submenu">
             <a href="#"><i class="fa fa-money" /> <span> Quản lý tài khoản</span> <span class="menu-arrow" /></a>
             <ul style="display: none;">
-              <li><router-link to="/taikhoan">Danh sách</router-link></li>
+              <li>
+                <router-link to="/taikhoan">
+                  Danh sách
+                </router-link>
+              </li>
             </ul>
           </li>
-          <li class="submenu">
+          <li v-if="isAdmin" class="submenu">
             <a href="#"><i class="fa fa-money" /> <span> Quản lý quyền</span> <span class="menu-arrow" /></a>
             <ul style="display: none;">
-              <li><router-link to="/quyen">Danh sách</router-link></li>
+              <li>
+                <router-link to="/quyen">
+                  Danh sách
+                </router-link>
+              </li>
               <!-- <li><a href="payments.html">Payments</a></li>
               <li><a href="expenses.html">Expenses</a></li>
               <li><a href="taxes.html">Taxes</a></li>
               <li><a href="provident-fund.html">Provident Fund</a></li> -->
             </ul>
           </li>
-          <li class="submenu">
+          <li v-if="isAdmin || isUser" class="submenu">
             <a href="#"><i class="fa fa-user" /> <span> Quản lý nhân Viên </span> <span class="menu-arrow" /></a>
             <ul style="display: none;">
-              <li><router-link to="/nhanvien">Danh sách</router-link></li>
-              <li><router-link to="/nhanvien/history/1">Lịch sử</router-link></li>
-              <li><router-link to="/nhanvien/attendance">Chấm công</router-link></li>
-              <li><router-link to="/nhanvien/payroll">Tính lương</router-link></li>
+              <li>
+                <router-link to="/nhanvien">
+                  Danh sách
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/nhanvien/history/1">
+                  Lịch sử
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/nhanvien/attendance">
+                  Chấm công
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/nhanvien/payroll">
+                  Tính lương
+                </router-link>
+              </li>
             </ul>
           </li>
           <li class="submenu">
             <a href="#"><i class="fa fa-user" /> <span> Quản lý nghỉ phép </span> <span class="menu-arrow" /></a>
             <ul style="display: none;">
-              <li><router-link to="/nghiphep/list">Danh sách</router-link></li>
+              <li>
+                <router-link to="/nghiphep/list">
+                  Danh sách
+                </router-link>
+              </li>
             </ul>
           </li>
         </ul>
@@ -58,7 +87,31 @@
   </div>
 </template>
 <script>
+import { mapState } from 'vuex';
 export default {
+  name: 'MenuList',
+  data() {
+    return {
+
+    };
+  },
+  computed: {
+    ...mapState({
+      user: 'user',
+    }),
+    roles() {
+      return this.user?.roles || [];
+    },
+    isAdmin() {
+      return this.roles.find(x => x === 'ADMIN');
+    },
+    isUser() {
+      return this.roles.find(x=> x === 'USER');
+    }
+  },
+  created() {
+
+  },
   mounted (){
     	// Small Sidebar
 	// if(screen.width >= 992) {

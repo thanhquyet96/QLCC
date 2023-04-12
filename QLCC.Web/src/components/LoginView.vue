@@ -41,6 +41,7 @@
             <div class="form-group text-right">
               <a href="forgot-password.html">Quên mật khẩu?</a>
             </div>
+            <div v-if="errMessage" style="color: red;" class="text-error">{{ errMessage }}</div>
             <div class="form-group text-center">
               <button
                 type="submit"
@@ -75,7 +76,8 @@ export default {
         user:{
             Username: null,
             Password: null
-        }
+        },
+        errMessage: null
     };
   },
   validations: {
@@ -90,12 +92,15 @@ export default {
   },
   methods: {
     submitForm() {
+      this.errMessage = '';
       this.$v.$touch()
       if (!this.$v.$invalid){
         //    const user = ;
         const vm = this;
            this.$services.login(this.user).then((res) => {
             location.href = "/";
+           }).catch((e) => {
+            this.errMessage = e.response.data?.message || e.message;
            });
         }
     }

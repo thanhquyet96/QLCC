@@ -9,11 +9,11 @@ namespace QLCC.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class TaiKhoanController : ControllerBase
+    public class TaiKhoanController : BaseController
     {
         private readonly DataContext _context;
 
-        public TaiKhoanController(DataContext context)
+        public TaiKhoanController(IHttpContextAccessor httpContextAccessort, DataContext context) : base(httpContextAccessort)
         {
             _context = context;
         }
@@ -28,6 +28,10 @@ namespace QLCC.Controllers
             }    
             else
             {
+                if (UserIdentity.OnlyUser)
+                {
+                    return await _context.Users.Where(x => x.Id == UserIdentity.Id).ToListAsync();
+                }
                return await _context.Users.Where(x=>x.HoVaTen.Contains(keyword) || x.TaiKhoan.Contains(keyword)).ToListAsync();
             }
             // return await _context.Users.ToListAsync();

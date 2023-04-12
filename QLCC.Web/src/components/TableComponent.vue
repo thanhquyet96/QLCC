@@ -12,9 +12,12 @@
         <template #cell(index)="data">
           {{ data.index + 1 }}
         </template>
-
+        <template #sinhNhat="row">
+          {{ formatDate(row.item.sinhNhat) }}
+        </template>
+        
         <template
-          v-if="showTrangThai"
+          v-if="showTrangThai && isAdmin"
           #cell(tenTrangThai)="row"
         >
           <b-form-select
@@ -29,10 +32,7 @@
             :events="{ atClick: fnNext(row) }"
             name="btn-more"
           /> -->
-          <slot
-            name="btn-more"
-            :data="row"
-          />
+         
           
           <router-link
             :to="`/${dataUrl}/detail/${row.item.id}`"
@@ -56,6 +56,11 @@
           >
             Xóa
           </b-button>
+          <slot
+            v-if="isAdmin"
+            name="btn-more"
+            :data="row"
+          />
         </template>
         <template #table-busy>
           <div class="text-center text-danger my-2">
@@ -103,6 +108,7 @@
   </div>
 </template>
 <script>
+import { mapState } from 'vuex';
 export default {
   name: 'TableView',
   props: {
@@ -158,6 +164,10 @@ export default {
   computed: {
     showTrangThai() {
       return this.fields.find(x=>x.key === 'tenTrangThai');
+    },
+    ...mapState(['user']),
+    isAdmin(){
+      return this.user.roles.find(x=> x === 'ADMIN');
     }
   },
   watch: {

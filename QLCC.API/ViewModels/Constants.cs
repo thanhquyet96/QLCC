@@ -25,6 +25,8 @@ namespace QLCC.ViewModels
             NghiSang = 3,
             [Description("Nghỉ buổi chiều")]
             NghiChieu = 4,
+            [Description("Không xác định")]
+            KhongXacDinh = 5,
         }
         public enum TrangThaiNghiEnum
         {

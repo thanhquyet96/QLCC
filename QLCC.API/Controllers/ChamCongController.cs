@@ -17,6 +17,7 @@ namespace QLCC.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ChamCongController : BaseController
     {
         private readonly DataContext _context;

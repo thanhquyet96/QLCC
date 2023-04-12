@@ -189,6 +189,8 @@
           // Nghỉ buổi chiều
           case 4: 
             return '<div class="half-day"><span class="first-off"><i class="fa fa-close text-success"></i></span><span class="first-off"><i class="fa fa-check text-danger"></i></span></div>';
+          case 5: 
+            return '<b style="font-weight: 900;" title="Không xác định">~</b>';
           default: 
             return '<i class="fa fa-close text-danger"></i>';
         }

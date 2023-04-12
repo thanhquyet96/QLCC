@@ -1,0 +1,53 @@
+﻿# build stage
+FROM node:lts-alpine as build-stage
+WORKDIR /builddir
+COPY ./QLCC.Web/package*.json ./
+RUN npm install
+COPY ./QLCC.Web/ ./
+
+RUN npm run build
+
+
+# production stage
+FROM nginx:stable-alpine as production-stage
+# COPY ./QLCC.Web/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build-stage /builddir/dist /usr/share/nginx/html
+# RUN rm /etc/nginx/conf.d/default.conf
+# COPY nginx.conf /etc/nginx/conf.d
+
+
+
+EXPOSE 80
+# Using `sed` to replace {{ API_URL }} with the actual API URL,
+# which is given to the container at RUN TIME !
+# CMD sed -i -e "s/{{ API_URL }}/$API_URL/g" /usr/share/nginx/html/js/app.*.js && \
+    # nginx -g "daemon off;"
+
+
+# CMD sed -i -e "s/API_URL/${API_URL}/g" /usr/share/nginx/html/js/app.*.js && \nginx -g "daemon off;"
+
+
+#   sed -i 's|VUE_APP_SERVER_URL|'${VUE_APP_SERVER_URL}'|g' $file
+
+
+CMD sed -i 's|API_URL|'${API_URL}'|g' /usr/share/nginx/html/js/app.*.js && \nginx -g "daemon off;"
+# CMD ["nginx", "-g", "daemon off;"]
+###################################
+# FROM node:lts-alpine as build-stage
+
+# ARG VUE_APP_API_URL
+# ENV VUE_APP_API_URL ${VUE_APP_API_URL}
+
+# WORKDIR /app
+# COPY ./front-end/package*.json .
+# RUN npm install
+
+# COPY ./front-end/ .
+# RUN npm run build
+
+# # production stage
+# FROM nginx:stable-alpine as production-stage
+
+# COPY --from=build-stage /app/dist /usr/share/nginx/html
+# EXPOSE 80
+# CMD ["nginx", "-g", "daemon off;"]

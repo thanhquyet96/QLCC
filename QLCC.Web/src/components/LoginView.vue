@@ -19,7 +19,8 @@
             >
               <b-form-input
                 v-model="$v.user.Username.$model"
-                :state="($v.user.Username.$model !== null) && !$v.user.Username.$error"
+                :state="$v.user.Username.$dirty ? !$v.user.Username.$error : null"
+                @input="$v.user.Username.$touch"
               />
               <b-form-invalid-feedback>
                 Trường này không được để trống
@@ -30,7 +31,7 @@
             >
               <b-form-input
                 v-model="$v.user.Password.$model"
-                :state="($v.user.Password.$model !== null) && !$v.user.Password.$error"
+                :state="$v.user.Password.$dirty ? !$v.user.Password.$error : null"
                 type="password"
               />
               <b-form-invalid-feedback>

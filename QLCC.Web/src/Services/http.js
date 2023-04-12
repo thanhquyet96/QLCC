@@ -3,7 +3,10 @@ import store from '@/store';
 import router from '@/router';
 import Vue from 'vue';
 import toast from 'vue-toast-notification';
-const baseURL = 'https://localhost:7284/api';
+// const baseURL = 'https://localhost:7284/api';
+const API_URL = window.ApiUrl || 'API_URL';
+
+const baseURL = `${API_URL}/api`;
 
 const errorHandler = (error) => {
   if (error.response.status === 500) {

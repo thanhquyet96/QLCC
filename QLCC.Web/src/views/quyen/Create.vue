@@ -10,7 +10,7 @@
             <label>Tên quyền</label>
             <b-form-input
               v-model="$v.quyen.tenQuyen.$model"
-              :state="($v.quyen.tenQuyen.$model !== null) && !$v.quyen.tenQuyen.$error"
+              :state="$v.quyen.tenQuyen.$dirty ? !$v.quyen.tenQuyen.$error : null"
             />
             <b-form-invalid-feedback>
               Trường này không được để trống

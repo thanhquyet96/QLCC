@@ -1,5 +1,7 @@
 import axios from 'axios';
-const baseURL = 'https://localhost:7284/api';
+const API_URL = window.ApiUrl || 'API_URL';
+const baseURL = `${API_URL}/api` || window.ApiUrl;
+
 import store from '../store/index';
 axios.defaults.headers.common = {
     "X-Requested-With": "XMLHttpRequest",

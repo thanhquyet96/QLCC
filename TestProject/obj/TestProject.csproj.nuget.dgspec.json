@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "\\\\Mac\\Home\\Desktop\\work\\netcore\\QLCC\\TestProject\\TestProject.csproj": {}
+    "/Users/xoet/Desktop/work/netcore/QLCC/TestProject/TestProject.csproj": {}
   },
   "projects": {
-    "\\\\Mac\\Home\\Desktop\\work\\netcore\\QLCC\\QLCC.API\\QLCC.csproj": {
+    "/Users/xoet/Desktop/work/netcore/QLCC/QLCC.API/QLCC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\work\\netcore\\QLCC\\QLCC.API\\QLCC.csproj",
+        "projectUniqueName": "/Users/xoet/Desktop/work/netcore/QLCC/QLCC.API/QLCC.csproj",
         "projectName": "QLCC",
-        "projectPath": "\\\\Mac\\Home\\Desktop\\work\\netcore\\QLCC\\QLCC.API\\QLCC.csproj",
-        "packagesPath": "C:\\Users\\xoet\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Desktop\\work\\netcore\\QLCC\\QLCC.API\\obj\\",
+        "projectPath": "/Users/xoet/Desktop/work/netcore/QLCC/QLCC.API/QLCC.csproj",
+        "packagesPath": "/Users/xoet/.nuget/packages/",
+        "outputPath": "/Users/xoet/Desktop/work/netcore/QLCC/QLCC.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\xoet\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/xoet/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -96,36 +94,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "\\\\Mac\\Home\\Desktop\\work\\netcore\\QLCC\\TestProject\\TestProject.csproj": {
+    "/Users/xoet/Desktop/work/netcore/QLCC/TestProject/TestProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\work\\netcore\\QLCC\\TestProject\\TestProject.csproj",
+        "projectUniqueName": "/Users/xoet/Desktop/work/netcore/QLCC/TestProject/TestProject.csproj",
         "projectName": "TestProject",
-        "projectPath": "\\\\Mac\\Home\\Desktop\\work\\netcore\\QLCC\\TestProject\\TestProject.csproj",
-        "packagesPath": "C:\\Users\\xoet\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Desktop\\work\\netcore\\QLCC\\TestProject\\obj\\",
+        "projectPath": "/Users/xoet/Desktop/work/netcore/QLCC/TestProject/TestProject.csproj",
+        "packagesPath": "/Users/xoet/.nuget/packages/",
+        "outputPath": "/Users/xoet/Desktop/work/netcore/QLCC/TestProject/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\xoet\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/xoet/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "\\\\Mac\\Home\\Desktop\\work\\netcore\\QLCC\\QLCC.API\\QLCC.csproj": {
-                "projectPath": "\\\\Mac\\Home\\Desktop\\work\\netcore\\QLCC\\QLCC.API\\QLCC.csproj"
+              "/Users/xoet/Desktop/work/netcore/QLCC/QLCC.API/QLCC.csproj": {
+                "projectPath": "/Users/xoet/Desktop/work/netcore/QLCC/QLCC.API/QLCC.csproj"
               }
             }
           }
@@ -177,7 +173,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -21,7 +21,7 @@ namespace QLCC.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer(@"Server=XOTA6A1;Database=QuanLyChamCong;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer(@"Server=103.124.92.157;Database=QLCC;Trusted_Connection=True;User Id=sa;password=Ab@123456");
             }
         }
 

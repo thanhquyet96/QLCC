@@ -17,7 +17,7 @@
               value-field="item"
               text-field="name"
               disabled-field="notEnabled"
-              :state="isEdit && ($v.nghiPhep.nguoiPheDuyetId.$model !== null) && !$v.nghiPhep.nguoiPheDuyetId.$error"
+              :state="isEdit && ($v.nghiPhep.nguoiPheDuyetId.$dirty ? !$v.nghiPhep.nguoiPheDuyetId.$error : null)"
             />
             <b-form-invalid-feedback>
               Trường này không được để trống
@@ -35,7 +35,7 @@
               value-field="item"
               text-field="name"
               disabled-field="notEnabled"
-              :state="isEdit && ($v.nghiPhep.hinhThucNghi.$model !== null) && !$v.nghiPhep.hinhThucNghi.$error"
+              :state="isEdit && ($v.nghiPhep.hinhThucNghi.$dirty ? !$v.nghiPhep.hinhThucNghi.$error : null)"
             />
             <b-form-invalid-feedback>
               Trường này không được để trống
@@ -53,7 +53,7 @@
               value-field="item"
               text-field="name"
               disabled-field="notEnabled"
-              :state="isEdit && ($v.nghiPhep.loaiNghi.$model !== null) && !$v.nghiPhep.loaiNghi.$error"
+              :state="isEdit && ($v.nghiPhep.loaiNghi.$dirty ? !$v.nghiPhep.loaiNghi.$error : null)"
             />
             <b-form-invalid-feedback>
               Trường này không được để trống
@@ -67,7 +67,7 @@
               v-model="$v.nghiPhep.taoChoNgay.$model"
               :disabled="!isEdit"
               type="date"
-              :state="isEdit && ($v.nghiPhep.taoChoNgay.$model !== null) && !$v.nghiPhep.taoChoNgay.$error"
+              :state="isEdit && ($v.nghiPhep.taoChoNgay.$dirty ? !$v.nghiPhep.taoChoNgay.$error : null)"
             />
             <!-- <datepicker
               :value="$v.nghiPhep.taoChoNgay.$model"
@@ -82,7 +82,7 @@
             <b-form-textarea
               v-model="$v.nghiPhep.lyDo.$model"
               :disabled="!isEdit"
-              :state="isEdit && ($v.nghiPhep.lyDo.$model !== null) && !$v.nghiPhep.lyDo.$error"
+              :state="isEdit && ($v.nghiPhep.lyDo.$dirty ? !$v.nghiPhep.lyDo.$error : null)"
               placeholder="Enter something..."
               rows="3"
               max-rows="6"

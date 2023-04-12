@@ -1,0 +1,53 @@
+version: '3.5'
+
+services:
+  db:
+    image: "mcr.microsoft.com/azure-sql-edge"
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: Ab@123456
+      ACCEPT_EULA: "Y"
+    restart: always
+    networks:
+      - proxynet
+  api:
+    image: thanhquyet96/qlcc.api
+    # image: api
+    # platform: linux/amd64
+    build:
+      context: .
+      dockerfile: ./QLCC.API/Dockerfile
+    ports:
+      - "3000:80"
+      - "3001:443"
+    depends_on:
+      - db
+    links:
+      - db
+    restart: always
+    networks:
+      - proxynet
+  web:
+    image: thanhquyet96/qlcc.web
+    # image: web
+    build:
+      context: .
+      dockerfile: ./QLCC.Web/Dockerfile
+    environment:
+      - VUE_APP_URL_API="BAR"
+      - API_URL=https://103.124.92.157:3001
+    ports:
+      - "8080:80"
+    # volumes:
+    #   - qlccapp:/web
+    depends_on:
+      - api
+    restart: always
+    networks:
+      - proxynet
+  # volumes:
+  #   qlccapp:
+networks:
+  proxynet:
+    name: custom_network

@@ -10,7 +10,7 @@
             <label :required="isEdit">Họ và tên</label>
             <b-form-input
               v-model="$v.nhanVien.hoVaTen.$model"
-              :state="isEdit && !$v.nhanVien.hoVaTen.$error"
+              :state="isEdit && ($v.nhanVien.hoVaTen.$dirty ? !$v.nhanVien.hoVaTen.$error : null)"
               :disabled="!isEdit"
             />
             <b-form-invalid-feedback>
@@ -21,7 +21,7 @@
             <label :required="isEdit">Tài khoản</label>
             <b-form-input
               v-model="$v.nhanVien.taiKhoan.$model"
-              :state="isEdit && !$v.nhanVien.taiKhoan.$error"
+              :state="isEdit && ($v.nhanVien.taiKhoan.$dirty ? !$v.nhanVien.taiKhoan.$error : null)"
               :disabled="!isEdit"
             />
             <b-form-invalid-feedback>
@@ -44,7 +44,7 @@
             <label>Số điện thoại</label>
             <b-form-input
               v-model="$v.nhanVien.soDienThoai.$model"
-              :state="isEdit && !$v.nhanVien.soDienThoai.$error"
+              :state="isEdit && ($v.nhanVien.soDienThoai.$dirty ? !$v.nhanVien.soDienThoai.$error : null)"
               :disabled="!isEdit"
             />
             <b-form-invalid-feedback>
@@ -55,7 +55,7 @@
             <label>Địa chỉ</label>
             <b-form-input
               v-model="$v.nhanVien.diaChi.$model"
-              :state="isEdit && !$v.nhanVien.diaChi.$error"
+              :state="isEdit && ($v.nhanVien.diaChi.$dirty ? !$v.nhanVien.diaChi.$error : null)"
               :disabled="!isEdit"
             />
             <b-form-invalid-feedback>
@@ -75,7 +75,7 @@
             <label>Hệ số lương</label>
             <b-form-input
               v-model="$v.nhanVien.heSoLuong.$model"
-              :state="isEdit && !$v.nhanVien.heSoLuong.$error"
+              :state="isEdit && ($v.nhanVien.heSoLuong.$dirty ? !$v.nhanVien.heSoLuong.$error : null)"
               :disabled="!isEdit"
             />
             <b-form-invalid-feedback>

@@ -10,7 +10,7 @@
             <label :required="isEdit">Tên quyền</label>
             <b-form-input
               v-model="$v.quyen.tenQuyen.$model"
-              :state="isEdit && !$v.quyen.tenQuyen.$error"
+              :state="isEdit && ($v.quyen.tenQuyen.$dirty ? !$v.quyen.tenQuyen.$error : null)"
               :disabled="!isEdit"
             />
             <b-form-invalid-feedback>

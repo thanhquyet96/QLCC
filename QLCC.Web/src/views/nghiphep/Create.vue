@@ -16,7 +16,7 @@
               value-field="item"
               text-field="name"
               disabled-field="notEnabled"
-              :state="($v.nghiPhep.nguoiPheDuyetId.$model !== null) && !$v.nghiPhep.nguoiPheDuyetId.$error"
+              :state="$v.nghiPhep.nguoiPheDuyetId.$dirty ? !$v.nghiPhep.nguoiPheDuyetId.$error : null"
             />
             <b-form-invalid-feedback>
               Trường này không được để trống
@@ -33,7 +33,7 @@
               value-field="item"
               text-field="name"
               disabled-field="notEnabled"
-              :state="($v.nghiPhep.hinhThucNghi.$model !== null) && !$v.nghiPhep.hinhThucNghi.$error"
+              :state="$v.nghiPhep.hinhThucNghi.$dirty ? !$v.nghiPhep.hinhThucNghi.$error : null"
             />
             <b-form-invalid-feedback>
               Trường này không được để trống
@@ -50,7 +50,7 @@
               value-field="item"
               text-field="name"
               disabled-field="notEnabled"
-              :state="($v.nghiPhep.loaiNghi.$model !== null) && !$v.nghiPhep.loaiNghi.$error"
+              :state="$v.nghiPhep.loaiNghi.$dirty ? !$v.nghiPhep.loaiNghi.$error : null"
             />
             <b-form-invalid-feedback>
               Trường này không được để trống
@@ -63,7 +63,7 @@
             <b-form-input
               v-model="$v.nghiPhep.taoChoNgay.$model"
               type="date"
-              :state="($v.nghiPhep.taoChoNgay.$model !== null) && !$v.nghiPhep.taoChoNgay.$error"
+              :state="$v.nghiPhep.taoChoNgay.$dirty ? !$v.nghiPhep.taoChoNgay.$error : null"
             />
             <!-- <datepicker
               :value="$v.nghiPhep.taoChoNgay.$model"
@@ -77,7 +77,7 @@
             <label>Lý do</label>
             <b-form-textarea
               v-model="$v.nghiPhep.lyDo.$model"
-              :state="($v.nghiPhep.lyDo.$model !== null) && !$v.nghiPhep.lyDo.$error"
+              :state="$v.nghiPhep.lyDo.$dirty ? !$v.nghiPhep.lyDo.$error : null"
               placeholder="Enter something..."
               rows="3"
               max-rows="6"

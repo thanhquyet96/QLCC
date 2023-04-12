@@ -1,0 +1,11 @@
+FROM mcr.microsoft.com/mssql/server:2017-latest
+  ENV ACCEPT_EULA=Y
+  ENV SA_PASSWORD=xxxxxxxx
+  ENV MSSQL_PID=Developer
+  ENV MSSQL_TCP_PORT=1433 
+   
+  WORKDIR /src
+   
+   COPY ["API/db/db.bak", "dbbackups/"]
+
+   RUN (/opt/mssql/bin/sqlservr --accept-eula & ) | grep -q "Starting database restore" && /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'xxxxxxxx' -Q "RESTORE FILELISTONLY FROM DISK='/dbbackups/db.bak';"

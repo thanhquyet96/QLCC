@@ -6,12 +6,14 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using QLCC.Entities;
+using QLCC.Helpers;
 using QLCC.Models;
 
 namespace QLCC.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class QuyenController : ControllerBase
     {
         private readonly DataContext _context;

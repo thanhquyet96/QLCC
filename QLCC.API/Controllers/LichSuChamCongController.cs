@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using QLCC.Entities;
+using QLCC.Helpers;
 using QLCC.Models;
 using QLCC.ViewModels;
 using static QLCC.ViewModels.Constants;
@@ -16,6 +17,7 @@ namespace QLCC.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class LichSuChamCongController : ControllerBase
     {
         private readonly DataContext _context;
@@ -60,7 +62,10 @@ namespace QLCC.Controllers
                     {
                         loaiNghi = LoaiNghiEnum.DiLam;
                     }
-                    record.Add($"heading_{day.NgayChamCong.Day.ToString()}", (int)loaiNghi);
+                    if (!record.ContainsKey($"heading_{day.NgayChamCong.Day.ToString()}"))
+                    {
+                        record.Add($"heading_{day.NgayChamCong.Day.ToString()}", (int)loaiNghi);
+                    }
                 }
                 if (nghiPheps != null && !nghiPheps.Any(x => item.Select(x => x.NgayChamCong.Day).Contains(x.TaoChoNgay.Day)))
                 {
@@ -81,10 +86,25 @@ namespace QLCC.Controllers
                         }
                     }
                 }
+                int days = DateTime.DaysInMonth(year, month);
+                var now = DateTime.Now;
+                if (month == now.Month && year == now.Year)
+                {
+                    for (int i = 1; i <= days; i++)
+                    {
+                        if (i > now.Day)
+                        {
+                            if (!record.ContainsKey($"heading_{i}"))
+                            {
+                                record.Add($"heading_{i}", (int)LoaiNghiEnum.KhongXacDinh);
+                            }
+                        }
+                    }
+                }
 
                 histories.Add(record);
             }
-
+            
 
             return Ok(histories);
         }

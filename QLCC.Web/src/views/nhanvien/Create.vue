@@ -10,7 +10,7 @@
             <label>Họ và tên</label>
             <b-form-input
               v-model="$v.nhanVien.hoVaTen.$model"
-              :state="($v.nhanVien.hoVaTen.$model !== null) && !$v.nhanVien.hoVaTen.$error"
+              :state="$v.nhanVien.hoVaTen.$dirty ? !$v.nhanVien.hoVaTen.$error : null"
             />
             <b-form-invalid-feedback>
               Trường này không được để trống
@@ -21,7 +21,7 @@
             <label>Số điện thoại</label>
             <b-form-input
               v-model="$v.nhanVien.soDienThoai.$model"
-              :state="($v.nhanVien.soDienThoai.$model !== null) && !$v.nhanVien.soDienThoai.$error"
+              :state="$v.nhanVien.soDienThoai.$dirty ? !$v.nhanVien.soDienThoai.$error : null"
             />
             <b-form-invalid-feedback>
               Trường này không được để trống
@@ -32,7 +32,7 @@
 
             <b-form-input
               v-model="$v.nhanVien.diaChi.$model"
-              :state="($v.nhanVien.diaChi.$model !== null) && !$v.nhanVien.diaChi.$error"
+              :state="$v.nhanVien.diaChi.$dirty ? !$v.nhanVien.diaChi.$error : null"
             />
             <b-form-invalid-feedback>
               Trường này không được để trống
@@ -51,7 +51,7 @@
             <b-form-input
               v-model="$v.nhanVien.heSoLuong.$model"
               type="number"
-              :state="($v.nhanVien.heSoLuong.$model !== null) && !$v.nhanVien.heSoLuong.$error"
+              :state="$v.nhanVien.heSoLuong.$dirty ? !$v.nhanVien.heSoLuong.$error : null"
             />
             <b-form-invalid-feedback>
               Trường này không được để trống

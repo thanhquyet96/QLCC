@@ -101,6 +101,10 @@ namespace QLCC.Controllers
             month = month ?? DateTime.Now.Month;
             List<PayrollViewModel> payrollViews = new List<PayrollViewModel>();
             var nhanViens = await _context.Users.Include(x => x.NghiPheps).Include(x => x.ChamCongs).AsNoTracking().ToListAsync();
+            if (UserIdentity.OnlyUser)
+            {
+                nhanViens = nhanViens.Where(x => x.Id == UserIdentity.Id).ToList();
+            }
             foreach (var nhanVien in nhanViens)
             {
                 // Lấy danh sách chấm công của nhân viên

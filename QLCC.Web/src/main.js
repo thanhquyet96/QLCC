@@ -5,6 +5,8 @@ import store from './store'
 import Vuex from 'vuex'
 import VueToast from 'vue-toast-notification';
 import Vuelidate from 'vuelidate'
+import moment from 'moment';
+import './Services/common';
 
 // Import one of the available themes
 //import 'vue-toast-notification/dist/theme-default.css';
@@ -33,6 +35,13 @@ Vue.use(Vuelidate)
 Vue.component('Datepicker', Datepicker)
 Vue.prototype.$services = Services;
 Vue.prototype.$http = HTTP;
+
+Vue.filter('formatDate', function (value, format) {
+  if (value) {
+      format = format || 'MM/DD/YYYY';
+      return moment(String(value)).format(format);
+  }
+});
 
 Vue.use(Vuex)
 

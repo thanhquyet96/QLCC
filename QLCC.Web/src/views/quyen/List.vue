@@ -86,7 +86,7 @@ export default {
         { key: 'action', label: 'Hành động' },
       ],
       searchForm: {
-        keyword: null,
+        keyword: '',
       },
       row: 'aaa'
     };  

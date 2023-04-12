@@ -86,8 +86,20 @@ export default {
         { key: 'tenNhanVien', label: 'Tên nhân viên' },
         { key: 'nguoiPheDuyet', label: 'Người phê duyệt' },
         { key: 'lyDo', label: 'Lý do' },
-        { key: 'thoiGianTao', label: 'Thời gian tạo' },
-        { key: 'taoChoNgay', label: 'Tạo cho ngày' },
+        { 
+          key: 'thoiGianTao', 
+          label: 'Thời gian tạo',
+          formatter: (value, key, item) => {
+            return formatDate(value, 'DD/MM/yyyy');
+          }
+        },
+        { 
+          key: 'taoChoNgay', 
+          label: 'Tạo cho ngày',
+          formatter: (value, key, item) => {
+            return formatDate(value, 'DD/MM/yyyy');
+          }
+        },
         { key: 'tenLoaiNghi', label: 'Loại nghỉ' },
         { key: 'tenHinhThucNghi', label: 'Hình thức nghỉ' },
         { key: 'tenTrangThai', label: 'Trạng thái' },
@@ -99,7 +111,7 @@ export default {
         { value: 3, text: 'Từ chối' },
       ],
       searchForm: {
-        keyword: null,
+        keyword: '',
       },
     };  
   },

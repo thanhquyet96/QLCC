@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System.Data;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using QLCC.Entities;
 using QLCC.ViewModels;
@@ -22,9 +23,10 @@ namespace QLCC.Helpers
         private void LoadUserIdentity()
         {
             var user = (User)_httpContextAccessor.HttpContext.Items["User"];
+            var roles = (List<string>)_httpContextAccessor.HttpContext.Items["Roles"];
             if (user != null)
             {
-                UserIdentity = new UserIdentity(user);
+                UserIdentity = new UserIdentity(user, roles);
             }
         }
 

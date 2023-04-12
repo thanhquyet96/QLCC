@@ -13,7 +13,7 @@
           label="Từ khóa:"
         >
           <b-form-input
-            v-model="searchForm.keyWord"
+            v-model="searchForm.keyword"
             type="text"
             placeholder="Nhập từ khóa"
             required
@@ -91,7 +91,7 @@
         ],
         fields: [],
         searchForm: {
-          keyWord: null,
+          keyword: '',
           month: new Date().getMonth() + 1,
           year: new Date().getFullYear(),
         },

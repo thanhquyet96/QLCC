@@ -18,21 +18,28 @@ namespace QLCC.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    public class LichSuChamCongController : ControllerBase
+    public class LichSuChamCongController : BaseController
     {
         private readonly DataContext _context;
 
-        public LichSuChamCongController(DataContext context)
+        public LichSuChamCongController(IHttpContextAccessor httpContextAccessort, DataContext context): base(httpContextAccessort)
         {
             _context = context;
         }
 
         // GET: api/LichSuChamCong
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<LichSuChamCongGrid>>> GetLichSuChamCong(int month, int year)
+        public async Task<ActionResult<IEnumerable<LichSuChamCongGrid>>> GetLichSuChamCong(int month, int year, string keyword)
         {
             var result = await _context.LichSuChamCong.Include(x => x.NhanVien).Where(x => x.NgayChamCong.Month == month && x.NgayChamCong.Year == year).ToListAsync();
-
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                result = result.Where(x => x.NhanVien.HoVaTen.ToLower().Contains(keyword.ToLower())).ToList();
+            }
+            if (UserIdentity.OnlyUser)
+            {
+                result = result.Where(x => x.NhanVienId == UserIdentity.Id).ToList();
+            }
             var data = result.GroupBy(x => new { NhanVienId = x.NhanVienId, HoVaTen = x.NhanVien.HoVaTen });
             List<IDictionary<string, object>> histories = new List<IDictionary<string, object>>();
             foreach (var item in data)

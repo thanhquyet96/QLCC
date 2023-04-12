@@ -23,9 +23,17 @@ namespace QLCC.Controllers
 
         // GET: api/NghiPhep
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<NghiPhepDetail>>> GetNghiPhep()
+        public async Task<ActionResult<IEnumerable<NghiPhepDetail>>> GetNghiPhep(string keyword)
         {
             var model = await _context.NghiPhep.Include(x=>x.NguoiPheDuyet).Include(x=>x.NhanVien).ToListAsync();
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                model = model.Where(x => x.NhanVien.HoVaTen.Contains(keyword)).ToList();
+            }
+            if (UserIdentity.OnlyUser)
+            {
+                model = model.Where(x => x.NhanVienId == UserIdentity.Id).ToList();
+            }
             var result = model.Select(x => new NghiPhepDetail()
             {
                 Id = x.Id,

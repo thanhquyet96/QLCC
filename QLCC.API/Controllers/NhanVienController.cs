@@ -10,11 +10,11 @@ namespace QLCC.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize(PRIVILGE.USER, PRIVILGE.OTHER)]
-    public class NhanVienController : ControllerBase
+    public class NhanVienController : BaseController
     {
         private readonly DataContext _context;
 
-        public NhanVienController(DataContext context)
+        public NhanVienController(IHttpContextAccessor httpContextAccessort, DataContext context) : base(httpContextAccessort)
         {
             _context = context;
         }
@@ -29,7 +29,11 @@ namespace QLCC.Controllers
             }    
             else
             {
-               return await _context.Users.Where(x=>x.HoVaTen.Contains(keyword) || x.TaiKhoan.Contains(keyword)).ToListAsync();
+                if (UserIdentity.OnlyUser)
+                {
+                    return await _context.Users.Where(x => x.Id == UserIdentity.Id).ToListAsync();
+                }
+                return await _context.Users.Where(x=>x.HoVaTen.Contains(keyword) || x.TaiKhoan.Contains(keyword)).ToListAsync();
             }
             // return await _context.Users.ToListAsync();
 

@@ -22,19 +22,18 @@ namespace QLCC.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers(string keyword)
         {
-            if(keyword == null || keyword == "null")
+            var users = await _context.Users.ToListAsync();
+            if (!string.IsNullOrWhiteSpace(keyword))
             {
-               return await _context.Users.ToListAsync();
-            }    
-            else
-            {
-                if (UserIdentity.OnlyUser)
-                {
-                    return await _context.Users.Where(x => x.Id == UserIdentity.Id).ToListAsync();
-                }
-               return await _context.Users.Where(x=>x.HoVaTen.Contains(keyword) || x.TaiKhoan.Contains(keyword)).ToListAsync();
+
+                users = users.Where(x => x.HoVaTen.Contains(keyword) || x.TaiKhoan.Contains(keyword)).ToList();
             }
-            // return await _context.Users.ToListAsync();
+
+            if (UserIdentity.OnlyUser)
+            {
+                users = users.Where(x => x.Id == UserIdentity.Id).ToList();
+            }
+            return users;
 
         }
 

@@ -30,6 +30,7 @@
             </b-form-invalid-feedback>
           </div>
           <div class="form-group">
+            <label>Địa chỉ</label>
             <b-form-input
               v-model="$v.nhanVien.diaChi.$model"
               :state="isEdit && ($v.nhanVien.diaChi.$dirty ? !$v.nhanVien.diaChi.$error : null)"

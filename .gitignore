@@ -2,3 +2,14 @@ QLCC.Web/package-lock.json
 TestProject/bin/Debug/net6.0/InternalTrace.95888.log
 TestProject/bin/Debug/net6.0/nunit_random_seed.tmp
 TestProject/obj/Debug/net6.0/TestProject.csproj.AssemblyReference.cache
+/.vs
+/QLCC/.vs
+/QLCC/bin/Debug/net6.0
+/QLCC/obj/Debug/net6.0
+/QLCC/obj
+/bin
+/obj
+/bin/*
+/obj/*
+
+/UnitOfWork/bin/Debug/net7.0

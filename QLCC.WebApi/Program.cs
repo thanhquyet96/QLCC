@@ -17,9 +17,12 @@ builder.Services.AddDbContext<QLCCContext>
 
 builder.Services.AddScoped(typeof(IRepository<,>), typeof(Repository<,>));
 //builder.Services.AddSingleton<IRepository<USER>, Repository<USER>>();
-builder.Services.AddAutoMapper(typeof(BaseServices<,>));
-builder.Services.AddScoped(typeof(BaseServices<,>));
-//builder.Services.AddSingleton<BaseServices<USER>>();
+builder.Services.AddAutoMapper(typeof(QLCCBaseServices<>));
+
+//builder.Services.AddAutoMapper(typeof(UserServices));
+
+//builder.Services.AddScoped(typeof(BaseServices<,>));
+////builder.Services.AddSingleton<BaseServices<USER>>();
 builder.Services.AddScoped<UserServices>();
 
 builder.Services.AddControllers().AddJsonOptions(options =>

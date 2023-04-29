@@ -14,8 +14,4 @@
     <None Remove="Dtos\" />
     <None Remove="Dtos\User\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dtos\" />
-    <Folder Include="Dtos\User\" />
-  </ItemGroup>
 </Project>

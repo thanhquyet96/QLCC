@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QLCC.Data.Entities
 {
-    [Table("ChamCong")]
+    [Table("TIME_KEEP")]
     [Description("Chấm công")]
     public class TIME_KEEP
     {

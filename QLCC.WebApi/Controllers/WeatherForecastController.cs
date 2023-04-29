@@ -33,9 +33,9 @@ public class WeatherForecastController : ControllerBase
         .ToArray();
     }
     [HttpGet("list-user")]
-    public IActionResult GetAction()
+    public async Task<IActionResult> GetAction([FromQuery]UserGridPagingDto pagingDto)
     {
-        var model = _userServices.Filter<UserGridDto>();
+        var model = await _userServices.GetUsers(pagingDto);
         return Ok(model);
     }
 }

@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace QLCC.Data.Entities
 {
-    [Table("NhanVien")]
+    [Table("USER")]
     public class USER
     {
         [Key]

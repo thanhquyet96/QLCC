@@ -12,7 +12,7 @@ namespace QLCC.Data
         private readonly string _connectionString;
         public QLCCContext()
         {
-            var connectionString = "Server=localhost; Database=QLCC_V2; Trusted_Connection=True; MultipleActiveResultSets=true; User Id=sa; Password=123456;";
+            var connectionString = "Server=.; Database=QLCC_V2; Trusted_Connection=True; MultipleActiveResultSets=true; User Id=sa; Password=123456;TrustServerCertificate=true";
             _connectionString = connectionString;
         }
         public QLCCContext(DbContextOptions<QLCCContext> options)
@@ -35,6 +35,10 @@ namespace QLCC.Data
             modelBuilder.Entity<USER>(entity =>
             {
                 entity.HasKey(e => e.ID);
+            });
+            modelBuilder.Entity<USER_ROLE>(entity =>
+            {
+                entity.HasKey(e => new { e.ROLE_ID, e.USER_ID });
             });
 
             //modelBuilder.Entity<Book>(entity =>

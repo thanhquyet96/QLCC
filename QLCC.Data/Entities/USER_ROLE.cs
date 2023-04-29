@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QLCC.Data.Entities
 {
+    [Table("USER_ROLE")]
     public class USER_ROLE
     {
         [Key]

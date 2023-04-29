@@ -8,14 +8,14 @@ public class PagingParams<T>
     public int ItemPerPage { get; set; }
     public string SortBy { get; set; }
     public bool SortDesc { get; set; }
-    //public string SortExpression
-    //{
-    //    get
-    //    {
-    //        return (string.IsNullOrEmpty(SortBy) ? "Id" : SortBy) + " " + (SortDesc ? "desc" : "asc");
-    //    }
-    //}
-    public Expression<Func<T, bool>> SortExpression { get; set; }
+    public string SortExpression
+    {
+        get
+        {
+            return (string.IsNullOrEmpty(SortBy) ? "Id" : SortBy) + " " + (SortDesc ? "desc" : "asc");
+        }
+    }
+    //public Expression<Func<T, object>> SortExpression { get; set; }
     public int StartIndex
     {
         get

@@ -1,0 +1,12 @@
+/Users/xoet/Desktop/work/netcore/QLCC/Common/bin/Debug/net7.0/Common.deps.json
+/Users/xoet/Desktop/work/netcore/QLCC/Common/bin/Debug/net7.0/Common.dll
+/Users/xoet/Desktop/work/netcore/QLCC/Common/bin/Debug/net7.0/Common.pdb
+/Users/xoet/Desktop/work/netcore/QLCC/Common/obj/Debug/net7.0/Common.csproj.AssemblyReference.cache
+/Users/xoet/Desktop/work/netcore/QLCC/Common/obj/Debug/net7.0/Common.GeneratedMSBuildEditorConfig.editorconfig
+/Users/xoet/Desktop/work/netcore/QLCC/Common/obj/Debug/net7.0/Common.AssemblyInfoInputs.cache
+/Users/xoet/Desktop/work/netcore/QLCC/Common/obj/Debug/net7.0/Common.AssemblyInfo.cs
+/Users/xoet/Desktop/work/netcore/QLCC/Common/obj/Debug/net7.0/Common.csproj.CoreCompileInputs.cache
+/Users/xoet/Desktop/work/netcore/QLCC/Common/obj/Debug/net7.0/Common.dll
+/Users/xoet/Desktop/work/netcore/QLCC/Common/obj/Debug/net7.0/refint/Common.dll
+/Users/xoet/Desktop/work/netcore/QLCC/Common/obj/Debug/net7.0/Common.pdb
+/Users/xoet/Desktop/work/netcore/QLCC/Common/obj/Debug/net7.0/ref/Common.dll

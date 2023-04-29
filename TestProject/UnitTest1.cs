@@ -40,10 +40,10 @@ namespace TestProject
                 var days = _random.Next(1, 31);
                 for (int i = 1; i <= days; i++)
                 {
-                    _db.LichSuChamCong.Add(new QLCC.Entities.LichSuChamCong()
+                    _db.LichSuChamCong.Add(new QLCC.Entities.HISTORY_TIME_KEEP()
                     {
                         NgayChamCong = new DateTime(DateTime.Now.Year, DateTime.Now.Month, i),
-                        NhanVienId = user.Id,
+                        USER_ID = user.Id,
                         ThoiGianChamCong = _random.NextInt64(10000, 900000),
                     });
                 }
@@ -53,7 +53,7 @@ namespace TestProject
         private void InsertChamCong(int month, int day)
         {
             var dateNow = new DateTime(2023, month, day);
-            var ngayChamCong = new NgayChamCong()
+            var ngayChamCong = new DateTimeKeep()
             {
                 ThoiGianChamCong = dateNow,
                 ThoiGianRaVe = dateNow,
@@ -64,7 +64,7 @@ namespace TestProject
              _db.NgayChamCong.Add(ngayChamCong);
              _db.SaveChanges();
             // Thêm Thời gian chấm công cho người chấm công
-            var chamCong = new ChamCong()
+            var chamCong = new TIME_KEEP()
             {
                 NhanVienId = 1,
                 NgayChamCongId = ngayChamCong.Id,
@@ -79,14 +79,14 @@ namespace TestProject
                         _db.SaveChanges();
             }
             // Lưu lịch sử cho nhân viên chấm công
-            var lichsuChamCong = new LichSuChamCong()
+            var lichsuChamCong = new HISTORY_TIME_KEEP()
             {
                 NgayChamCong = dateNow,
-                NhanVienId = 1,
+                USER_ID = 1,
                 //ThoiGianChamCong = null,
             };
             // Kiểm tra lịch sử chấm công đã tồn tại chưa
-            var lichsuChamCongOld = _db.LichSuChamCong.FirstOrDefault(x => x.NgayChamCong.Date == lichsuChamCong.NgayChamCong.Date && x.NhanVienId == lichsuChamCong.NhanVienId);
+            var lichsuChamCongOld = _db.LichSuChamCong.FirstOrDefault(x => x.NgayChamCong.Date == lichsuChamCong.NgayChamCong.Date && x.USER_ID == lichsuChamCong.USER_ID);
             // CHưa tồn tại
             if (lichsuChamCongOld == null)
             {

@@ -25,14 +25,14 @@ namespace QLCC.Controllers
 
         // GET: api/NgayChamCong
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<NgayChamCong>>> GetNgayChamCong()
+        public async Task<ActionResult<IEnumerable<DateTimeKeep>>> GetNgayChamCong()
         {
             return await _context.NgayChamCong.ToListAsync();
         }
 
         // GET: api/NgayChamCong/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<NgayChamCong>> GetNgayChamCong(int id)
+        public async Task<ActionResult<DateTimeKeep>> GetNgayChamCong(int id)
         {
             var ngayChamCong = await _context.NgayChamCong.FindAsync(id);
 
@@ -47,7 +47,7 @@ namespace QLCC.Controllers
         // PUT: api/NgayChamCong/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutNgayChamCong(int id, NgayChamCong ngayChamCong)
+        public async Task<IActionResult> PutNgayChamCong(int id, DateTimeKeep ngayChamCong)
         {
             if (id != ngayChamCong.Id)
             {
@@ -78,7 +78,7 @@ namespace QLCC.Controllers
         // POST: api/NgayChamCong
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<NgayChamCong>> PostNgayChamCong(NgayChamCong ngayChamCong)
+        public async Task<ActionResult<DateTimeKeep>> PostNgayChamCong(DateTimeKeep ngayChamCong)
         {
             _context.NgayChamCong.Add(ngayChamCong);
             await _context.SaveChangesAsync();

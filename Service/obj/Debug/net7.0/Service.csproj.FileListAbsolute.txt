@@ -1,0 +1,17 @@
+/Users/xoet/Desktop/work/netcore/QLCC/Service/bin/Debug/net7.0/Service.deps.json
+/Users/xoet/Desktop/work/netcore/QLCC/Service/bin/Debug/net7.0/Service.dll
+/Users/xoet/Desktop/work/netcore/QLCC/Service/bin/Debug/net7.0/Service.pdb
+/Users/xoet/Desktop/work/netcore/QLCC/Service/bin/Debug/net7.0/Common.dll
+/Users/xoet/Desktop/work/netcore/QLCC/Service/bin/Debug/net7.0/Repository.dll
+/Users/xoet/Desktop/work/netcore/QLCC/Service/bin/Debug/net7.0/Common.pdb
+/Users/xoet/Desktop/work/netcore/QLCC/Service/bin/Debug/net7.0/Repository.pdb
+/Users/xoet/Desktop/work/netcore/QLCC/Service/obj/Debug/net7.0/Service.csproj.AssemblyReference.cache
+/Users/xoet/Desktop/work/netcore/QLCC/Service/obj/Debug/net7.0/Service.GeneratedMSBuildEditorConfig.editorconfig
+/Users/xoet/Desktop/work/netcore/QLCC/Service/obj/Debug/net7.0/Service.AssemblyInfoInputs.cache
+/Users/xoet/Desktop/work/netcore/QLCC/Service/obj/Debug/net7.0/Service.AssemblyInfo.cs
+/Users/xoet/Desktop/work/netcore/QLCC/Service/obj/Debug/net7.0/Service.csproj.CoreCompileInputs.cache
+/Users/xoet/Desktop/work/netcore/QLCC/Service/obj/Debug/net7.0/Service.csproj.CopyComplete
+/Users/xoet/Desktop/work/netcore/QLCC/Service/obj/Debug/net7.0/Service.dll
+/Users/xoet/Desktop/work/netcore/QLCC/Service/obj/Debug/net7.0/refint/Service.dll
+/Users/xoet/Desktop/work/netcore/QLCC/Service/obj/Debug/net7.0/Service.pdb
+/Users/xoet/Desktop/work/netcore/QLCC/Service/obj/Debug/net7.0/ref/Service.dll

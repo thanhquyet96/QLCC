@@ -1,0 +1,14 @@
+/Users/xoet/Desktop/work/netcore/QLCC/QLCC.Data/bin/Debug/net7.0/QLCC.Data.deps.json
+/Users/xoet/Desktop/work/netcore/QLCC/QLCC.Data/bin/Debug/net7.0/QLCC.Data.dll
+/Users/xoet/Desktop/work/netcore/QLCC/QLCC.Data/bin/Debug/net7.0/QLCC.Data.pdb
+/Users/xoet/Desktop/work/netcore/QLCC/QLCC.Data/obj/Debug/net7.0/QLCC.Data.csproj.AssemblyReference.cache
+/Users/xoet/Desktop/work/netcore/QLCC/QLCC.Data/obj/Debug/net7.0/QLCC.Data.GeneratedMSBuildEditorConfig.editorconfig
+/Users/xoet/Desktop/work/netcore/QLCC/QLCC.Data/obj/Debug/net7.0/QLCC.Data.AssemblyInfoInputs.cache
+/Users/xoet/Desktop/work/netcore/QLCC/QLCC.Data/obj/Debug/net7.0/QLCC.Data.AssemblyInfo.cs
+/Users/xoet/Desktop/work/netcore/QLCC/QLCC.Data/obj/Debug/net7.0/QLCC.Data.csproj.CoreCompileInputs.cache
+/Users/xoet/Desktop/work/netcore/QLCC/QLCC.Data/obj/Debug/net7.0/QLCC.Data.dll
+/Users/xoet/Desktop/work/netcore/QLCC/QLCC.Data/obj/Debug/net7.0/refint/QLCC.Data.dll
+/Users/xoet/Desktop/work/netcore/QLCC/QLCC.Data/obj/Debug/net7.0/QLCC.Data.pdb
+/Users/xoet/Desktop/work/netcore/QLCC/QLCC.Data/obj/Debug/net7.0/ref/QLCC.Data.dll
+/Users/xoet/Desktop/work/netcore/QLCC/QLCC.Data/bin/Debug/net7.0/QLCC.Data.runtimeconfig.json
+/Users/xoet/Desktop/work/netcore/QLCC/QLCC.Data/obj/Debug/net7.0/QLCC.Data.genruntimeconfig.cache

@@ -35,7 +35,7 @@ namespace QLCC.Controllers
             {
                 // Thêm thời gian chấm công
                 var dateNow = DateTime.Now;
-                var ngayChamCong = new NgayChamCong()
+                var ngayChamCong = new DateTimeKeep()
                 {
                     ThoiGianChamCong = dateNow,
                     ThoiGianRaVe = dateNow,
@@ -46,7 +46,7 @@ namespace QLCC.Controllers
                 await _context.NgayChamCong.AddAsync(ngayChamCong);
                 await _context.SaveChangesAsync();
                 // Thêm Thời gian chấm công cho người chấm công
-                var chamCong = new ChamCong()
+                var chamCong = new TIME_KEEP()
                 {
                     NhanVienId = UserIdentity.Id,
                     NgayChamCongId = ngayChamCong.Id,
@@ -61,14 +61,14 @@ namespace QLCC.Controllers
                     await _context.SaveChangesAsync();
                 }
                 // Lưu lịch sử cho nhân viên chấm công
-                var lichsuChamCong = new LichSuChamCong()
+                var lichsuChamCong = new HISTORY_TIME_KEEP()
                 {
                     NgayChamCong = dateNow,
-                    NhanVienId = UserIdentity.Id,
+                    USER_ID = UserIdentity.Id,
                     //ThoiGianChamCong = null,
                 };
                 // Kiểm tra lịch sử chấm công đã tồn tại chưa
-                var lichsuChamCongOld = await _context.LichSuChamCong.FirstOrDefaultAsync(x => x.NgayChamCong.Date == lichsuChamCong.NgayChamCong.Date && x.NhanVienId == lichsuChamCong.NhanVienId);
+                var lichsuChamCongOld = await _context.LichSuChamCong.FirstOrDefaultAsync(x => x.NgayChamCong.Date == lichsuChamCong.NgayChamCong.Date && x.USER_ID == lichsuChamCong.USER_ID);
                 // CHưa tồn tại
                 if (lichsuChamCongOld == null)
                 {
@@ -88,7 +88,7 @@ namespace QLCC.Controllers
         {
             var day = DateTime.Now;
             // Kiểm tra nhân viên đã checkin chưa
-            var chamCong = await _context.ChamCong.Include(x => x.NgayChamCong).FirstOrDefaultAsync(x => x.NhanVienId == UserIdentity.Id && x.NgayChamCong.Date.Date == day.Date);
+            var chamCong = await _context.ChamCong.Include(x => x.DATE_TIME_KEEP).FirstOrDefaultAsync(x => x.NhanVienId == UserIdentity.Id && x.DATE_TIME_KEEP.Date.Date == day.Date);
             // Chưa checkin
             return Ok(chamCong != null);
         }
@@ -108,7 +108,7 @@ namespace QLCC.Controllers
             foreach (var nhanVien in nhanViens)
             {
                 // Lấy danh sách chấm công của nhân viên
-                var chamCongs = await _context.ChamCong.Include(x => x.NgayChamCong).Where(x => x.NhanVienId == nhanVien.Id && x.NgayChamCong.Date.Month == month && x.NgayChamCong.Date.Year == year).AsNoTracking().ToListAsync();
+                var chamCongs = await _context.ChamCong.Include(x => x.DATE_TIME_KEEP).Where(x => x.NhanVienId == nhanVien.Id && x.DATE_TIME_KEEP.Date.Month == month && x.DATE_TIME_KEEP.Date.Year == year).AsNoTracking().ToListAsync();
 
                 var chamCongGroup = chamCongs?.GroupBy(x => x.NgayChamCong.Ten).Select(z => new
                 {

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "d/GIGN0D00joISKsMQ+uaROZKp4sNJIiyqYKNBOQsVM=",
+  "Source": "QLCC.WebApi",
+  "BasePath": "_content/QLCC.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

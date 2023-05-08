@@ -188,7 +188,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[USER](
 	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[nvarchar(50)] [nvarchar](max) NOT NULL,
+	[USER_NAME] [nvarchar](max) NOT NULL,
 	[PASSWORD] [nvarchar](max) NOT NULL,
 	[FULL_NAME] [nvarchar](max) NOT NULL,
 	[PHONE_NUMBER] [nvarchar](max) NOT NULL,

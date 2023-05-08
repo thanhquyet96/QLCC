@@ -9,8 +9,8 @@
           <div class="form-group">
             <label :required="isEdit">Họ và tên</label>
             <b-form-input
-              v-model="$v.nhanVien.hoVaTen.$model"
-              :state="isEdit && ($v.nhanVien.hoVaTen.$dirty ? !$v.nhanVien.hoVaTen.$error : null)"
+              v-model="$v.nhanVien.fullName.$model"
+              :state="isEdit && ($v.nhanVien.fullName.$dirty ? !$v.nhanVien.fullName.$error : null)"
               :disabled="!isEdit"
             />
             <b-form-invalid-feedback>
@@ -21,8 +21,8 @@
           <div class="form-group">
             <label>Số điện thoại</label>
             <b-form-input
-              v-model="$v.nhanVien.soDienThoai.$model"
-              :state="isEdit && ($v.nhanVien.soDienThoai.$dirty ? !$v.nhanVien.soDienThoai.$error : null)"
+              v-model="$v.nhanVien.phoneNumber.$model"
+              :state="isEdit && ($v.nhanVien.phoneNumber.$dirty ? !$v.nhanVien.phoneNumber.$error : null)"
               :disabled="!isEdit"
             />
             <b-form-invalid-feedback>
@@ -32,8 +32,8 @@
           <div class="form-group">
             <label>Địa chỉ</label>
             <b-form-input
-              v-model="$v.nhanVien.diaChi.$model"
-              :state="isEdit && ($v.nhanVien.diaChi.$dirty ? !$v.nhanVien.diaChi.$error : null)"
+              v-model="$v.nhanVien.address.$model"
+              :state="isEdit && ($v.nhanVien.address.$dirty ? !$v.nhanVien.address.$error : null)"
               :disabled="!isEdit"
             />
             <b-form-invalid-feedback>
@@ -43,7 +43,7 @@
           <div class="form-group">
             <label>Sinh nhật</label>
             <input
-              v-model="nhanVien.sinhNhat"
+              v-model="nhanVien.birthDay"
               type="date"
               class="form-control"
               :disabled="!isEdit"
@@ -52,8 +52,8 @@
           <div class="form-group">
             <label>Hệ số lương</label>
             <b-form-input
-              v-model="$v.nhanVien.heSoLuong.$model"
-              :state="isEdit && ($v.nhanVien.heSoLuong.$dirty ? !$v.nhanVien.heSoLuong.$error : null)"
+              v-model="$v.nhanVien.coefficientsSalary.$model"
+              :state="isEdit && ($v.nhanVien.coefficientsSalary.$dirty ? !$v.nhanVien.coefficientsSalary.$error : null)"
               :disabled="!isEdit"
             />
             <b-form-invalid-feedback>
@@ -63,7 +63,7 @@
           <div class="form-group">
             <label>Số ngày đã nghỉ</label>
             <input
-              v-model="nhanVien.soNgayDaNghi"
+              v-model="nhanVien.numberOfDays"
               type="text"
               class="form-control"
               :disabled="!isEdit"
@@ -72,7 +72,7 @@
           <div class="form-group">
             <label>Số ngày nghỉ phép</label>
             <input
-              v-model="nhanVien.ngayNghiPhep"
+              v-model="nhanVien.vacationDay"
               type="text"
               class="form-control"
               :disabled="!isEdit"
@@ -123,30 +123,30 @@ export default {
   data() {
     return {
       nhanVien: {
-        diaChi: null,
-        heSoLuong: null,
-        hoVaTen: null,
+        address: null,
+        coefficientsSalary: null,
+        fullName: null,
         id: null,
-        ngayNghiPhep: null,
-        sinhNhat: null,
-        soDienThoai: null,
-        soNgayDaNghi: null,
-        // taiKhoan: null,
+        vacationDay: null,
+        birthDay: null,
+        phoneNumber: null,
+        numberOfDays: null,
+        // userName: null,
       }
     };
   },
   validations: {
     nhanVien: {
-      hoVaTen: {
+      fullName: {
         required,
       },
-      diaChi: {
+      address: {
         required,
       },
-      soDienThoai: {
+      phoneNumber: {
         required,
       },
-      heSoLuong: {
+      coefficientsSalary: {
         required,
       },
     }
@@ -164,15 +164,15 @@ export default {
   },
   methods: {
     async getData() {
-      const res = await this.$http.get(`nhanvien/${this.id}`);
+      const res = await this.$http.get(`user/${this.id}`);
       this.nhanVien = res?.data || {};
-      this.nhanVien.sinhNhat = res?.data.sinhNhat?.split('T')[0];
+      this.nhanVien.birthDay = res?.data.birthDay?.split('T')[0];
 
     },
     async save() {
       this.$v.$touch()
       if (!this.$v.$invalid){
-        await this.$http.put(`nhanvien/${this.id}`, this.nhanVien);
+        await this.$http.put(`user/${this.id}`, this.nhanVien);
         this.$toast.success('Cập nhật thành công!');
         this.cancel();
       }

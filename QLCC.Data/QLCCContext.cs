@@ -12,7 +12,7 @@ namespace QLCC.Data
         private readonly string _connectionString;
         public QLCCContext()
         {
-            var connectionString = "Server=.; Database=QLCC_V2; Trusted_Connection=True; MultipleActiveResultSets=true; User Id=sa; Password=123456;TrustServerCertificate=true";
+            var connectionString = "Server=localhost;Database=QLCC_V2;Trusted_Connection=false;User Id=sa;password=Ab@123456;TrustServerCertificate=true;";
             _connectionString = connectionString;
         }
         public QLCCContext(DbContextOptions<QLCCContext> options)

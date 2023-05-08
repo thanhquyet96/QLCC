@@ -10,14 +10,14 @@
             label="Người phê duyệt:"
           >
             <b-form-select
-              v-model="nghiPhep.nguoiPheDuyetId"
+              v-model="nghiPhep.approveUserId"
               :disabled="!isEdit"
               :options="nguoiPheDuyets"
               class="mb-3"
               value-field="item"
               text-field="name"
               disabled-field="notEnabled"
-              :state="isEdit && ($v.nghiPhep.nguoiPheDuyetId.$dirty ? !$v.nghiPhep.nguoiPheDuyetId.$error : null)"
+              :state="isEdit && ($v.nghiPhep.approveUserId.$dirty ? !$v.nghiPhep.approveUserId.$error : null)"
             />
             <b-form-invalid-feedback>
               Trường này không được để trống
@@ -28,14 +28,14 @@
             label="Hình thức nghỉ:"
           >
             <b-form-select
-              v-model="nghiPhep.hinhThucNghi"
+              v-model="nghiPhep.leaveForm"
               :disabled="!isEdit"
-              :options="hinhThucNghis"
+              :options="leaveForms"
               class="mb-3"
               value-field="item"
               text-field="name"
               disabled-field="notEnabled"
-              :state="isEdit && ($v.nghiPhep.hinhThucNghi.$dirty ? !$v.nghiPhep.hinhThucNghi.$error : null)"
+              :state="isEdit && ($v.nghiPhep.leaveForm.$dirty ? !$v.nghiPhep.leaveForm.$error : null)"
             />
             <b-form-invalid-feedback>
               Trường này không được để trống
@@ -46,14 +46,14 @@
             label="Loại nghỉ:"
           >
             <b-form-select
-              v-model="nghiPhep.loaiNghi"
+              v-model="nghiPhep.leaveType"
               :disabled="!isEdit"
               :options="optionsLeaveType"
               class="mb-3"
               value-field="item"
               text-field="name"
               disabled-field="notEnabled"
-              :state="isEdit && ($v.nghiPhep.loaiNghi.$dirty ? !$v.nghiPhep.loaiNghi.$error : null)"
+              :state="isEdit && ($v.nghiPhep.leaveType.$dirty ? !$v.nghiPhep.leaveType.$error : null)"
             />
             <b-form-invalid-feedback>
               Trường này không được để trống
@@ -64,14 +64,14 @@
             label="Ngày nghỉ:"
           >
             <b-form-input
-              v-model="$v.nghiPhep.taoChoNgay.$model"
+              v-model="$v.nghiPhep.createdForDay.$model"
               :disabled="!isEdit"
               type="date"
-              :state="isEdit && ($v.nghiPhep.taoChoNgay.$dirty ? !$v.nghiPhep.taoChoNgay.$error : null)"
+              :state="isEdit && ($v.nghiPhep.createdForDay.$dirty ? !$v.nghiPhep.createdForDay.$error : null)"
             />
             <!-- <datepicker
-              :value="$v.nghiPhep.taoChoNgay.$model"
-              :state="($v.nghiPhep.taoChoNgay.$model !== null) && !$v.nghiPhep.taoChoNgay.$error"
+              :value="$v.nghiPhep.createdForDay.$model"
+              :state="($v.nghiPhep.createdForDay.$model !== null) && !$v.nghiPhep.createdForDay.$error"
             /> -->
             <b-form-invalid-feedback>
               Trường này không được để trống
@@ -80,9 +80,9 @@
           <div class="form-group">
             <label>Lý do</label>
             <b-form-textarea
-              v-model="$v.nghiPhep.lyDo.$model"
+              v-model="$v.nghiPhep.reason.$model"
               :disabled="!isEdit"
-              :state="isEdit && ($v.nghiPhep.lyDo.$dirty ? !$v.nghiPhep.lyDo.$error : null)"
+              :state="isEdit && ($v.nghiPhep.reason.$dirty ? !$v.nghiPhep.reason.$error : null)"
               placeholder="Enter something..."
               rows="3"
               max-rows="6"
@@ -114,7 +114,7 @@
             class="text-right"
           >
             <router-link 
-              :to="`/nghiphep/edit/${nghiPhep.id}`"
+              :to="`/leave/edit/${nghiPhep.id}`"
               class="btn btn-primary btn-sm"
             >
               Sửa
@@ -137,14 +137,14 @@ export default {
   data() {
     return {
       nghiPhep: {
-        loaiNghi: null,
-        nguoiPheDuyetId: null,
-        taoChoNgay: null,
-        lyDo: null,
-        hinhThucNghi: null,
+        leaveType: null,
+        approveUserId: null,
+        createdForDay: null,
+        reason: null,
+        leaveForm: null,
       },
       nguoiPheDuyets: [],
-      hinhThucNghis: [
+      leaveForms: [
         { item: 1, name: 'Nghỉ phép' },
         { item: 2, name: 'Nghỉ không lương' },
       ],
@@ -158,19 +158,19 @@ export default {
   validations: {
     
     nghiPhep: {
-      nguoiPheDuyetId: {
+      approveUserId: {
         required
       },
-      loaiNghi: {
+      leaveType: {
         required
       },
-      hinhThucNghi: {
+      leaveForm: {
         required
       },
-      taoChoNgay: {
+      createdForDay: {
         required,
       },
-      lyDo: {
+      reason: {
         required,
       },
     }
@@ -192,25 +192,25 @@ export default {
     async save() {
       this.$v.$touch()
       if (!this.$v.$invalid){
-        await this.$http.put(`nghiphep/${this.id}`, this.nghiPhep);
+        await this.$http.put(`leave/${this.id}`, this.nghiPhep);
         this.$toast.success('Cập nhật thành công!');
         this.cancel();
       }
     },
     cancel() {
-      this.$router.push(`/nghiphep`);
+      this.$router.push(`/leave`);
     },
     async getDetail() {
-      const { data } = await this.$http.get(`nghiphep/${this.id}`);
+      const { data } = await this.$http.get(`leave/${this.id}`);
       this.nghiPhep = data || [];
-      this.nghiPhep.taoChoNgay = data.taoChoNgay?.split('T')[0];
+      this.nghiPhep.createdForDay = data.createdForDay?.split('T')[0];
     },
     async loadUsers() {
-      const { data } = await this.$http.get('nhanvien');
+      const { data } = await this.$http.get('user/list');
       this.nguoiPheDuyets = data.map(x => { 
         return {
           item: x.id,
-          name: x.hoVaTen,
+          name: x.fullName,
         }
       });
     }

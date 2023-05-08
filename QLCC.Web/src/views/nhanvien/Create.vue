@@ -9,8 +9,8 @@
           <div class="form-group">
             <label>Họ và tên</label>
             <b-form-input
-              v-model="$v.nhanVien.hoVaTen.$model"
-              :state="$v.nhanVien.hoVaTen.$dirty ? !$v.nhanVien.hoVaTen.$error : null"
+              v-model="$v.nhanVien.fullName.$model"
+              :state="$v.nhanVien.fullName.$dirty ? !$v.nhanVien.fullName.$error : null"
             />
             <b-form-invalid-feedback>
               Trường này không được để trống
@@ -20,8 +20,8 @@
           <div class="form-group">
             <label>Số điện thoại</label>
             <b-form-input
-              v-model="$v.nhanVien.soDienThoai.$model"
-              :state="$v.nhanVien.soDienThoai.$dirty ? !$v.nhanVien.soDienThoai.$error : null"
+              v-model="$v.nhanVien.phoneNumber.$model"
+              :state="$v.nhanVien.phoneNumber.$dirty ? !$v.nhanVien.phoneNumber.$error : null"
             />
             <b-form-invalid-feedback>
               Trường này không được để trống
@@ -31,8 +31,8 @@
             <label>Địa chỉ</label>
 
             <b-form-input
-              v-model="$v.nhanVien.diaChi.$model"
-              :state="$v.nhanVien.diaChi.$dirty ? !$v.nhanVien.diaChi.$error : null"
+              v-model="$v.nhanVien.address.$model"
+              :state="$v.nhanVien.address.$dirty ? !$v.nhanVien.address.$error : null"
             />
             <b-form-invalid-feedback>
               Trường này không được để trống
@@ -41,7 +41,7 @@
           <div class="form-group">
             <label>Sinh nhật</label>
             <input
-              v-model="nhanVien.sinhNhat"
+              v-model="nhanVien.birthDay"
               type="date"
               class="form-control"
             >
@@ -49,9 +49,9 @@
           <div class="form-group">
             <label>Hệ số lương</label>
             <b-form-input
-              v-model="$v.nhanVien.heSoLuong.$model"
+              v-model="$v.nhanVien.coefficientsSalary.$model"
               type="number"
-              :state="$v.nhanVien.heSoLuong.$dirty ? !$v.nhanVien.heSoLuong.$error : null"
+              :state="$v.nhanVien.coefficientsSalary.$dirty ? !$v.nhanVien.coefficientsSalary.$error : null"
             />
             <b-form-invalid-feedback>
               Trường này không được để trống
@@ -60,7 +60,7 @@
           <div class="form-group">
             <label>Số ngày đã nghỉ</label>
             <input
-              v-model="nhanVien.soNgayDaNghi"
+              v-model="nhanVien.numberOfDays"
               type="number"
               class="form-control"
             >
@@ -68,7 +68,7 @@
           <div class="form-group">
             <label>Số ngày nghỉ phép</label>
             <input
-              v-model="nhanVien.ngayNghiPhep"
+              v-model="nhanVien.vacationDay"
               type="number"
               class="form-control"
             >
@@ -106,30 +106,30 @@ export default {
   data() {
     return {
       nhanVien: {
-        diaChi: null,
-        heSoLuong: null,
-        hoVaTen: null,
+        address: null,
+        coefficientsSalary: null,
+        fullName: null,
         id: 0,
-        ngayNghiPhep: null,
-        sinhNhat: null,
-        soDienThoai: null,
-        soNgayDaNghi: null,
-        // taiKhoan: null,
+        vacationDay: null,
+        birthDay: null,
+        phoneNumber: null,
+        numberOfDays: null,
+        // userName: null,
       }
     };
   },
   validations: {
     nhanVien: {
-      hoVaTen: {
+      fullName: {
         required,
       },
-      diaChi: {
+      address: {
         required,
       },
-      soDienThoai: {
+      phoneNumber: {
         required,
       },
-      heSoLuong: {
+      coefficientsSalary: {
         required,
       },
     }
@@ -143,7 +143,7 @@ export default {
     async save() {
       this.$v.$touch()
       if (!this.$v.$invalid){
-        await this.$http.post(`nhanvien`, this.nhanVien);
+        await this.$http.post(`user`, this.nhanVien);
         this.$toast.success('Thêm mới thành công!');
         this.cancel();
       }

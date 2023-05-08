@@ -51,7 +51,7 @@
       <div class="col-sm-6 col-md-3">
         <b-button
           class="btn btn-success btn-block"
-          @click.stop="doSearch"
+          @click.prevent="doSearch"
         >
           Tìm kiếm
         </b-button>
@@ -65,7 +65,8 @@
       ref="tableNhanVien"
       :fields="fields"
       :search-form="searchForm"
-      data-url="nhanvien"
+      data-url="user"
+      path="nhanvien"
     />
   </div>
 </template>
@@ -82,18 +83,18 @@ export default {
     return {
       fields: [
         { key: 'index', label: 'STT' },
-        { key: 'hoVaTen', label: 'Họ và tên' },
-        { key: 'diaChi', label: 'Địa chỉ' },
+        { key: 'fullName', label: 'Họ và tên' },
+        { key: 'address', label: 'Địa chỉ' },
         { 
-          key: 'sinhNhat', 
+          key: 'birthDay', 
           label: 'Sinh nhật', 
           formatter: (value, key, item) => {
               return formatDate(value, 'DD/MM/yyyy');
           }
         },
-        { key: 'soDienThoai', label: 'Số điện thoại' },
-        { key: 'soNgayDaNghi', label: 'Số ngày đã nghỉ' },
-        { key: 'ngayNghiPhep', label: 'Số ngày nghỉ phép' },
+        { key: 'phoneNumber', label: 'Số điện thoại' },
+        { key: 'numberOfDays', label: 'Số ngày đã nghỉ' },
+        { key: 'vacationDay', label: 'Số ngày nghỉ phép' },
         { key: 'action', label: 'Hành động' },
       ],
       searchForm: {

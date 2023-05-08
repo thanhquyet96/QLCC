@@ -12,4 +12,12 @@
   <ItemGroup>
     <Folder Include="Helpers\" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NLog.Web.AspNetCore" Version="5.2.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.30.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="JWT\AppSettings.cs" />
+    <Compile Remove="JWT\JWTHelper.cs" />
+  </ItemGroup>
 </Project>

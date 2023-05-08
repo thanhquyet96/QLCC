@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using Common.Helpers;
 using Microsoft.EntityFrameworkCore;
@@ -28,7 +29,7 @@ namespace Repository
 
         }
 
-        public virtual IQueryable Filter(params Expression<Func<T, bool>>[] expressions)
+        public virtual IQueryable<T> Filter(params Expression<Func<T, bool>>[] expressions)
         {
             return _context.Set<T>().WhereMany(expressions);
         }
@@ -38,7 +39,11 @@ namespace Repository
             return await _context.Set<T>().WhereMany(expressions).FirstOrDefaultAsync();
         }
 
-        public virtual async Task<T> Get(object id)
+        public virtual IQueryable<T> All()
+        {
+            return _context.Set<T>().AsQueryable();
+        }
+        public virtual async Task<T> Find(object id)
         {
             
             T entity;
@@ -58,12 +63,7 @@ namespace Repository
             return entity;
         }
 
-        public virtual async Task Save()
-        {
-            await _context.SaveChangesAsync();
-        }
-
-        public virtual void Update(T t)
+        public virtual async Task Update(T t)
         {
             if (t == null)
             {
@@ -73,13 +73,28 @@ namespace Repository
         }
         public virtual async Task Delete(object id)
         {
-            var entity = await Get(id);
+            var entity = await Find(id);
             if (entity == null)
             {
                 throw new ArgumentNullException("entity");
             }
             _context.Set<T>().Remove(entity);
         }
+
+
+        public virtual async Task<bool> ContainAsync(Expression<Func<T, bool>> exception)
+            
+        {
+            var model = await _context.Set<T>().Where(exception).ToListAsync();
+            return false;
+        }
+
+        public virtual async Task FromSql(FormattableString rawSql)
+        {
+            //_context.Set<T>().FromSql(rawSql);
+            _context.Database.ExecuteSql(rawSql);
+        }
+
 
         public void Dispose()
         {

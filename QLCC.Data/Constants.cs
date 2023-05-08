@@ -6,25 +6,52 @@ namespace QLCC.Data
 {
     public static class Constants
     {
+        /// <summary>
+        /// Hình thức nghỉ
+        /// </summary>
         public enum LeaveFormEnum
         {
+            /// <summary>
+            /// Nghỉ Không lương
+            /// </summary>
             [Display(Name = "Nghỉ không lương")]
             [Description("Nghỉ không lương")]
             UnpaidLeave = 1,
+            /// <summary>
+            /// Nghỉ phép
+            /// </summary>
             [Display(Name = "Nghỉ phép")]
             [Description("Nghỉ phép")]
             OnLeave = 2,
         }
+        /// <summary>
+        /// Loại nghỉ
+        /// </summary>
         public enum LeaveTypeEnum
         {
             // =1 nếu đi làm full
+            /// <summary>
+            /// ĐI làm full
+            /// </summary>
             FullDay = 1,
+            /// <summary>
+            /// Nghỉ cả ngày
+            /// </summary>
             [Description("Nghỉ cả ngày")]
             OffFullDay = 2,
+            /// <summary>
+            /// Nghỉ sáng
+            /// </summary>
             [Description("Nghỉ buổi sáng")]
             OffMorning = 3,
+            /// <summary>
+            /// Nghỉ chiều
+            /// </summary>
             [Description("Nghỉ buổi chiều")]
             OffAfternoon = 4,
+            /// <summary>
+            /// Không xác định
+            /// </summary>
             [Description("Không xác định")]
             Orther = 5,
         }

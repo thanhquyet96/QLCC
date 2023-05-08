@@ -3,7 +3,7 @@
     <div class="col-md-12">
       <div class="card-box">
         <h4 class="card-title">
-          Phân quyền cho <b>{{ user.hoVaTen }}</b>
+          Phân quyền cho <b>{{ user.fullName }}</b>
         </h4>
         <form action="#">
           <b-form-group
@@ -52,7 +52,7 @@ export default {
   data() {
     return {
       user: {
-        hoVaTen: null,
+        fullName: null,
       },
       selected: [], // Must be an array reference!
       roles: [],
@@ -72,16 +72,16 @@ export default {
   },
   methods: {
     async getData() {
-      const res = await this.$http.get(`taikhoan/${this.id}`);
+      const res = await this.$http.get(`user/${this.id}`);
       this.user = res?.data || {};
     },
     async getRoles() {
-      const res = await this.$http.get(`quyen`);
-      this.roles = res?.data.map(x => { return { text: x.tenQuyen, value: x.id} }) || {};
-      this.selected = this.user.nhanVien_Quyens?.map(x=>x.quyenId) || [];
+      const res = await this.$http.get(`role/list`);
+      this.roles = res?.data.map(x => { return { text: x.name, value: x.id} }) || {};
+      this.selected = this.user.userRoles?.map(x=>x.roleId) || [];
     },
     async save() {
-      await this.$http.post(`nhanvien_quyen/${this.id}`, this.selected);
+      await this.$http.post(`userRole/${this.id}`, this.selected);
         this.$toast.success('Cập nhật thành công!');
         this.cancel();
     },

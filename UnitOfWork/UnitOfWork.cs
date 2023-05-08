@@ -3,14 +3,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace UnitOfWork
 {
-	public class UnitOfWork:IUnitOfWork
-	{
-        private DbContext _context;
-		public UnitOfWork(DbContext context)
-		{
+    public class UnitOfWork<TContext> : IUnitOfWork<TContext> where TContext : DbContext, new()
+    {
+        private TContext _context;
+        public UnitOfWork(TContext context)
+        {
             _context = context;
-		}
-
+        }
         public async Task Save()
         {
             await _context.SaveChangesAsync();

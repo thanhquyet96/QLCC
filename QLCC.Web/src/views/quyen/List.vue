@@ -65,7 +65,8 @@
       ref="tablequyen"
       :fields="fields"
       :search-form="searchForm"
-      data-url="quyen"
+      data-url="role"
+      path="quyen"
     />
   </div>
 </template>
@@ -82,7 +83,7 @@ export default {
     return {
       fields: [
         { key: 'index', label: 'STT' },
-        { key: 'tenQuyen', label: 'Tên quyền' },
+        { key: 'name', label: 'Tên quyền' },
         { key: 'action', label: 'Hành động' },
       ],
       searchForm: {

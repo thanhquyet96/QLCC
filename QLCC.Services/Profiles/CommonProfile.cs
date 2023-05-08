@@ -22,7 +22,7 @@ namespace QLCC.Services.Profiles
     {
         public CommonEntityToDto()
         {
-            CreateMap<USER, UserGridDto>();
+            
         }
     }
 }

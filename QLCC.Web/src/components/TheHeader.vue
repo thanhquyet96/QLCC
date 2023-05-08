@@ -124,7 +124,7 @@
                                    alt="Admin"
                                  >
             <span class="status online" /></span>
-          <span style="padding-left: 6px;">{{ $store.state?.user?.hoVaTen }}</span>
+          <span style="padding-left: 6px;">{{ $store.state?.user?.fullName }}</span>
         </a>
         <div class="dropdown-menu">
           <a

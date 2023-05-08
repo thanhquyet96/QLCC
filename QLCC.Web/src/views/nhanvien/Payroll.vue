@@ -56,7 +56,7 @@
           href="#"
           class="btn btn-success btn-block"
           style="margin-top: 15px;"
-          @click="doSearch"
+          @click.prevent="doSearch"
         > Tìm kiếm </a>
       </div>
     </div>
@@ -79,12 +79,12 @@ export default {
     return {
       headers: [
         { key: 'index', label: 'STT' },
-        { key: 'hoVaTen', label: 'Họ và tên' },
-        { key: 'heSoLuong', label: 'Hệ số lương' },
-        { key: 'soNgayNghiHuongLuong', label: 'Số ngày nghỉ hưởng lương' },
-        { key: 'soNgayNghiKhongHuongLuong', label: 'Số ngày nghỉ không hưởng lương' },
+        { key: 'fullName', label: 'Họ và tên' },
+        { key: 'coefficientsSalary', label: 'Hệ số lương' },
+        { key: 'onLeave', label: 'Số ngày nghỉ hưởng lương' },
+        { key: 'sUnpaidLeave', label: 'Số ngày nghỉ không hưởng lương' },
         { 
-          key: 'tienLuong', 
+          key: 'salary', 
           label: 'Tổng lương',
           formatter: (value) => {
             return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(value);
@@ -93,11 +93,11 @@ export default {
         { key: 'show_details', label: 'Chi tiết'}
       ],
       items: [
-          { index: 1, fullName: 'Lof van ten', heSoLuong: 'Male', soNgayNghiHuongLuong: 42, soNgayNghiKhongHuongLuong: 12, tienLuong: 1000 },
-          { index: 2, fullName: 'Lof van ten', heSoLuong: 'Male', soNgayNghiHuongLuong: 42, soNgayNghiKhongHuongLuong: 12, tienLuong: 1000 },
-          { index: 3, fullName: 'Lof van ten', heSoLuong: 'Male', soNgayNghiHuongLuong: 42, soNgayNghiKhongHuongLuong: 12, tienLuong: 1000 },
-          { index: 4, fullName: 'Lof van ten', heSoLuong: 'Male', soNgayNghiHuongLuong: 42, soNgayNghiKhongHuongLuong: 12, tienLuong: 1000 },
-          { index: 5, fullName: 'Lof van ten', heSoLuong: 'Male', soNgayNghiHuongLuong: 42, soNgayNghiKhongHuongLuong: 12, tienLuong: 1000 },
+          { index: 1, fullName: 'Lof van ten', coefficientsSalary: 'Male', soNgayNghiHuongLuong: 42, soNgayNghiKhongHuongLuong: 12, tienLuong: 1000 },
+          { index: 2, fullName: 'Lof van ten', coefficientsSalary: 'Male', soNgayNghiHuongLuong: 42, soNgayNghiKhongHuongLuong: 12, tienLuong: 1000 },
+          { index: 3, fullName: 'Lof van ten', coefficientsSalary: 'Male', soNgayNghiHuongLuong: 42, soNgayNghiKhongHuongLuong: 12, tienLuong: 1000 },
+          { index: 4, fullName: 'Lof van ten', coefficientsSalary: 'Male', soNgayNghiHuongLuong: 42, soNgayNghiKhongHuongLuong: 12, tienLuong: 1000 },
+          { index: 5, fullName: 'Lof van ten', coefficientsSalary: 'Male', soNgayNghiHuongLuong: 42, soNgayNghiKhongHuongLuong: 12, tienLuong: 1000 },
 
         ],
         searchForm: {
@@ -147,7 +147,7 @@ export default {
     async funPayroll() {
       const query = new URLSearchParams(this.searchForm).toString()
 
-      const {data} = await this.$http.post(`chamcong/payroll?${query}`);
+      const {data} = await this.$http.post(`timeKeep/payroll?${query}`);
       this.items = data;
     },
     formatCurrency(value) {

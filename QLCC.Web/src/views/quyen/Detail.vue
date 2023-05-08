@@ -9,8 +9,8 @@
           <div class="form-group">
             <label :required="isEdit">Tên quyền</label>
             <b-form-input
-              v-model="$v.quyen.tenQuyen.$model"
-              :state="isEdit && ($v.quyen.tenQuyen.$dirty ? !$v.quyen.tenQuyen.$error : null)"
+              v-model="$v.quyen.name.$model"
+              :state="isEdit && ($v.quyen.name.$dirty ? !$v.quyen.name.$error : null)"
               :disabled="!isEdit"
             />
             <b-form-invalid-feedback>
@@ -62,13 +62,13 @@ export default {
   data() {
     return {
       quyen: {
-        tenQuyen: null,
+        name: null,
       }
     };
   },
   validations: {
     quyen: {
-      tenQuyen: {
+      name: {
         required,
       },
     }
@@ -86,13 +86,13 @@ export default {
   },
   methods: {
     async getData() {
-      const res = await this.$http.get(`quyen/${this.id}`);
+      const res = await this.$http.get(`role/${this.id}`);
       this.quyen = res?.data || {};
     },
     async save() {
       this.$v.$touch()
       if (!this.$v.$invalid){
-        await this.$http.put(`quyen/${this.id}`, this.quyen);
+        await this.$http.put(`role/${this.id}`, this.quyen);
         this.$toast.success('Cập nhật thành công!');
         this.cancel();
       }

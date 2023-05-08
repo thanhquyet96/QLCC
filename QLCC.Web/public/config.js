@@ -1,2 +1,2 @@
-window.ApiUrl = "http://localhost:5252";
+window.ApiUrl = "http://localhost:5296";
 

@@ -15,7 +15,13 @@ namespace QLCC.Data.Entities
         public string REASON { get; set; }
         public DateTime CREATED_DATE { get; set; }
         public DateTime CREATED_FOR_DAY { get; set; }
+        /// <summary>
+        /// Loại nghỉ
+        /// </summary>
         public LeaveTypeEnum LEAVE_TYPE { get; set; }
+        /// <summary>
+        /// Hình thức nghỉ
+        /// </summary>
         public LeaveFormEnum LEAVE_FORM { get; set; }
         public LeaveStatusEnum LEAVE_STATUS { get; set; }
         [JsonIgnore]

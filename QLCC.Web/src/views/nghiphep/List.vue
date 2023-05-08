@@ -8,7 +8,7 @@
       </div>
       <div class="col-sm-4 col-6 text-right m-b-30">
         <router-link
-          to="/nghiphep/create"
+          to="/leave/create"
           class="btn btn-primary btn-rounded float-right"
         >
           <i class="fa fa-plus" /> Thêm mới nghỉ phép
@@ -51,7 +51,7 @@
       <div class="col-sm-6 col-md-3">
         <b-button
           class="btn btn-success btn-block"
-          @click.stop="doSearch"
+          @click.prevent="doSearch"
         >
           Tìm kiếm
         </b-button>
@@ -65,7 +65,7 @@
       ref="tableNhanVien"
       :fields="fields"
       :search-form="searchForm"
-      data-url="nghiphep"
+      data-url="leave"
       :trang-thais="trangThais"
     />
   </div>
@@ -83,26 +83,26 @@ export default {
     return {
       fields: [
         { key: 'index', label: 'STT' },
-        { key: 'tenNhanVien', label: 'Tên nhân viên' },
-        { key: 'nguoiPheDuyet', label: 'Người phê duyệt' },
-        { key: 'lyDo', label: 'Lý do' },
+        { key: 'userFullName', label: 'Tên nhân viên' },
+        { key: 'approveUserFullName', label: 'Người phê duyệt' },
+        { key: 'reason', label: 'Lý do' },
         { 
-          key: 'thoiGianTao', 
+          key: 'createdDate', 
           label: 'Thời gian tạo',
           formatter: (value, key, item) => {
             return formatDate(value, 'DD/MM/yyyy');
           }
         },
         { 
-          key: 'taoChoNgay', 
+          key: 'createdForDay', 
           label: 'Tạo cho ngày',
           formatter: (value, key, item) => {
             return formatDate(value, 'DD/MM/yyyy');
           }
         },
-        { key: 'tenLoaiNghi', label: 'Loại nghỉ' },
-        { key: 'tenHinhThucNghi', label: 'Hình thức nghỉ' },
-        { key: 'tenTrangThai', label: 'Trạng thái' },
+        { key: 'leaveTypeName', label: 'Loại nghỉ' },
+        { key: 'leaveFormName', label: 'Hình thức nghỉ' },
+        { key: 'leaveStatusName', label: 'Trạng thái' },
         { key: 'action', label: 'Hành động' },
       ],
       trangThais: [

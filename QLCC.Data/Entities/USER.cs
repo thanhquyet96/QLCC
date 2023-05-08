@@ -10,14 +10,13 @@ namespace QLCC.Data.Entities
     {
         [Key]
         public int ID { get; set; }
-        [Column("nvarchar(50)")]
         public string USER_NAME { get; set; }
         [JsonIgnore]
         public string PASSWORD { get; set; }
         public string FULL_NAME { get; set; }
 
-        public string PHONE_NUMBER { get; set; }
-        public string ADDRESS { get; set; }
+        public string? PHONE_NUMBER { get; set; }
+        public string? ADDRESS { get; set; }
         public DateTime? BIRTH_DAY { get; set; }
         public double? COEFFICIENTS_SALARY { get; set; }
         /// <summary>
@@ -29,7 +28,7 @@ namespace QLCC.Data.Entities
         /// </summary>
         public int? NUMBER_OF_DAYS { get; set; }
         public decimal? SALARY { get; set; }
-        public virtual ICollection<USER_ROLE> USER_ROLES { get; set; }
+        public virtual ICollection<USER_ROLE>? USER_ROLES { get; set; }
         [InverseProperty("APPROVE_USER")]
         public virtual ICollection<LEAVE> LEAVES { get; set; }
         [InverseProperty("USER")]

@@ -26,43 +26,48 @@ namespace Service
             await _repository.Add(entity);
         }
 
-        public Task Delete(object id)
+        public async Task Delete(object id)
         {
-            throw new NotImplementedException();
+            await _repository.Delete(id);
         }
 
-        public IQueryable Filter<TDto>(params Expression<Func<TDto, bool>>[] expessions)
+        public IQueryable<TDto> Filter<TDto>()
+        {
+            return _repository.Filter().ProjectTo<TDto>(_mapper.ConfigurationProvider);
+        }
+
+        public IQueryable<TDto> Filter<TDto>(params Expression<Func<TDto, bool>>[] expessions)
         {
             return _repository.Filter().ProjectTo<TDto>(_mapper.ConfigurationProvider).WhereMany(expessions);
         }
 
-        
-
-        public Task<TDto> Get<TDto, TEntity1>(object id)
+        public async Task<TDto> Find<TDto>(object id)
         {
-            throw new NotImplementedException();
+            var entity = await _repository.Find(id);
+            return _mapper.Map<TEntity, TDto>(entity);
         }
 
         public async Task<TDto> Get<TDto>(params Expression<Func<TDto, bool>>[] expression)
         {
-            var entity = await _repository.Get(expression);
-            return _mapper.Map<TEntity, TDto>(entity);
+            return await _repository.All().ProjectTo<TDto>(_mapper.ConfigurationProvider).WhereMany(expression).FirstOrDefaultAsync();
         }
 
-        public Task<TDto> Get<TDto>(object id)
+        public async Task Update<TDto>(object id,TDto t)
         {
-            throw new NotImplementedException();
+            var entity = await _repository.Find(id);
+            _mapper.Map<TDto, TEntity>(t, entity);
+            await _repository.Update(entity);
         }
 
-        public Task Save()
+        public virtual async Task<bool> ContainAsync<TDto>(Expression<Func<TDto, bool>> exception)
         {
-            throw new NotImplementedException();
+            //var item = await _repository.Filter().ProjectTo<TDto>(_mapper.ConfigurationProvider).Where(exception).ToListAsync();
+
+            var model = await _repository.Filter().ProjectTo<TDto>(_mapper.ConfigurationProvider).Where(exception).ToListAsync();
+
+            return model.Any() ;
         }
 
-        public void Update<TDto1>(TDto1 t)
-        {
-            throw new NotImplementedException();
-        }
 
         public async Task<PagingResult<TDto>> FilterPage<TDto>(PagingParams<TDto> pagingParams, params Expression<Func<TDto, bool>>[] expressions)
         {
@@ -100,6 +105,12 @@ namespace Service
             result.Data = await query.ToListAsync();
             return result;
         }
+
+        public async Task FromSql(FormattableString rawSql)
+        {
+            await _repository.FromSql(rawSql);
+        }
+
     }
 }
 

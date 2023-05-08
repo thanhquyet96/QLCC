@@ -12,7 +12,7 @@ namespace Common.Helpers
 			{
 				foreach (var exp in expessions)
 				{
-					source.Where(exp);
+					source = source.Where(exp);
 				}
 			}
             return source;

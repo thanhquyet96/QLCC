@@ -12,8 +12,8 @@
         <template #cell(index)="data">
           {{ data.index + 1 }}
         </template>
-        <template #sinhNhat="row">
-          {{ formatDate(row.item.sinhNhat) }}
+        <template #birthDay="row">
+          {{ formatDate(row.item.birthDay) }}
         </template>
         
         <template
@@ -35,14 +35,14 @@
          
           
           <router-link
-            :to="`/${dataUrl}/detail/${row.item.id}`"
+            :to="`/${path ?? dataUrl}/detail/${row.item.id}`"
             class="btn btn-primary btn-sm m-l-1"
           >
             Xem
           </router-link>
           <router-link 
             v-if="!showTrangThai"
-            :to="`/${dataUrl}/edit/${row.item.id}`"
+            :to="`/${path ?? dataUrl}/edit/${row.item.id}`"
             class="btn btn-success btn-sm m-l-1"
           >
             Sửa
@@ -124,6 +124,10 @@ export default {
       type: String,
       default: () => ''
     },
+    path: {
+      type: String,
+      default: () => ''
+    },
     fields: {
       type: Array,
       default: () => []
@@ -191,7 +195,7 @@ export default {
       this.isBusy = true;
       const query = new URLSearchParams(this.searchForm).toString()
       const res = await this.$http.get(`${this.dataUrl}?${query}`);
-      this.items = res?.data || [];
+      this.items = res?.data?.data || [];
       this.isBusy = false;
 
     },

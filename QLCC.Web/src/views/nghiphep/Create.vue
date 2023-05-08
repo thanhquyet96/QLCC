@@ -168,20 +168,20 @@ export default {
     async save() {
       this.$v.$touch()
       if (!this.$v.$invalid){
-        await this.$http.post(`nghiphep`, this.nghiPhep);
+        await this.$http.post(`leave`, this.nghiPhep);
         this.$toast.success('Thêm mới thành công!');
         this.cancel();
       }
     },
     cancel() {
-      this.$router.push(`/nghiphep`);
+      this.$router.push(`/leave`);
     },
     async loadUsers() {
       const { data } = await this.$http.get('nhanvien');
       this.nguoiPheDuyets = data.map(x => { 
         return {
           item: x.id,
-          name: x.hoVaTen,
+          name: x.fullName,
         }
       });
     }

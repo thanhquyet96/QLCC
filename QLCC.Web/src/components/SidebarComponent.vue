@@ -75,7 +75,7 @@
             <a href="#"><i class="fa fa-user" /> <span> Quản lý nghỉ phép </span> <span class="menu-arrow" /></a>
             <ul style="display: none;">
               <li>
-                <router-link to="/nghiphep/list">
+                <router-link to="/leave/list">
                   Danh sách
                 </router-link>
               </li>

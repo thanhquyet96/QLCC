@@ -8,7 +8,7 @@
       </div>
       <div class="col-sm-4 col-6 text-right m-b-30">
         <router-link
-          to="/taikhoan/create"
+          to="/user/create"
           class="btn btn-primary btn-rounded float-right"
         >
           <i class="fa fa-plus" /> Thêm mới tài khoản
@@ -51,7 +51,7 @@
       <div class="col-sm-6 col-md-3">
         <b-button
           class="btn btn-success btn-block"
-          @click.stop="doSearch"
+          @click.prevent="doSearch"
         >
           Tìm kiếm
         </b-button>
@@ -65,7 +65,8 @@
       ref="tableTaiKhoan"
       :fields="fields"
       :search-form="searchForm"
-      data-url="taikhoan"
+      data-url="user"
+      path="taikhoan"
     >
       <template #btn-more="{ data }">
         <!-- <b-button
@@ -117,19 +118,19 @@ export default {
     return {
       fields: [
         { key: 'index', label: 'STT' },
-        { key: 'hoVaTen', label: 'Họ và tên' },
-        { key: 'taiKhoan', label: 'Tài khoản' },
-        { key: 'diaChi', label: 'Địa chỉ' },
+        { key: 'fullName', label: 'Họ và tên' },
+        { key: 'userName', label: 'Tài khoản' },
+        { key: 'address', label: 'Địa chỉ' },
         {
-           key: 'sinhNhat', 
+           key: 'birthDay', 
            label: 'Sinh nhật',
            formatter: (value, key, item) => {
               return formatDate(value, 'DD/MM/yyyy');
            }
         },
-        { key: 'soDienThoai', label: 'Số điện thoại' },
-        { key: 'soNgayDaNghi', label: 'Số ngày đã nghỉ' },
-        { key: 'ngayNghiPhep', label: 'Số ngày nghỉ phép' },
+        { key: 'phoneNumber', label: 'Số điện thoại' },
+        { key: 'numberOfDays', label: 'Số ngày đã nghỉ' },
+        { key: 'vacationDay', label: 'Số ngày nghỉ phép' },
         { key: 'action', label: 'Hành động' },
       ],
       searchForm: {

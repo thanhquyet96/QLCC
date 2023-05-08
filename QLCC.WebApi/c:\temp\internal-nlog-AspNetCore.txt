@@ -1,0 +1,744 @@
+2023-04-30 20:00:50.4037 Info Message Template Auto Format enabled
+2023-04-30 20:00:50.4168 Info Loading assembly: NLog.Web.AspNetCore
+2023-04-30 20:00:50.4321 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-04-30 20:00:50.4326 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-04-30 20:00:50.4326 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-04-30 20:00:50.4663 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-04-30 20:05:51.3288 Info Message Template Auto Format enabled
+2023-04-30 20:05:51.3514 Info Loading assembly: NLog.Web.AspNetCore
+2023-04-30 20:05:51.3637 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-04-30 20:05:51.3637 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-04-30 20:05:51.3637 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-04-30 20:05:51.4080 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-02 23:41:48.4131 Info Message Template Auto Format enabled
+2023-05-02 23:41:48.4295 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-02 23:41:48.4435 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-02 23:41:48.4435 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-02 23:41:48.4441 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-02 23:41:48.5323 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-02 23:45:46.1994 Info Message Template Auto Format enabled
+2023-05-02 23:45:46.2162 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-02 23:45:46.2313 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-02 23:45:46.2319 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-02 23:45:46.2319 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-02 23:45:46.2866 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-02 23:46:57.5372 Info Message Template Auto Format enabled
+2023-05-02 23:46:57.5563 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-02 23:46:57.5716 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-02 23:46:57.5721 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-02 23:46:57.5721 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-02 23:46:57.6545 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-02 23:49:03.5823 Info Message Template Auto Format enabled
+2023-05-02 23:49:03.5961 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-02 23:49:03.6099 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-02 23:49:03.6099 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-02 23:49:03.6099 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-02 23:49:03.6422 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-02 23:51:49.5567 Info Message Template Auto Format enabled
+2023-05-02 23:51:49.5719 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-02 23:51:49.5863 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-02 23:51:49.5868 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-02 23:51:49.5868 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-02 23:51:49.6396 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-02 23:54:37.3568 Info Message Template Auto Format enabled
+2023-05-02 23:54:37.3702 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-02 23:54:37.3842 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-02 23:54:37.3842 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-02 23:54:37.3842 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-02 23:54:37.4133 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-02 23:55:36.8712 Info Message Template Auto Format enabled
+2023-05-02 23:55:36.8967 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-02 23:55:36.9107 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-02 23:55:36.9107 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-02 23:55:36.9114 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-02 23:55:36.9680 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-02 23:57:01.0056 Info Message Template Auto Format enabled
+2023-05-02 23:57:01.0314 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-02 23:57:01.0455 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-02 23:57:01.0455 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-02 23:57:01.0455 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-02 23:57:01.0782 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 00:00:10.9639 Info Message Template Auto Format enabled
+2023-05-03 00:00:10.9907 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 00:00:11.0048 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 00:00:11.0048 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 00:00:11.0055 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 00:00:11.0612 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 00:04:57.5495 Info Message Template Auto Format enabled
+2023-05-03 00:04:57.5783 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 00:04:57.5928 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 00:04:57.5928 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 00:04:57.5928 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 00:04:57.6338 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 00:08:05.6487 Info Message Template Auto Format enabled
+2023-05-03 00:08:05.6827 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 00:08:05.6977 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 00:08:05.6982 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 00:08:05.6982 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 00:08:05.7556 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 00:11:15.3843 Info Message Template Auto Format enabled
+2023-05-03 00:11:15.4086 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 00:11:15.4227 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 00:11:15.4232 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 00:11:15.4232 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 00:11:15.4829 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 00:12:43.5854 Info Message Template Auto Format enabled
+2023-05-03 00:12:43.6116 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 00:12:43.6257 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 00:12:43.6262 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 00:12:43.6262 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 00:12:43.7126 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 00:28:55.4462 Info Message Template Auto Format enabled
+2023-05-03 00:28:55.4704 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 00:28:55.4845 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 00:28:55.4851 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 00:28:55.4851 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 00:28:55.5460 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 00:31:56.2155 Info Message Template Auto Format enabled
+2023-05-03 00:31:56.2420 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 00:31:56.2560 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 00:31:56.2566 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 00:31:56.2566 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 00:31:56.3398 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 00:33:50.5282 Info Message Template Auto Format enabled
+2023-05-03 00:33:50.5446 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 00:33:50.5584 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 00:33:50.5589 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 00:33:50.5589 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 00:33:50.6301 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 00:37:52.6579 Info Message Template Auto Format enabled
+2023-05-03 00:37:52.6725 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 00:37:52.6865 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 00:37:52.6870 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 00:37:52.6870 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 00:37:52.7169 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 00:38:45.3956 Info Message Template Auto Format enabled
+2023-05-03 00:38:45.4125 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 00:38:45.4263 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 00:38:45.4268 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 00:38:45.4268 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 00:38:45.4740 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 00:40:48.3744 Info Message Template Auto Format enabled
+2023-05-03 00:40:48.3904 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 00:40:48.4040 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 00:40:48.4046 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 00:40:48.4046 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 00:40:48.4651 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 09:33:53.2251 Info Message Template Auto Format enabled
+2023-05-03 09:33:53.2504 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 09:33:53.2667 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 09:33:53.2673 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 09:33:53.2673 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 09:33:53.3086 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 12:49:29.8734 Info Message Template Auto Format enabled
+2023-05-03 12:49:29.8874 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 12:49:29.9016 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 12:49:29.9016 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 12:49:29.9016 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 12:49:29.9763 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 13:04:06.2081 Info Message Template Auto Format enabled
+2023-05-03 13:04:06.2346 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 13:04:06.2490 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 13:04:06.2490 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 13:04:06.2490 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 13:04:06.3001 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 15:54:28.5324 Info Message Template Auto Format enabled
+2023-05-03 15:54:28.5464 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 15:54:28.5609 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 15:54:28.5615 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 15:54:28.5615 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 15:54:28.6223 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 16:03:10.0820 Info Message Template Auto Format enabled
+2023-05-03 16:03:10.1104 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 16:03:10.1256 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 16:03:10.1256 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 16:03:10.1263 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 16:03:10.2023 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 16:05:26.2282 Info Message Template Auto Format enabled
+2023-05-03 16:05:26.2558 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 16:05:26.2698 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 16:05:26.2698 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 16:05:26.2698 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 16:05:26.3053 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 16:06:42.5608 Info Message Template Auto Format enabled
+2023-05-03 16:06:42.5778 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 16:06:42.5931 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 16:06:42.5931 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 16:06:42.5939 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 16:06:42.6560 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 23:10:33.5990 Info Message Template Auto Format enabled
+2023-05-03 23:10:33.6339 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 23:10:33.6531 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 23:10:33.6540 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 23:10:33.6540 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 23:10:33.7263 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 23:19:26.8048 Info Message Template Auto Format enabled
+2023-05-03 23:19:26.8346 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 23:19:26.8495 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 23:19:26.8500 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 23:19:26.8500 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 23:19:26.9038 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 23:23:23.0406 Info Message Template Auto Format enabled
+2023-05-03 23:23:23.0662 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 23:23:23.0816 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 23:23:23.0816 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 23:23:23.0824 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 23:23:23.1591 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 23:28:28.7236 Info Message Template Auto Format enabled
+2023-05-03 23:28:28.7480 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 23:28:28.7629 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 23:28:28.7629 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 23:28:28.7629 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 23:28:28.8282 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 23:31:26.5281 Info Message Template Auto Format enabled
+2023-05-03 23:31:26.6457 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 23:31:26.6649 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 23:31:26.6654 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 23:31:26.6654 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 23:31:26.7587 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-03 23:33:33.2782 Info Message Template Auto Format enabled
+2023-05-03 23:33:33.3137 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-03 23:33:33.3440 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-03 23:33:33.3450 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-03 23:33:33.3450 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-03 23:33:33.4035 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-04 20:26:20.6215 Info Message Template Auto Format enabled
+2023-05-04 20:26:20.6359 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-04 20:26:20.6499 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-04 20:26:20.6505 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-04 20:26:20.6505 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-04 20:26:20.7184 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-04 20:30:30.5876 Info Message Template Auto Format enabled
+2023-05-04 20:30:30.6068 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-04 20:30:30.6247 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-04 20:30:30.6253 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-04 20:30:30.6253 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-04 20:30:30.6933 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-04 20:35:53.2613 Info Message Template Auto Format enabled
+2023-05-04 20:35:53.2848 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-04 20:35:53.2987 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-04 20:35:53.2992 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-04 20:35:53.2992 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-04 20:35:53.3449 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-04 20:56:14.1892 Info Message Template Auto Format enabled
+2023-05-04 20:56:14.2130 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-04 20:56:14.2273 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-04 20:56:14.2278 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-04 20:56:14.2278 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-04 20:56:14.2598 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-04 21:04:54.9177 Info Message Template Auto Format enabled
+2023-05-04 21:04:54.9345 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-04 21:04:54.9490 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-04 21:04:54.9490 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-04 21:04:54.9497 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-04 21:04:55.0038 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 00:04:31.4671 Info Message Template Auto Format enabled
+2023-05-05 00:04:31.4837 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 00:04:31.4973 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 00:04:31.4979 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 00:04:31.4979 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 00:04:31.5752 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 00:08:17.5780 Info Message Template Auto Format enabled
+2023-05-05 00:08:17.5949 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 00:08:17.6095 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 00:08:17.6100 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 00:08:17.6100 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 00:08:17.6490 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 00:14:57.3270 Info Message Template Auto Format enabled
+2023-05-05 00:14:57.3437 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 00:14:57.3576 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 00:14:57.3582 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 00:14:57.3582 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 00:14:57.4243 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 00:18:05.0913 Info Message Template Auto Format enabled
+2023-05-05 00:18:05.1066 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 00:18:05.1202 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 00:18:05.1207 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 00:18:05.1207 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 00:18:05.1721 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 00:19:14.4408 Info Message Template Auto Format enabled
+2023-05-05 00:19:14.4568 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 00:19:14.4705 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 00:19:14.4705 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 00:19:14.4705 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 00:19:14.5143 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 00:21:12.4380 Info Message Template Auto Format enabled
+2023-05-05 00:21:12.4539 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 00:21:12.4685 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 00:21:12.4685 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 00:21:12.4693 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 00:21:12.5100 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 00:33:31.7769 Info Message Template Auto Format enabled
+2023-05-05 00:33:31.7940 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 00:33:31.8101 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 00:33:31.8107 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 00:33:31.8107 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 00:33:31.8546 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 00:42:05.2836 Info Message Template Auto Format enabled
+2023-05-05 00:42:05.3000 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 00:42:05.3138 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 00:42:05.3143 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 00:42:05.3143 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 00:42:05.3703 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 00:44:01.9537 Info Message Template Auto Format enabled
+2023-05-05 00:44:01.9697 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 00:44:01.9832 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 00:44:01.9832 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 00:44:01.9832 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 00:44:02.0335 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 00:45:53.6740 Info Message Template Auto Format enabled
+2023-05-05 00:45:53.6908 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 00:45:53.7046 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 00:45:53.7046 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 00:45:53.7046 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 00:45:53.7490 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 00:48:11.7288 Info Message Template Auto Format enabled
+2023-05-05 00:48:11.7425 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 00:48:11.7566 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 00:48:11.7572 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 00:48:11.7572 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 00:48:11.7852 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 00:52:28.8596 Info Message Template Auto Format enabled
+2023-05-05 00:52:28.8744 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 00:52:28.8892 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 00:52:28.8899 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 00:52:28.8899 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 00:52:28.9368 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 00:54:04.5947 Info Message Template Auto Format enabled
+2023-05-05 00:54:04.6115 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 00:54:04.6259 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 00:54:04.6267 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 00:54:04.6267 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 00:54:04.6735 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 00:58:34.8376 Info Message Template Auto Format enabled
+2023-05-05 00:58:34.8541 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 00:58:34.8679 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 00:58:34.8679 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 00:58:34.8686 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 00:58:34.9126 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 01:01:46.4045 Info Message Template Auto Format enabled
+2023-05-05 01:01:46.4213 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 01:01:46.4355 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 01:01:46.4355 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 01:01:46.4355 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 01:01:46.5153 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 08:21:42.2207 Info Message Template Auto Format enabled
+2023-05-05 08:21:42.2378 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 08:21:42.2523 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 08:21:42.2528 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 08:21:42.2528 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 08:21:42.3074 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 08:43:32.2833 Info Message Template Auto Format enabled
+2023-05-05 08:43:32.2996 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 08:43:32.3134 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 08:43:32.3139 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 08:43:32.3139 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 08:43:32.3827 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 08:48:28.6140 Info Message Template Auto Format enabled
+2023-05-05 08:48:28.6384 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 08:48:28.6520 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 08:48:28.6520 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 08:48:28.6526 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 08:48:28.7004 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 08:52:56.7837 Info Message Template Auto Format enabled
+2023-05-05 08:52:56.7974 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 08:52:56.8109 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 08:52:56.8114 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 08:52:56.8114 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 08:52:56.8609 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 08:57:31.3943 Info Message Template Auto Format enabled
+2023-05-05 08:57:31.4092 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 08:57:31.4233 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 08:57:31.4238 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 08:57:31.4238 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 08:57:31.4736 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 08:58:02.7439 Info Message Template Auto Format enabled
+2023-05-05 08:58:02.7584 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 08:58:02.7727 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 08:58:02.7727 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 08:58:02.7727 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 08:58:02.8513 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 08:59:49.2102 Info Message Template Auto Format enabled
+2023-05-05 08:59:49.2241 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 08:59:49.2377 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 08:59:49.2383 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 08:59:49.2383 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 08:59:49.3129 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 09:23:47.0866 Info Message Template Auto Format enabled
+2023-05-05 09:23:47.1105 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 09:23:47.1252 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 09:23:47.1257 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 09:23:47.1257 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 09:23:47.1836 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 09:27:50.8439 Info Message Template Auto Format enabled
+2023-05-05 09:27:50.8599 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 09:27:50.8734 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 09:27:50.8739 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 09:27:50.8739 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 09:27:50.9271 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 09:33:05.8918 Info Message Template Auto Format enabled
+2023-05-05 09:33:05.9065 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 09:33:05.9210 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 09:33:05.9216 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 09:33:05.9216 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 09:33:05.9461 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 10:11:53.0143 Info Message Template Auto Format enabled
+2023-05-05 10:11:53.0384 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 10:11:53.0530 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 10:11:53.0535 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 10:11:53.0535 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 10:11:53.1067 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 10:14:22.8811 Info Message Template Auto Format enabled
+2023-05-05 10:14:22.8974 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 10:14:22.9117 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 10:14:22.9117 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 10:14:22.9117 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 10:14:22.9702 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 10:15:09.9482 Info Message Template Auto Format enabled
+2023-05-05 10:15:09.9652 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 10:15:09.9800 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 10:15:09.9800 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 10:15:09.9800 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 10:15:10.0226 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 10:18:11.8257 Info Message Template Auto Format enabled
+2023-05-05 10:18:11.8422 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 10:18:11.8558 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 10:18:11.8558 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 10:18:11.8565 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 10:18:11.9093 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 10:32:11.7525 Info Message Template Auto Format enabled
+2023-05-05 10:32:11.7688 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 10:32:11.7827 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 10:32:11.7827 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 10:32:11.7833 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 10:32:11.8341 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 10:32:16.5066 Info Message Template Auto Format enabled
+2023-05-05 10:32:16.5197 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 10:32:16.5335 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 10:32:16.5335 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 10:32:16.5335 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 10:32:16.5862 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 10:44:55.6774 Info Message Template Auto Format enabled
+2023-05-05 10:44:55.6939 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 10:44:55.7079 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 10:44:55.7079 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 10:44:55.7079 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 10:44:55.7419 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 10:50:39.4598 Info Message Template Auto Format enabled
+2023-05-05 10:50:39.4742 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 10:50:39.4884 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 10:50:39.4890 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 10:50:39.4890 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 10:50:39.5376 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 11:04:33.2973 Info Message Template Auto Format enabled
+2023-05-05 11:04:33.3138 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 11:04:33.3283 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 11:04:33.3283 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 11:04:33.3290 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 11:04:33.3887 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 11:07:20.6911 Info Message Template Auto Format enabled
+2023-05-05 11:07:20.7069 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 11:07:20.7207 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 11:07:20.7207 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 11:07:20.7214 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 11:07:20.7913 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 11:08:27.9393 Info Message Template Auto Format enabled
+2023-05-05 11:08:27.9551 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 11:08:27.9689 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 11:08:27.9689 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 11:08:27.9696 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 11:08:28.0439 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 11:09:09.8255 Info Message Template Auto Format enabled
+2023-05-05 11:09:09.8415 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 11:09:09.8550 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 11:09:09.8556 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 11:09:09.8556 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 11:09:09.9066 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 11:12:18.8106 Info Message Template Auto Format enabled
+2023-05-05 11:12:18.8264 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 11:12:18.8401 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 11:12:18.8401 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 11:12:18.8401 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 11:12:18.8939 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 11:13:26.8640 Info Message Template Auto Format enabled
+2023-05-05 11:13:26.8840 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 11:13:26.9045 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 11:13:26.9052 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 11:13:26.9052 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 11:13:26.9455 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 11:19:56.4667 Info Message Template Auto Format enabled
+2023-05-05 11:19:56.4848 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 11:19:56.5006 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 11:19:56.5012 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 11:19:56.5012 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 11:19:56.5590 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 12:30:30.8032 Info Message Template Auto Format enabled
+2023-05-05 12:30:30.8183 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 12:30:30.8330 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 12:30:30.8330 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 12:30:30.8338 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 12:30:30.8878 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 12:37:17.4512 Info Message Template Auto Format enabled
+2023-05-05 12:37:17.4676 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 12:37:17.4813 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 12:37:17.4813 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 12:37:17.4813 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 12:37:17.5299 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 12:37:53.9252 Info Message Template Auto Format enabled
+2023-05-05 12:37:53.9407 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 12:37:53.9558 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 12:37:53.9558 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 12:37:53.9558 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 12:37:53.9808 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 12:40:24.0995 Info Message Template Auto Format enabled
+2023-05-05 12:40:24.1142 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 12:40:24.1294 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 12:40:24.1294 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 12:40:24.1294 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 12:40:24.1709 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 12:43:25.9066 Info Message Template Auto Format enabled
+2023-05-05 12:43:25.9228 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 12:43:25.9368 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 12:43:25.9374 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 12:43:25.9374 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 12:43:25.9671 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 12:45:14.4141 Info Message Template Auto Format enabled
+2023-05-05 12:45:14.4312 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 12:45:14.4455 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 12:45:14.4455 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 12:45:14.4455 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 12:45:14.4991 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 12:47:14.0937 Info Message Template Auto Format enabled
+2023-05-05 12:47:14.1160 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 12:47:14.1304 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 12:47:14.1309 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 12:47:14.1309 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 12:47:14.1892 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 12:49:44.0385 Info Message Template Auto Format enabled
+2023-05-05 12:49:44.0548 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 12:49:44.0687 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 12:49:44.0692 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 12:49:44.0692 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 12:49:44.1136 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 12:51:06.7876 Info Message Template Auto Format enabled
+2023-05-05 12:51:06.8048 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 12:51:06.8185 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 12:51:06.8191 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 12:51:06.8191 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 12:51:06.8938 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 12:52:50.7492 Info Message Template Auto Format enabled
+2023-05-05 12:52:50.7656 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 12:52:50.7794 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 12:52:50.7794 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 12:52:50.7801 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 12:52:50.8370 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 12:54:56.0006 Info Message Template Auto Format enabled
+2023-05-05 12:54:56.0171 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 12:54:56.0306 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 12:54:56.0306 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 12:54:56.0306 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 12:54:56.0877 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 12:56:28.1258 Info Message Template Auto Format enabled
+2023-05-05 12:56:28.1423 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 12:56:28.1560 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 12:56:28.1565 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 12:56:28.1565 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 12:56:28.2034 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 13:02:39.3526 Info Message Template Auto Format enabled
+2023-05-05 13:02:39.3693 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 13:02:39.3832 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 13:02:39.3837 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 13:02:39.3837 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 13:02:39.4132 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 13:04:14.9559 Info Message Template Auto Format enabled
+2023-05-05 13:04:14.9726 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 13:04:14.9864 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 13:04:14.9869 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 13:04:14.9869 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 13:04:15.0436 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 13:05:22.0612 Info Message Template Auto Format enabled
+2023-05-05 13:05:22.0772 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 13:05:22.0909 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 13:05:22.0909 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 13:05:22.0909 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 13:05:22.1513 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 13:07:35.2439 Info Message Template Auto Format enabled
+2023-05-05 13:07:35.2602 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 13:07:35.2738 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 13:07:35.2744 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 13:07:35.2744 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 13:07:35.2984 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 13:09:44.1278 Info Message Template Auto Format enabled
+2023-05-05 13:09:44.1440 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 13:09:44.1577 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 13:09:44.1582 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 13:09:44.1582 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 13:09:44.2350 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 13:14:46.7054 Info Message Template Auto Format enabled
+2023-05-05 13:14:46.7216 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 13:14:46.7352 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 13:14:46.7358 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 13:14:46.7358 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 13:14:46.8149 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 13:17:22.4476 Info Message Template Auto Format enabled
+2023-05-05 13:17:22.4640 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 13:17:22.4776 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 13:17:22.4782 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 13:17:22.4782 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 13:17:22.5325 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 13:25:54.8752 Info Message Template Auto Format enabled
+2023-05-05 13:25:54.8916 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 13:25:54.9054 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 13:25:54.9059 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 13:25:54.9059 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 13:25:54.9587 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 13:27:04.8243 Info Message Template Auto Format enabled
+2023-05-05 13:27:04.8402 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 13:27:04.8540 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 13:27:04.8545 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 13:27:04.8545 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 13:27:04.9361 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 13:28:17.7219 Info Message Template Auto Format enabled
+2023-05-05 13:28:17.7383 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 13:28:17.7523 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 13:28:17.7523 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 13:28:17.7530 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 13:28:17.7981 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 13:32:13.9867 Info Message Template Auto Format enabled
+2023-05-05 13:32:14.0030 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 13:32:14.0167 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 13:32:14.0173 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 13:32:14.0173 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 13:32:14.0468 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 13:33:22.4941 Info Message Template Auto Format enabled
+2023-05-05 13:33:22.5107 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 13:33:22.5245 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 13:33:22.5250 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 13:33:22.5250 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 13:33:22.5841 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 13:34:04.7289 Info Message Template Auto Format enabled
+2023-05-05 13:34:04.7452 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 13:34:04.7590 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 13:34:04.7596 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 13:34:04.7596 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 13:34:04.8333 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 13:38:16.2304 Info Message Template Auto Format enabled
+2023-05-05 13:38:16.2467 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 13:38:16.2605 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 13:38:16.2605 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 13:38:16.2605 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 13:38:16.2870 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 13:41:19.6988 Info Message Template Auto Format enabled
+2023-05-05 13:41:19.7151 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 13:41:19.7288 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 13:41:19.7288 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 13:41:19.7288 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 13:41:19.7907 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 13:50:50.1962 Info Message Template Auto Format enabled
+2023-05-05 13:50:50.2123 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 13:50:50.2266 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 13:50:50.2266 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 13:50:50.2266 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 13:50:50.2529 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 13:54:50.0206 Info Message Template Auto Format enabled
+2023-05-05 13:54:50.0365 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 13:54:50.0507 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 13:54:50.0513 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 13:54:50.0513 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 13:54:50.0837 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 14:01:53.7277 Info Message Template Auto Format enabled
+2023-05-05 14:01:53.7440 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 14:01:53.7577 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 14:01:53.7577 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 14:01:53.7577 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 14:01:53.8051 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 14:02:54.6726 Info Message Template Auto Format enabled
+2023-05-05 14:02:54.6881 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 14:02:54.7016 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 14:02:54.7016 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 14:02:54.7023 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 14:02:54.7278 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 14:04:01.0616 Info Message Template Auto Format enabled
+2023-05-05 14:04:01.0781 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 14:04:01.0917 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 14:04:01.0923 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 14:04:01.0923 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 14:04:01.1710 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 14:04:12.0744 Info Message Template Auto Format enabled
+2023-05-05 14:04:12.0881 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 14:04:12.1024 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 14:04:12.1029 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 14:04:12.1029 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 14:04:12.1481 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 14:06:48.8370 Info Message Template Auto Format enabled
+2023-05-05 14:06:48.8533 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 14:06:48.8670 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 14:06:48.8675 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 14:06:48.8675 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 14:06:48.9229 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 14:07:58.2443 Info Message Template Auto Format enabled
+2023-05-05 14:07:58.2608 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 14:07:58.2745 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 14:07:58.2751 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 14:07:58.2751 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 14:07:58.3272 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 14:08:00.5462 Info Message Template Auto Format enabled
+2023-05-05 14:08:00.5595 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 14:08:00.5735 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 14:08:00.5740 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 14:08:00.5740 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 14:08:00.6158 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 14:30:39.6123 Info Message Template Auto Format enabled
+2023-05-05 14:30:39.6343 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 14:30:39.6491 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 14:30:39.6497 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 14:30:39.6497 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 14:30:39.6905 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 14:32:00.8613 Info Message Template Auto Format enabled
+2023-05-05 14:32:00.8777 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 14:32:00.8921 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 14:32:00.8926 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 14:32:00.8926 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 14:32:00.9505 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 14:32:35.9128 Info Message Template Auto Format enabled
+2023-05-05 14:32:35.9294 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 14:32:35.9433 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 14:32:35.9433 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 14:32:35.9439 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 14:32:36.0147 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 14:34:13.2252 Info Message Template Auto Format enabled
+2023-05-05 14:34:13.2416 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 14:34:13.2552 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 14:34:13.2552 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 14:34:13.2552 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 14:34:13.3475 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 14:52:51.4260 Info Message Template Auto Format enabled
+2023-05-05 14:52:51.4426 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 14:52:51.4588 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 14:52:51.4588 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 14:52:51.4597 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 14:52:51.5166 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 14:54:58.9928 Info Message Template Auto Format enabled
+2023-05-05 14:54:59.0086 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 14:54:59.0227 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 14:54:59.0233 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 14:54:59.0233 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 14:54:59.0808 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 15:00:54.4014 Info Message Template Auto Format enabled
+2023-05-05 15:00:54.4182 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 15:00:54.4321 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 15:00:54.4321 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 15:00:54.4328 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 15:00:54.4779 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-05 15:05:29.2636 Info Message Template Auto Format enabled
+2023-05-05 15:05:29.2802 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-05 15:05:29.2943 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-05 15:05:29.2943 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-05 15:05:29.2943 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-05 15:05:29.3219 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config
+2023-05-08 15:02:54.3336 Info Message Template Auto Format enabled
+2023-05-08 15:02:54.3522 Info Loading assembly: NLog.Web.AspNetCore
+2023-05-08 15:02:54.3682 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-05-08 15:02:54.3689 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-05-08 15:02:54.3689 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-05-08 15:02:54.4437 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=56, FilePath=/Users/xoet/Desktop/work/netcore/QLCC/QLCC.WebApi/bin/Debug/net7.0/NLog.config

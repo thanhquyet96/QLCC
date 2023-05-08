@@ -14,7 +14,7 @@
           style="margin-bottom: -10px; width: 400px;"
         >
           <h2 class="text-left">
-            Xin chào, {{ user?.hoVaTen }}
+            Xin chào, {{ user?.fullName }}
           </h2>
         </div>
         <p
@@ -78,12 +78,12 @@ import { mapState } from 'vuex';
     },
     methods: {
       async chamCong(checkOut) {
-        await this.$http.post(`chamcong?checkOut=${checkOut}`);
+        await this.$http.post(`timeKeep?checkOut=${checkOut}`);
         await this.checkCheckInCheckOut();
         this.$toast.success('Chấm công thành công!');
       },
       async checkCheckInCheckOut() {
-        const { data } = await this.$http.get('chamcong/is-checkin');
+        const { data } = await this.$http.get('timeKeep/is-checkin');
         this.isCheckIn = data;
       }
     }

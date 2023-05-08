@@ -31,16 +31,16 @@ namespace QLCC.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<LichSuChamCongGrid>>> GetLichSuChamCong(int month, int year, string keyword)
         {
-            var result = await _context.LichSuChamCong.Include(x => x.NhanVien).Where(x => x.NgayChamCong.Month == month && x.NgayChamCong.Year == year).ToListAsync();
+            var result = await _context.LichSuChamCong.Include(x => x.USER).Where(x => x.NgayChamCong.Month == month && x.NgayChamCong.Year == year).ToListAsync();
             if (!string.IsNullOrWhiteSpace(keyword))
             {
                 result = result.Where(x => x.NhanVien.HoVaTen.ToLower().Contains(keyword.ToLower())).ToList();
             }
             if (UserIdentity.OnlyUser)
             {
-                result = result.Where(x => x.NhanVienId == UserIdentity.Id).ToList();
+                result = result.Where(x => x.USER_ID == UserIdentity.Id).ToList();
             }
-            var data = result.GroupBy(x => new { NhanVienId = x.NhanVienId, HoVaTen = x.NhanVien.HoVaTen });
+            var data = result.GroupBy(x => new { NhanVienId = x.USER_ID, HoVaTen = x.NhanVien.HoVaTen });
             List<IDictionary<string, object>> histories = new List<IDictionary<string, object>>();
             foreach (var item in data)
             {
@@ -118,7 +118,7 @@ namespace QLCC.Controllers
 
         // GET: api/LichSuChamCong/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<LichSuChamCong>> GetLichSuChamCong(int id)
+        public async Task<ActionResult<HISTORY_TIME_KEEP>> GetLichSuChamCong(int id)
         {
             var lichSuChamCong = await _context.LichSuChamCong.FindAsync(id);
 

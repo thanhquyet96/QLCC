@@ -25,7 +25,7 @@ namespace QLCC.Controllers
 
         // GET: api/NhanVien_Quyen
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<NhanVien_Quyen>>> GetNhanVien_Quyen()
+        public async Task<ActionResult<IEnumerable<USER_ROLE>>> GetNhanVien_Quyen()
         {
             return await _context.NhanVien_Quyen.ToListAsync();
         }
@@ -34,11 +34,11 @@ namespace QLCC.Controllers
         {
             try
             {
-                var quyenNhanVien = _context.NhanVien_Quyen.Where(x => x.NhanVienId == userId);
+                var quyenNhanVien = _context.NhanVien_Quyen.Where(x => x.USER_ID == userId);
                 _context.NhanVien_Quyen.RemoveRange(quyenNhanVien);
                 foreach (var item in quyens)
                 {
-                    await _context.NhanVien_Quyen.AddAsync(new NhanVien_Quyen { NhanVienId = userId, QuyenId = item});
+                    await _context.NhanVien_Quyen.AddAsync(new USER_ROLE { USER_ID = userId, ROLE_ID = item});
                 }
                 await _context.SaveChangesAsync();
             }

@@ -111,12 +111,12 @@ const routes = [
       ]
     },
     {
-      path: '/nghiphep',
-      name: 'nghiphep',
+      path: '/leave',
+      name: 'leave',
       component: {
         render(c) { return c('router-view') }
       },
-      redirect: '/nghiphep/list',
+      redirect: '/leave/list',
       children: [
         {
           path: 'list',

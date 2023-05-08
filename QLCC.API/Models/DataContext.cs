@@ -58,11 +58,11 @@ namespace QLCC.Models
             //    entity.Property(e => e.RowGuid).HasMaxLength(50).IsUnicode(false);
             //    entity.Property(e => e.ModifiedDate).IsUnicode(false);
             //});
-            modelBuilder.Entity<NhanVien_Quyen>(entity => {
+            modelBuilder.Entity<USER_ROLE>(entity => {
                 //    entity.Property(e => e.EmployeeID).HasColumnName("EmployeeID");
                 entity.HasKey(table => new {
-                    table.QuyenId,
-                    table.NhanVienId
+                    table.ROLE_ID,
+                    table.USER_ID
                 });
             });
             OnModelCreatingPartial(modelBuilder);
@@ -75,16 +75,16 @@ namespace QLCC.Models
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
-        public DbSet<QLCC.Entities.ChamCong> ChamCong { get; set; }
+        public DbSet<QLCC.Entities.TIME_KEEP> ChamCong { get; set; }
 
-        public DbSet<QLCC.Entities.NgayChamCong> NgayChamCong { get; set; }
+        public DbSet<QLCC.Entities.DateTimeKeep> NgayChamCong { get; set; }
 
         public DbSet<QLCC.Entities.NghiPhep> NghiPhep { get; set; }
 
-        public DbSet<QLCC.Entities.LichSuChamCong> LichSuChamCong { get; set; }
+        public DbSet<QLCC.Entities.HISTORY_TIME_KEEP> LichSuChamCong { get; set; }
 
         public DbSet<QLCC.Entities.Quyen> Quyen { get; set; }
 
-        public DbSet<QLCC.Entities.NhanVien_Quyen> NhanVien_Quyen { get; set; }
+        public DbSet<QLCC.Entities.USER_ROLE> NhanVien_Quyen { get; set; }
     }
 }

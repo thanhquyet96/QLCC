@@ -9,8 +9,8 @@
           <div class="form-group">
             <label>Tên quyền</label>
             <b-form-input
-              v-model="$v.quyen.tenQuyen.$model"
-              :state="$v.quyen.tenQuyen.$dirty ? !$v.quyen.tenQuyen.$error : null"
+              v-model="$v.quyen.name.$model"
+              :state="$v.quyen.name.$dirty ? !$v.quyen.name.$error : null"
             />
             <b-form-invalid-feedback>
               Trường này không được để trống
@@ -49,13 +49,13 @@ export default {
   data() {
     return {
       quyen: {
-        tenQuyen: null,
+        name: null,
       }
     };
   },
   validations: {
     quyen: {
-      tenQuyen: {
+      name: {
         required,
       },
     }
@@ -69,7 +69,7 @@ export default {
     async save() {
       this.$v.$touch()
       if (!this.$v.$invalid){
-        await this.$http.post(`quyen`, this.quyen);
+        await this.$http.post(`role`, this.quyen);
         this.$toast.success('Thêm mới thành công!');
         this.cancel();
       }

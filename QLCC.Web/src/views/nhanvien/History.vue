@@ -53,7 +53,7 @@
           href="#"
           class="btn btn-success btn-block"
           style="margin-top: 15px;"
-          @click="doSearch"
+          @click.prevent="doSearch"
         > Tìm kiếm </a>
       </div>
     </div>
@@ -83,11 +83,11 @@
         labelIcon: '<i class="fa fa-check text-success" />',
         formatted: [1,2,3,4,5,6],
         items: [
-          { hoVaTen: 'Lof van ten', 1: 1, 2: 2, 3: 3, 5: 5, loaiNghi: 1 },
+          { fullName: 'Lof van ten', 1: 1, 2: 2, 3: 3, 5: 5, loaiNghi: 1 },
         ],
         fieldDefault: [
           // { key: 'index', label: 'STT' },
-          { key: 'hoVaTen', label: 'Nhân viên' },
+          { key: 'fullName', label: 'Nhân viên' },
         ],
         fields: [],
         searchForm: {
@@ -166,7 +166,7 @@
       async loadHistories() {
         const query = new URLSearchParams(this.searchForm).toString()
         this.items = [];
-        const {data} = await this.$http.get(`lichsuchamcong?${query}`);
+        const {data} = await this.$http.get(`historyTimeKeep?${query}`);
         this.items = data || [];
         this.$nextTick(() => {
           this.rawIcon();

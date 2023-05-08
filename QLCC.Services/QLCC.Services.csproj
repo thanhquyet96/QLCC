@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Service\Service.csproj" />
+    <ProjectReference Include="..\QLCC.Data\QLCC.Data.csproj" />
+    <ProjectReference Include="..\UnitOfWork\UnitOfWork.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Dtos\" />
+    <None Remove="Dtos\User\" />
+    <None Remove="Helpers\JWT\" />
+    <None Remove="Dtos\TimeKeep\" />
+    <None Remove="Dtos\DateTimeKeep\" />
+    <None Remove="Dtos\HistoryTimeKeep\" />
+    <None Remove="Dtos\Leave\" />
+    <None Remove="Dtos\Role\" />
+    <None Remove="Dtos\UserRole\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NLog.Web.AspNetCore" Version="5.2.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.30.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\JWT\" />
+    <Folder Include="Dtos\TimeKeep\" />
+    <Folder Include="Dtos\DateTimeKeep\" />
+    <Folder Include="Dtos\HistoryTimeKeep\" />
+    <Folder Include="Dtos\Leave\" />
+    <Folder Include="Dtos\Role\" />
+    <Folder Include="Dtos\UserRole\" />
+  </ItemGroup>
+</Project>
